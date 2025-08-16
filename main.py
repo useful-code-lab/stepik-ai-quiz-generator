@@ -39,7 +39,9 @@ def post_step_source(token: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     if r.status_code == 429:
         time.sleep(1.5)
         r = requests.post(url, headers=mk_headers(token), data=json.dumps(payload), timeout=60)
+    print(r.text)
     r.raise_for_status()
+
     return r.json()
 
 
@@ -109,7 +111,7 @@ def generate_questions():
 # ==== Основной запуск ====
 if __name__ == "__main__":
     # ID урока нужно знать заранее (например, 123456)
-    LESSON_ID = 1906442
+    LESSON_ID = 1907159
     output_dir = Path("questions_split")
 
     generate_questions()
