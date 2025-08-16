@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 6</h3>\n\n<p>Какой стиль именования переменных повышает читаемость?</p>\n\n<p><em>Пояснение:</em> Консистентный стиль делает код предсказуемым и понятным.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": false,
+          "text": "Переменные с разным стилем в одном проекте",
+          "feedback": ""
+        },
+        {
+          "is_correct": true,
+          "text": "Единый стиль, например camelCase или snake_case",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Все переменные называются data",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Использование случайных символов",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10006",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

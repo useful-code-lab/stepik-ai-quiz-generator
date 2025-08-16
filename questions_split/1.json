@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 1</h3>\n\n<p>Почему важно уделять внимание читаемости кода?</p>\n\n<p><em>Пояснение:</em> Читаемый код легче поддерживать, изменять и использовать другими разработчиками.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Чтобы код было проще понимать и сопровождать",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Чтобы код был длиннее",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Чтобы запутать других программистов",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Чтобы быстрее пройти ревью",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10001",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

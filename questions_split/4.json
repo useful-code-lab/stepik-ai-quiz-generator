@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 4</h3>\n\n<p>Почему дублирование кода снижает читаемость?</p>\n\n<p><em>Пояснение:</em> Дублирование усложняет поддержку и запутывает структуру программы.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "При изменении нужно править во многих местах",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Код становится слишком коротким",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Программисты быстрее читают повторения",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Код компилируется дольше",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10004",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

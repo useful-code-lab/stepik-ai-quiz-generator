@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 13</h3>\n\n<p>Что помогает быстро заметить проблемы с читаемостью кода?</p>\n\n<p><em>Пояснение:</em> Code review и линтеры выявляют несоответствия стилю и плохие практики.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Code review и использование линтеров",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Игнорирование замечаний коллег",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Случайное форматирование",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Сокрытие кода от команды",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10013",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

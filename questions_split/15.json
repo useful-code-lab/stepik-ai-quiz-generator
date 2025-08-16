@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 15</h3>\n\n<p>Что лучше всего помогает поддерживать читаемость кода на долгой дистанции?</p>\n\n<p><em>Пояснение:</em> Регулярный рефакторинг поддерживает структуру и понятность кода.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Регулярный рефакторинг и улучшение стиля",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Полное игнорирование старого кода",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Постоянное добавление новых функций без проверки",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Оставлять код без изменений навсегда",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10015",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

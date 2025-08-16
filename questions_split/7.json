@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 7</h3>\n\n<p>Почему комментарии не должны заменять хорошие имена?</p>\n\n<p><em>Пояснение:</em> Ясные имена делают код самодокументируемым, а лишние комментарии могут устаревать.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Хорошие имена переменных и функций сами объясняют код",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Комментарии должны быть в каждой строке",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Комментарии всегда заменяют документацию",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Комментарии можно использовать вместо кода",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10007",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

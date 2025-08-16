@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 10</h3>\n\n<p>Почему магические числа снижают читаемость?</p>\n\n<p><em>Пояснение:</em> Числа без контекста сложно понять — лучше использовать именованные константы.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Они не объясняют смысл значения",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Они ускоряют выполнение кода",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Они автоматически документируют код",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Они сокращают количество строк",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10010",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

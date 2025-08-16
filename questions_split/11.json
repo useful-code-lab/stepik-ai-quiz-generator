@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 11</h3>\n\n<p>Как можно улучшить читаемость при работе с магическими числами?</p>\n\n<p><em>Пояснение:</em> Константы с понятными именами объясняют назначение значения.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": false,
+          "text": "Оставить все числа как есть",
+          "feedback": ""
+        },
+        {
+          "is_correct": true,
+          "text": "Заменить числа на именованные константы",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Сделать числа более случайными",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Добавить комментарии без изменения кода",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10011",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}

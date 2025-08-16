@@ -1,0 +1,49 @@
+{
+  "block": {
+    "name": "choice",
+    "text": "<h3>Вопрос 12</h3>\n\n<p>Почему важно придерживаться единого код-стайла?</p>\n\n<p><em>Пояснение:</em> Единый стиль упрощает чтение и понимание кода командой.</p>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Код становится предсказуемым и понятным",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Код становится случайным",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Никто не может его читать",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Код всегда короче",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "id": "10012",
+  "has_review": false,
+  "time": "2025-08-16T18:00:32.203Z"
+}
