@@ -61,38 +61,56 @@ def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -
     print(f"✓ [{path}] Создан шаг {position + 1}, id={new_id}")
 
 
+import json
+from pathlib import Path
+
+def extract_json_objects(text: str):
+    """Идём по строке, находим '{', пробуем raw_decode с этой позиции.
+    Если получилось — забираем объект и прыгаем на конец; если нет — сдвигаемся на 1 символ.
+    """
+    dec = json.JSONDecoder()
+    i = 0
+    n = len(text)
+    objects = []
+    while i < n:
+        j = text.find('{', i)
+        if j == -1:
+            break
+        try:
+            obj, end = dec.raw_decode(text, j)  # парсит полноценно со всеми вложенными скобками/строками
+            objects.append(obj)
+            i = end
+        except json.JSONDecodeError:
+            i = j + 1
+    return objects
+
 def generate_questions():
-    global output_dir
-    # Входной файл с твоим большим текстом
     input_file = "questions_all.json"
-    # Папка для сохранения отдельных файлов
-    output_dir = Path("questions_split")
-    output_dir.mkdir(exist_ok=True)
-    # Читаем весь текст
+    out_dir = Path("questions_split")
+    out_dir.mkdir(exist_ok=True)
+
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
-    # Регулярка находит каждый полный JSON-блок { ... }
-    json_blocks = re.findall(r"\{.*?\}(?=\s*(?:json|$))", content, re.DOTALL)
-    print(f"Найдено {len(json_blocks)} JSON-блоков")
-    name = 0
-    for idx, block in enumerate(json_blocks, start=1):
-        name = name + 1
-        try:
-            # Проверим, что это валидный JSON
-            data = json.loads(block)
-            # Имя файла по id или по номеру
-            file_name = f"{name}.json"
-            with open(output_dir / file_name, "w", encoding="utf-8") as out_f:
-                json.dump(data, out_f, ensure_ascii=False, indent=2)
-            print(f"Сохранён файл: {file_name}")
-        except json.JSONDecodeError as e:
-            print(f"Ошибка в блоке {idx}: {e}")
+
+    objs = extract_json_objects(content)
+    print(f"Найдено {len(objs)} JSON-блоков")
+
+    for idx, data in enumerate(objs, start=1):
+        file_name = f"{idx}.json"
+        with open(out_dir / file_name, "w", encoding="utf-8") as out_f:
+            json.dump(data, out_f, ensure_ascii=False, indent=2)
+        print(f"Сохранён файл: {file_name}")
+
+    # если дальше используете out_dir:
+    return out_dir
+
 
 
 # ==== Основной запуск ====
 if __name__ == "__main__":
     # ID урока нужно знать заранее (например, 123456)
-    LESSON_ID = 1907158
+    LESSON_ID = 1906442
+    output_dir = Path("questions_split")
 
     generate_questions()
 

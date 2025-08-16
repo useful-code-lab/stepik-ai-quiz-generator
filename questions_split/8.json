@@ -1,49 +1,26 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 8</h3>\n\n<p>Какой риск несёт скрытое дублирование (копирование с маленькими изменениями)?</p>\n\n<p><em>Пояснение:</em> Такие копии труднее находить, и они создают ещё больше багов.</p>",
+    "name": "sorting",
+    "text": "<p><strong>Вопрос:</strong><br>Как программист должен действовать при обнаружении дублирующегося кода?</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
       "options": [
         {
-          "is_correct": true,
-          "text": "Ошибки исправляются не во всех местах",
-          "feedback": ""
+          "text": "1. Найти повторяющиеся блоки"
         },
         {
-          "is_correct": false,
-          "text": "Код становится быстрее",
-          "feedback": ""
+          "text": "2. Вынести их в отдельную функцию"
         },
         {
-          "is_correct": false,
-          "text": "Проще документировать",
-          "feedback": ""
+          "text": "3. Использовать новую функцию вместо копий"
         },
         {
-          "is_correct": false,
-          "text": "Улучшается читаемость",
-          "feedback": ""
+          "text": "4. Проверить тестами"
         }
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901008",
-  "has_review": false,
-  "time": "2025-08-16T20:41:07.203Z"
+    }
+  }
 }

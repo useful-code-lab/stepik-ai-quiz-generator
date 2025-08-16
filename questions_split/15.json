@@ -1,49 +1,30 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 15</h3>\n\n<p>Какое главное правило борьбы с дублированием?</p>\n\n<p><em>Пояснение:</em> Всегда ищи возможность вынести общую логику и переиспользовать её.</p>",
+    "name": "code",
+    "text": "<h3>Задача 15</h3><p>Вам дан «грязный» код:</p><pre><code>def process(x, y):\n    if x > y:\n        return x - y\n    elif x == y:\n        return 0\n    else:\n        return y - x\n</code></pre><p>Отрефакторьте его, используя встроенные возможности Python. Функция должна называться <code>absolute_difference</code>.</p>",
     "video": null,
     "options": {
-      "is_multiple_choice": false
+      "code_templates": {
+        "python3": "def absolute_difference(x, y):\n    return abs(x - y)"
+      }
     },
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
-        {
-          "is_correct": true,
-          "text": "Не повторяй код, используй общие функции",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Пиши больше кода",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Скрывай дублирование комментариями",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Делай копии для надёжности",
-          "feedback": ""
-        }
+      "test_cases": [
+        [
+          "7 3",
+          "4"
+        ],
+        [
+          "5 5",
+          "0"
+        ],
+        [
+          "2 10",
+          "8"
+        ]
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901015",
-  "has_review": false,
-  "time": "2025-08-16T20:41:14.203Z"
+    }
+  }
 }

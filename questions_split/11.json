@@ -1,49 +1,30 @@
 {
   "block": {
     "name": "choice",
-    "text": "<h3>Вопрос 11</h3>\n\n<p>Как дублирование влияет на производительность команды?</p>\n\n<p><em>Пояснение:</em> Команда тратит больше времени на поддержку и исправления ошибок.</p>",
+    "text": "<h3>Вопрос 11</h3><p>Почему важно запускать тесты после рефакторинга?</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
       "options": [
         {
           "is_correct": true,
-          "text": "Замедляет работу из-за лишней поддержки",
-          "feedback": ""
+          "text": "Чтобы убедиться, что поведение программы не изменилось"
         },
         {
           "is_correct": false,
-          "text": "Ускоряет написание кода",
-          "feedback": ""
+          "text": "Чтобы проверить скорость работы"
         },
         {
           "is_correct": false,
-          "text": "Не влияет никак",
-          "feedback": ""
+          "text": "Чтобы уменьшить количество строк"
         },
         {
           "is_correct": false,
-          "text": "Упрощает тестирование",
-          "feedback": ""
+          "text": "Чтобы добавить новые фичи"
         }
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901011",
-  "has_review": false,
-  "time": "2025-08-16T20:41:10.203Z"
+    }
+  }
 }

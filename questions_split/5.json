@@ -1,40 +1,67 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 5</h3>\n\n<p>Что означает принцип DRY?</p>\n\n<p><em>Пояснение:</em> DRY = Don’t Repeat Yourself — не повторяй себя.</p>",
+    "name": "table",
+    "text": "<h3>Задача 5</h3><p>Выберите, что относится к рефакторингу:</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
+      "rows": [
         {
-          "is_correct": true,
-          "text": "Не повторяй себя",
-          "feedback": ""
+          "name": "Переименование переменной",
+          "columns": [
+            {
+              "choice": true
+            },
+            {
+              "choice": false
+            }
+          ]
         },
         {
-          "is_correct": false,
-          "text": "Пиши код быстрее",
-          "feedback": ""
+          "name": "Добавление новой функции",
+          "columns": [
+            {
+              "choice": false
+            },
+            {
+              "choice": true
+            }
+          ]
         },
         {
-          "is_correct": false,
-          "text": "Разделяй код и комментарии",
-          "feedback": ""
+          "name": "Удаление дублирующегося кода",
+          "columns": [
+            {
+              "choice": true
+            },
+            {
+              "choice": false
+            }
+          ]
         },
         {
-          "is_correct": false,
-          "text": "Делай код красивее",
-          "feedback": ""
+          "name": "Исправление бага",
+          "columns": [
+            {
+              "choice": false
+            },
+            {
+              "choice": true
+            }
+          ]
+        }
+      ],
+      "options": {
+        "is_checkbox": false
+      },
+      "columns": [
+        {
+          "name": "Да"
+        },
+        {
+          "name": "Нет"
         }
       ]
     },
@@ -42,8 +69,5 @@
     "tests_archive": null,
     "feedback_correct": "",
     "feedback_wrong": ""
-  },
-  "id": "901005",
-  "has_review": false,
-  "time": "2025-08-16T20:41:04.203Z"
+  }
 }

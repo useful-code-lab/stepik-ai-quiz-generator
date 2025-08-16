@@ -1,40 +1,25 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 3</h3>\n\n<p>Какая проблема возникает, если одинаковый алгоритм скопирован в 5 местах?</p>\n\n<p><em>Пояснение:</em> Изменение в одном месте потребует поиска и изменения остальных копий.</p>",
+    "name": "sorting",
+    "text": "<p><strong>Вопрос:</strong><br>Расположите шаги рефакторинга в правильном порядке:</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
       "is_html_enabled": true,
-      "is_options_feedback": false,
       "options": [
         {
-          "is_correct": true,
-          "text": "Риск несовместимости логики при изменениях",
-          "feedback": ""
+          "text": "1. Найти проблемный участок кода"
         },
         {
-          "is_correct": false,
-          "text": "Код компилируется быстрее",
-          "feedback": ""
+          "text": "2. Внести улучшения"
         },
         {
-          "is_correct": false,
-          "text": "Появляется больше комментариев",
-          "feedback": ""
+          "text": "3. Сохранить функциональность без изменений"
         },
         {
-          "is_correct": false,
-          "text": "Уменьшается читаемость переменных",
-          "feedback": ""
+          "text": "4. Запустить тесты для проверки"
         }
       ]
     },
@@ -42,8 +27,5 @@
     "tests_archive": null,
     "feedback_correct": "",
     "feedback_wrong": ""
-  },
-  "id": "901003",
-  "has_review": false,
-  "time": "2025-08-16T20:41:02.203Z"
+  }
 }

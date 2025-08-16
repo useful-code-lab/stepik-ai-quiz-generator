@@ -1,49 +1,22 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 12</h3>\n\n<p>Чем отличается копипаст от переиспользования?</p>\n\n<p><em>Пояснение:</em> Копипаст = вставка одинакового кода. Переиспользование = вызов общей функции.</p>",
+    "name": "code",
+    "text": "<h3>Задача 12</h3><p>Есть код с дублированием:</p><pre><code>def area_rectangle(a, b):\n    return a*b\n\ndef area_square(x):\n    return x*x\n</code></pre><p>Отрефакторьте так, чтобы квадрат считался через функцию прямоугольника.</p>",
     "video": null,
     "options": {
-      "is_multiple_choice": false
+      "code_templates": {
+        "python3": "def area_rectangle(a, b):\n    return a * b\n\ndef area_square(x):\n    return area_rectangle(x, x)"
+      }
     },
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
-        {
-          "is_correct": true,
-          "text": "Копипаст создаёт новые копии кода, переиспользование вызывает одну функцию",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Копипаст работает быстрее",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Переиспользование всегда медленнее",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Они ничем не отличаются",
-          "feedback": ""
-        }
+      "test_cases": [
+        [
+          "5",
+          "25"
+        ]
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901012",
-  "has_review": false,
-  "time": "2025-08-16T20:41:11.203Z"
+    }
+  }
 }

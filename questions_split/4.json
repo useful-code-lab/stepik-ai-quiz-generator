@@ -1,40 +1,30 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 4</h3>\n\n<p>Как правильно устранить дублирование кода?</p>\n\n<p><em>Пояснение:</em> Общую логику лучше вынести в отдельную функцию или модуль.</p>",
+    "name": "matching",
+    "text": "<h3>Задача 4</h3><p>Сопоставьте понятие и определение.</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
+      "preserve_firsts_order": true,
       "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
+      "pairs": [
         {
-          "is_correct": true,
-          "text": "Вынести повторяющийся код в отдельную функцию",
-          "feedback": ""
+          "first": "Рефакторинг",
+          "second": "Изменение внутренней структуры кода без изменения поведения"
         },
         {
-          "is_correct": false,
-          "text": "Оставить всё как есть",
-          "feedback": ""
+          "first": "Цель рефакторинга",
+          "second": "Улучшение читаемости и поддержки"
         },
         {
-          "is_correct": false,
-          "text": "Скопировать ещё раз для надёжности",
-          "feedback": ""
+          "first": "Код с дубликатами",
+          "second": "Повторяющиеся фрагменты программы"
         },
         {
-          "is_correct": false,
-          "text": "Скрыть дублирование комментариями",
-          "feedback": ""
+          "first": "Плохие имена",
+          "second": "Неочевидные названия переменных или функций"
         }
       ]
     },
@@ -42,8 +32,5 @@
     "tests_archive": null,
     "feedback_correct": "",
     "feedback_wrong": ""
-  },
-  "id": "901004",
-  "has_review": false,
-  "time": "2025-08-16T20:41:03.203Z"
+  }
 }

@@ -1,49 +1,30 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 9</h3>\n\n<p>Как рефакторинг помогает в борьбе с дублированием?</p>\n\n<p><em>Пояснение:</em> Рефакторинг выявляет повторяющийся код и превращает его в переиспользуемые модули.</p>",
+    "name": "matching",
+    "text": "<h3>Задача 9</h3><p>Сопоставьте проблему кода и её описание.</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
+      "pairs": [
         {
-          "is_correct": true,
-          "text": "Выносит общую логику в отдельные функции/классы",
-          "feedback": ""
+          "first": "Magic numbers",
+          "second": "Неочевидные числовые константы"
         },
         {
-          "is_correct": false,
-          "text": "Увеличивает количество копий",
-          "feedback": ""
+          "first": "Long function",
+          "second": "Слишком большая и непонятная функция"
         },
         {
-          "is_correct": false,
-          "text": "Добавляет больше комментариев",
-          "feedback": ""
+          "first": "Duplicated code",
+          "second": "Копирование одних и тех же строк"
         },
         {
-          "is_correct": false,
-          "text": "Скрывает код в длинных файлах",
-          "feedback": ""
+          "first": "Bad naming",
+          "second": "Имена не отражают суть"
         }
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901009",
-  "has_review": false,
-  "time": "2025-08-16T20:41:08.203Z"
+    }
+  }
 }

@@ -1,49 +1,66 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 10</h3>\n\n<p>Какая техника помогает найти дублирование?</p>\n\n<p><em>Пояснение:</em> Code review и автоматические линтеры легко находят повторяющиеся куски.</p>",
+    "name": "table",
+    "text": "<h3>Задача 10</h3><p>Определите, какие действия не относятся к рефакторингу.</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
+      "rows": [
         {
-          "is_correct": true,
-          "text": "Code review и статический анализатор",
-          "feedback": ""
+          "name": "Удаление мёртвого кода",
+          "columns": [
+            {
+              "choice": true
+            },
+            {
+              "choice": false
+            }
+          ]
         },
         {
-          "is_correct": false,
-          "text": "Случайные догадки",
-          "feedback": ""
+          "name": "Добавление нового API",
+          "columns": [
+            {
+              "choice": false
+            },
+            {
+              "choice": true
+            }
+          ]
         },
         {
-          "is_correct": false,
-          "text": "Добавление новых комментариев",
-          "feedback": ""
+          "name": "Оптимизация цикла",
+          "columns": [
+            {
+              "choice": true
+            },
+            {
+              "choice": false
+            }
+          ]
         },
         {
-          "is_correct": false,
-          "text": "Удаление функций без проверки",
-          "feedback": ""
+          "name": "Исправление бага",
+          "columns": [
+            {
+              "choice": false
+            },
+            {
+              "choice": true
+            }
+          ]
+        }
+      ],
+      "columns": [
+        {
+          "name": "Да (рефакторинг)"
+        },
+        {
+          "name": "Нет"
         }
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901010",
-  "has_review": false,
-  "time": "2025-08-16T20:41:09.203Z"
+    }
+  }
 }

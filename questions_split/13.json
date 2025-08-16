@@ -1,49 +1,26 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 13</h3>\n\n<p>Как дублирование связано с багами?</p>\n\n<p><em>Пояснение:</em> Баг, исправленный в одном месте, может остаться в другой копии.</p>",
+    "name": "sorting",
+    "text": "<p><strong>Вопрос:</strong><br>Как лучше всего упростить слишком длинную функцию?</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
       "options": [
         {
-          "is_correct": true,
-          "text": "Исправления могут не дойти до всех копий",
-          "feedback": ""
+          "text": "1. Разбить на более мелкие функции"
         },
         {
-          "is_correct": false,
-          "text": "Дублирование само исправляет баги",
-          "feedback": ""
+          "text": "2. Дать понятные имена"
         },
         {
-          "is_correct": false,
-          "text": "Ошибки исчезают сразу",
-          "feedback": ""
+          "text": "3. Использовать каждый кусок по назначению"
         },
         {
-          "is_correct": false,
-          "text": "Копии помогают быстрее находить баги",
-          "feedback": ""
+          "text": "4. Проверить тестами"
         }
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901013",
-  "has_review": false,
-  "time": "2025-08-16T20:41:12.203Z"
+    }
+  }
 }

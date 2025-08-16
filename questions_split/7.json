@@ -1,49 +1,23 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 7</h3>\n\n<p>Что делать, если дублирование немного отличается в разных местах?</p>\n\n<p><em>Пояснение:</em> В таких случаях лучше обобщить различия через параметры.</p>",
+    "name": "code",
+    "text": "<h3>Задача 7</h3><p>Отрефакторьте функцию:</p><pre><code>def f(a, b, c, d):\n    if (a+b) > (c+d):\n        return (a+b) - (c+d)\n    else:\n        return (c+d) - (a+b)\n</code></pre><p>Переименуйте её в <code>difference_of_sums</code> и сделайте проще.</p>",
     "video": null,
     "options": {
-      "is_multiple_choice": false
+      "code_templates": {
+        "python3": "def difference_of_sums(a, b, c, d):\n    return abs((a+b) - (c+d))"
+      }
     },
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
-        {
-          "is_correct": true,
-          "text": "Создать одну функцию с параметрами",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Оставить все копии без изменений",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Удалить одну копию и надеяться, что не сломается",
-          "feedback": ""
-        },
-        {
-          "is_correct": false,
-          "text": "Дублировать ещё больше",
-          "feedback": ""
-        }
+      "code": "def check(reply, clue):\n    return reply.strip() == clue.strip()",
+      "test_cases": [
+        [
+          "3 5 2 1",
+          "5"
+        ]
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901007",
-  "has_review": false,
-  "time": "2025-08-16T20:41:06.203Z"
+    }
+  }
 }

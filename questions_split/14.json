@@ -1,49 +1,30 @@
 {
   "block": {
-    "name": "choice",
-    "text": "<h3>Вопрос 14</h3>\n\n<p>Что лучше: скопировать чужую функцию или подключить библиотеку?</p>\n\n<p><em>Пояснение:</em> Лучше использовать проверенную библиотеку — это уменьшает дублирование.</p>",
+    "name": "matching",
+    "text": "<h3>Задача 14</h3><p>Сопоставьте проблему и подходящий приём рефакторинга.</p>",
     "video": null,
-    "options": {
-      "is_multiple_choice": false
-    },
+    "options": {},
     "subtitle_files": [],
     "is_deprecated": false,
     "source": {
-      "is_multiple_choice": false,
-      "is_always_correct": false,
-      "sample_size": 4,
-      "preserve_order": false,
-      "is_html_enabled": true,
-      "is_options_feedback": false,
-      "options": [
+      "pairs": [
         {
-          "is_correct": true,
-          "text": "Подключить библиотеку",
-          "feedback": ""
+          "first": "Слишком длинная функция",
+          "second": "Extract Method (выделение метода)"
         },
         {
-          "is_correct": false,
-          "text": "Скопировать функцию в проект",
-          "feedback": ""
+          "first": "Дублирующийся код",
+          "second": "Extract Function (вынести функцию)"
         },
         {
-          "is_correct": false,
-          "text": "Переписать один-в-один",
-          "feedback": ""
+          "first": "Плохие названия",
+          "second": "Rename (переименование)"
         },
         {
-          "is_correct": false,
-          "text": "Создать несколько копий",
-          "feedback": ""
+          "first": "Magic numbers",
+          "second": "Introduce Constant (вынести константу)"
         }
       ]
-    },
-    "subtitles": {},
-    "tests_archive": null,
-    "feedback_correct": "",
-    "feedback_wrong": ""
-  },
-  "id": "901014",
-  "has_review": false,
-  "time": "2025-08-16T20:41:13.203Z"
+    }
+  }
 }
