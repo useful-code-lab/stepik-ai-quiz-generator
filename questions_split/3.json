@@ -1,7 +1,7 @@
 {
   "block": {
     "name": "choice",
-    "text": "<h3>Вопрос 3</h3>\n\n<p>Что лучше выбрать для названия переменной, чтобы повысить читаемость?</p>\n\n<p><em>Пояснение:</em> Осмысленные имена переменных помогают понять назначение кода.</p>",
+    "text": "<h3>Вопрос 3</h3>\n\n<p>Какая проблема возникает, если одинаковый алгоритм скопирован в 5 местах?</p>\n\n<p><em>Пояснение:</em> Изменение в одном месте потребует поиска и изменения остальных копий.</p>",
     "video": null,
     "options": {
       "is_multiple_choice": false
@@ -17,23 +17,23 @@
       "is_options_feedback": false,
       "options": [
         {
-          "is_correct": false,
-          "text": "x1, x2",
-          "feedback": ""
-        },
-        {
           "is_correct": true,
-          "text": "customerName",
+          "text": "Риск несовместимости логики при изменениях",
           "feedback": ""
         },
         {
           "is_correct": false,
-          "text": "aaa, bbb",
+          "text": "Код компилируется быстрее",
           "feedback": ""
         },
         {
           "is_correct": false,
-          "text": "temp123",
+          "text": "Появляется больше комментариев",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Уменьшается читаемость переменных",
           "feedback": ""
         }
       ]
@@ -43,7 +43,7 @@
     "feedback_correct": "",
     "feedback_wrong": ""
   },
-  "id": "10003",
+  "id": "901003",
   "has_review": false,
-  "time": "2025-08-16T18:00:32.203Z"
+  "time": "2025-08-16T20:41:02.203Z"
 }

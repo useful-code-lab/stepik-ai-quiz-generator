@@ -30,46 +30,6 @@ def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
 
-def create_text_step(lesson_id: int, position: int, html: str) -> Dict[str, Any]:
-    return {
-        "step-source": {
-            "lesson": lesson_id,
-            "position": position,
-            "block": {
-                "name": "text",
-                "text": html,
-                "source": {}  # обязательно, даже пустой
-            }
-        }
-    }
-
-
-def create_choice_step(lesson_id, position, prompt_html, options, is_multiple_choice):
-    payload = {
-        "step-source": {
-            "lesson": lesson_id,
-            # "position": position,
-            "block": {
-                "name": "choice",
-                "text": prompt_html,
-                "source": {
-                    "is_multiple_choice": is_multiple_choice,
-                    "is_always_correct": False,
-                    "sample_size": len(options),
-                    "preserve_order": True,
-                    "is_html_enabled": True,
-                    "is_options_feedback": False,
-                    "options": [{"text": o["text"], "is_correct": bool(o["is_correct"]), "feedback": ""} for o in
-                                options],
-                    "hint": "",
-                    "solution": "",
-                }
-            }
-        }
-    }
-    return payload
-
-
 # ==== Запрос в Stepik ====
 def post_step_source(token: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     print("Отправляем payload:", json.dumps(payload, ensure_ascii=False, indent=2))
@@ -90,30 +50,15 @@ def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -
 
     block = cfg["block"]
 
-    t = "choice"
-
-    if t == "choice":
-        position = 1
-        prompt_html = block["text"]
-        options = [{"text": "1", "is_correct": False}, {"text": "2", "is_correct": True}]
-        is_multiple_choice = False
-        payload = {"step-source": {
-            "lesson": lesson_id,
-            "block": block
-        }
-        }
-        # "position": position,block
-
-        """payload = create_choice_step(
-            lesson_id, pos, s["prompt_html"],
-            s["options"], s.get("is_multiple_choice", False)
-        )"""
-    else:
-        raise ValueError(f"Неизвестный тип шага: {t}")
+    payload = {"step-source": {
+        "lesson": lesson_id,
+        "block": block
+    }
+    }
 
     resp = post_step_source(token, payload)
     new_id = resp.get("step-sources", [{}])[0].get("id")
-    print(f"✓ [{path}] Создан шаг (type={t}) на позиции {position}, id={new_id}")
+    print(f"✓ [{path}] Создан шаг {position + 1}, id={new_id}")
 
 
 def generate_questions():
@@ -154,7 +99,9 @@ if __name__ == "__main__":
     # 2. Получение токена
     token = get_access_token()
 
-    # 3. Загрузка каждого JSON в Stepik
-    for key, file in enumerate(sorted(os.listdir(output_dir))):
+    files_sorted = sorted(os.listdir(output_dir), key=lambda x: int(re.search(r'(\d+)', x).group(1)))
+
+    # Перебираем с индексом
+    for key, file in enumerate(files_sorted, start=1):
         if file.endswith(".json"):
-            load_steps_from_json(LESSON_ID, key + 2, os.path.join(output_dir, file), token)
+            load_steps_from_json(LESSON_ID, key, os.path.join(output_dir, file), token)
