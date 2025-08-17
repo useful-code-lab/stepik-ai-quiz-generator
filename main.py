@@ -10,10 +10,10 @@ from typing import Dict, Any, List
 import os
 
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "6WJSFLcvCV50tmTp0Qn5JJzA4jQ0Q6gZsEVB3VIl"
-CLIENT_SECRET = "g6KgKx8LZaLpILc3A7G2dnJE6wnjabwzz8ZZdIAaJtZXjB8TiBZm2jy3XhHD6K1tTO9Xdm4h5dV2Jcu5vSOA4kib3TxEUEDKZzMzwMxS76AOtyF83KoLKgrqbB8eXuIL"
+CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
+CLIENT_SECRET = "mqjpR0NjckDjVG6cGxCILh18nkDHJb7D2WLWlTpqYKVoWfCDKZF53MhvlHk7YbgUi1U8L96bEPhMRepW6IiSyvs98qtn7aU7J1DW9LD9jZF0g1HZVI3rHcrphLN8Kkik"
 
-
+total_text = ""
 # ==== OAuth ====
 def get_access_token() -> str:
     resp = requests.post(
@@ -57,9 +57,16 @@ def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -
         "block": block
     }
     }
+    global total_text
+    if position > 10:
+        payload["step-source"]["block"]["text"] = total_text
 
     resp = post_step_source(token, payload)
     new_id = resp.get("step-sources", [{}])[0].get("id")
+
+    'text'
+    total_text = total_text + resp.get("step-sources", [{}])[0].get("block").get("text")
+
     print(f"✓ [{path}] Создан шаг {position + 1}, id={new_id}")
 
 
@@ -111,7 +118,7 @@ def generate_questions():
 # ==== Основной запуск ====
 if __name__ == "__main__":
     # ID урока нужно знать заранее (например, 123456)
-    LESSON_ID = 1907159
+    LESSON_ID = 1908195
     output_dir = Path("questions_split")
 
     generate_questions()
