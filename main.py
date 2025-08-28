@@ -75,7 +75,7 @@ from pathlib import Path
 
 def extract_json_objects(text: str):
     """Идём по строке, находим '{', пробуем raw_decode с этой позиции.
-    Если получилось — забираем объект и прыгаем на конец; если нет — сдвигаемся на 1 символ.
+    Если получилось — забираем объект и прыгаем на конец; если нет — сдвигаемся на запрос.txt символ.
     """
     dec = json.JSONDecoder()
     i = 0
@@ -118,7 +118,7 @@ def generate_questions():
 # ==== Основной запуск ====
 if __name__ == "__main__":
     # ID урока нужно знать заранее (например, 123456)
-    LESSON_ID = 1908195
+    LESSON_ID = 1922779
     output_dir = Path("questions_split")
 
     generate_questions()
