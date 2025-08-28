@@ -118,7 +118,7 @@ def generate_questions():
 # ==== Основной запуск ====
 if __name__ == "__main__":
     # ID урока нужно знать заранее (например, 123456)
-    LESSON_ID = 1922779
+    LESSON_ID = 1923336
     output_dir = Path("questions_split")
 
     generate_questions()
@@ -128,7 +128,10 @@ if __name__ == "__main__":
 
     files_sorted = sorted(os.listdir(output_dir), key=lambda x: int(re.search(r'(\d+)', x).group(1)))
 
-    # Перебираем с индексом
-    for key, file in enumerate(files_sorted, start=1):
-        if file.endswith(".json"):
-            load_steps_from_json(LESSON_ID, key, os.path.join(output_dir, file), token)
+    try:
+        # Перебираем с индексом
+        for key, file in enumerate(files_sorted, start=1):
+            if file.endswith(".json"):
+                load_steps_from_json(LESSON_ID, key, os.path.join(output_dir, file), token)
+    except Exception as e:
+        load_steps_from_json(LESSON_ID, 11, os.path.join(output_dir, "1000.json"), token)
