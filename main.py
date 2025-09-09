@@ -260,31 +260,7 @@ def select_lesson():
         return redirect(url_for("lesson_form"))
     return render_template("index.html", lessons=lessons_list, step=current_step)
 
-# ------------------- Шаг 2: Заполнение модуля, аудитории и тем -------------------
-@app.route("/lesson_form", methods=["GET", "POST"])
-def lesson_form():
-    lessons_list = session.get("lessons_list", [])
-    lesson_id = session.get("current_lesson_id")
-    lesson = next(l for l in lessons_list if l["lesson_id"] == lesson_id)
-    current_step = 2
 
-    prompt_text = ""
-    generated_json = session.get("generated_json", [])
-
-    if request.method == "POST":
-        module_title = request.form["module_title"]
-        audience = request.form["audience"]
-        topic_examples = [s.strip() for s in request.form["topic_examples"].split(",")]
-
-        # Заглушка: пока JSON генерируем пустыми объектами
-        generated_json = ["{}"]*10
-
-        session["generated_json"] = generated_json
-        session["prompt_text"] = prompt_text
-        return redirect(url_for("edit_json"))
-
-    return render_template("lesson_form.html", lesson=lesson, prompt_text=prompt_text,
-                           generated_json=generated_json, step=current_step)
 
 @app.route("/get_prompt")
 def get_prompt():
@@ -302,56 +278,6 @@ def get_prompt():
         )
         return jsonify({"prompt": prompt})
     return jsonify({"prompt": ""})
-
-
-# ------------------- Шаг 3: Редактирование JSON -------------------
-@app.route("/edit_json", methods=["GET", "POST"])
-def edit_json():
-    lesson_id = session.get("current_lesson_id")
-    lesson = next(l for l in session.get("lessons_list", []) if l["lesson_id"] == lesson_id)
-    prompt_text = session.get("prompt_text", "")
-    generated_json = session.get("generated_json", [])
-    current_step = 3
-
-    if request.method == "POST":
-        # Пользователь редактирует JSON
-        user_json = request.form.get("json_content", "")
-        try:
-            parsed = json.loads(user_json)
-            session["generated_json"] = parsed
-            return redirect(url_for("show_json"))
-        except:
-            error = "Некорректный JSON"
-            return render_template("edit_json.html", lesson=lesson, prompt_text=prompt_text,
-                                   json_content=user_json, error=error, step=current_step)
-
-    # Показываем поле с автогенерированным JSON (пока заглушка)
-    json_content = json.dumps(generated_json, indent=2, ensure_ascii=False)
-    return render_template("edit_json.html", lesson=lesson, prompt_text=prompt_text,
-                           json_content=json_content, step=current_step)
-
-# ------------------- Шаг 4: Просмотр JSON и загрузка в Stepik -------------------
-@app.route("/show_json")
-def show_json():
-    generated_json = session.get("generated_json", [])
-    prompt_text = session.get("prompt_text", "")
-    current_step = 4
-    return render_template("show_json.html", json_list=generated_json, prompt_text=prompt_text, step=current_step)
-
-@app.route("/upload_to_stepik")
-def upload_to_stepik():
-    lesson_id = session.get("current_lesson_id")
-    generated_json = session.get("generated_json", [])
-    token = get_access_token()
-
-    for quest_json in generated_json:
-        url = f"{STEPIC_HOST}/api/step-sources"
-        payload = {"step_source": quest_json}
-        r = requests.post(url, headers=mk_headers(token), data=json.dumps(payload))
-        r.raise_for_status()
-
-    return "<h1>Все задания успешно загружены в Stepik!</h1><a href='/'>Вернуться к списку уроков</a>"
-
 
 
 
