@@ -1,110 +1,89 @@
-<h1>Шаг {{ step }}: Выберите урок для редактирования</h1>
-
-<form method="post" id="lessonForm">
-    <label htmlFor="lessonSelect">Выберите урок:</label>
-    <select name="lesson_id" id="lessonSelect">
-        <option value="">-- выберите урок --</option>
-        {% for l in lessons %}
-        <option value="{{ l.lesson_id }}">
-            {{ l.lesson_title }} — Модуль: {{ l.module_title }} — Шагов: {{ l.steps_count }}
-        </option>
-        {% endfor %}
-    </select>
-    <br><br>
-
-    <div id="promptContainer" style="border:1px solid #ccc; padding:10px; margin-top:10px; display:none;">
-        <strong>Промпт для генерации квестов:</strong>
-        <pre id="promptText" style="white-space: pre-wrap;"></pre>
-        <button type="button" id="copyPromptBtn">Скопировать промпт</button>
-    </div>
-
-    <br>
-    <label htmlFor="jsonInput">JSON с заданиями для Stepik:</label><br>
-    <textarea id="jsonInput" name="json_input" rows="20" style="width:100%; font-family: monospace;"
-              placeholder="Вставьте сюда JSON с заданиями"></textarea>
-    <br><br>
-    <button type="submit" id="saveBtn">Сохранить</button>
-</form>
-
 <script>
-    const select = document.getElementById("lessonSelect");
-    const promptContainer = document.getElementById("promptContainer");
-    const promptText = document.getElementById("promptText");
-    const copyBtn = document.getElementById("copyPromptBtn");
-    const jsonInput = document.getElementById("jsonInput");
+const select = document.getElementById("lessonSelect");
+const promptContainer = document.getElementById("promptContainer");
+const promptText = document.getElementById("promptText");
+const copyBtn = document.getElementById("copyPromptBtn");
+const saveBtn = document.getElementById("saveBtn");
+const lessonText = document.getElementById("lessonText");
 
-    select.addEventListener("change", function () {
-        const lessonId = select.value;
-        if (!lessonId) {
-            promptText.textContent = "";
-            promptContainer.style.display = "none";
-            return;
-        }
+// Функция для обновления списка уроков
+function reloadLessonList() {
+    fetch('/get_lessons')  // эндпоинт, который возвращает актуальный список уроков
+        .then(resp => resp.json())
+        .then(data => {
+            if (data.lessons) {
+                // Очищаем старые options
+                select.innerHTML = '<option value="">-- выберите урок --</option>';
+                data.lessons.forEach(l => {
+                    const opt = document.createElement('option');
+                    opt.value = l.lesson_id;
+                    opt.textContent = `${l.lesson_title} — Модуль: ${l.module_title} — Шагов: ${l.steps_count}`;
+                    select.appendChild(opt);
+                });
+            }
+        })
+        .catch(err => console.error("Ошибка при перезагрузке списка уроков:", err));
+}
 
-        fetch(`/get_prompt?lesson_id=${lessonId}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.prompt) {
-                    promptText.textContent = data.prompt;
-                    promptContainer.style.display = "block";
-                    jsonInput.value = ""; // Очистка поля JSON при смене урока
-                } else {
-                    promptText.textContent = "";
-                    promptContainer.style.display = "none";
-                    jsonInput.value = "";
-                }
-            })
-            .catch(err => {
-                console.error("Ошибка при получении промпта:", err);
+// Показ промпта при выборе урока
+select.addEventListener("change", function () {
+    const lessonId = select.value;
+    if (!lessonId) {
+        promptText.textContent = "";
+        promptContainer.style.display = "none";
+        return;
+    }
+
+    fetch(`/get_prompt?lesson_id=${lessonId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.prompt) {
+                promptText.textContent = data.prompt;
+                promptContainer.style.display = "block";
+            } else {
                 promptText.textContent = "";
                 promptContainer.style.display = "none";
-                jsonInput.value = "";
-            });
-    });
-
-    copyBtn.addEventListener("click", function () {
-        if (promptText.textContent) {
-            navigator.clipboard.writeText(promptText.textContent)
-                .then(() => alert("Промпт скопирован в буфер обмена!"))
-                .catch(err => alert("Ошибка при копировании: " + err));
-        }
-    });
-
-    // Можно добавить обработку сохранения через AJAX, если нужно
-    document.getElementById("lessonForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Чтобы форма не перезагружала страницу
-        const lessonId = select.value;
-        const jsonData = jsonInput.value.trim();
-        if (!lessonId) {
-            alert("Выберите урок!");
-            return;
-        }
-        if (!jsonData) {
-            alert("Введите JSON с заданиями!");
-            return;
-        }
-
-        fetch(`/save_lesson_json`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                lesson_id: lessonId,
-                json: jsonData
-            })
+            }
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert("JSON успешно сохранён!");
-                } else {
-                    alert("Ошибка при сохранении: " + (data.error || "неизвестная ошибка"));
-                }
-            })
-            .catch(err => {
-                console.error("Ошибка при сохранении:", err);
-                alert("Ошибка при сохранении: " + err);
-            });
-    });
+        .catch(err => {
+            console.error("Ошибка при получении промпта:", err);
+            promptText.textContent = "";
+            promptContainer.style.display = "none";
+        });
+});
+
+// Копирование промпта
+copyBtn.addEventListener("click", function () {
+    if (promptText.textContent) {
+        navigator.clipboard.writeText(promptText.textContent)
+            .then(() => alert("Промпт скопирован!"))
+            .catch(err => alert("Ошибка при копировании: " + err));
+    }
+});
+
+// Сохранение текста через AJAX
+saveBtn.addEventListener("click", function () {
+    const lessonId = select.value;
+    const textData = lessonText.value.trim();
+
+    if (!lessonId || !textData) {
+        alert("Выберите урок и вставьте текст!");
+        return;
+    }
+
+    fetch(`/save_lesson_text?lesson_id=${lessonId}`, {
+        method: "POST",
+        body: textData
+    })
+    .then(resp => resp.json())
+    .then(data => {
+        if (data.success) {
+            alert("Текст успешно сохранен и шаги загружены!");
+            reloadLessonList();  // <-- обновляем список после сохранения
+        } else {
+            alert("Ошибка: " + (data.error || "Неизвестная ошибка"));
+        }
+    })
+    .catch(err => alert("Ошибка при сохранении: " + err));
+});
 </script>

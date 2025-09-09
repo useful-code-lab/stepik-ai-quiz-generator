@@ -13,7 +13,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import requests
 import json
 
-COURSE_ID=252535
+COURSE_ID = 252535
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
@@ -23,6 +23,7 @@ total_text = ""
 
 app = Flask(__name__)
 app.secret_key = "super-secret-key"
+
 
 # ==== OAuth ====
 def get_access_token() -> str:
@@ -105,40 +106,40 @@ def extract_json_objects(text: str):
     return objects
 
 
-def generate_questions():
+def generate_questions(input_file):
     # Папка, где находятся файлы
     folder = "questions_split"
 
     # Имя файла, который нужно оставить
     file_to_keep = "1000.txt"
 
-    # Перебираем все файлы в папке
+    # Создаём папку, если её нет
+    out_dir = Path(folder)
+    out_dir.mkdir(exist_ok=True)
+
+    # Удаляем все файлы, кроме file_to_keep
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
-        # Проверяем, что это файл и он не тот, который нужно оставить
         if os.path.isfile(file_path) and filename != file_to_keep:
             os.remove(file_path)
             print(f"Удален файл: {filename}")
 
-    input_file = "questions_all.json"
-    out_dir = Path(folder)
-    out_dir.mkdir(exist_ok=True)
-
+    # Читаем переданный файл
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
 
+    # Извлекаем JSON объекты
     objs = extract_json_objects(content)
     print(f"Найдено {len(objs)} JSON-блоков")
 
+    # Сохраняем каждый блок отдельно
     for idx, data in enumerate(objs, start=1):
         file_name = f"{idx}.json"
         with open(out_dir / file_name, "w", encoding="utf-8") as out_f:
             json.dump(data, out_f, ensure_ascii=False, indent=2)
         print(f"Сохранён файл: {file_name}")
 
-    # если дальше используете out_dir:
     return out_dir
-
 
 
 def get_units_from_course(token: str, course_id: int) -> List[int]:
@@ -165,7 +166,6 @@ def get_units_from_course(token: str, course_id: int) -> List[int]:
         units.extend(section.get("units", []))
 
     return units
-
 
 
 # ==== Запрос в Stepik (пример POST) ====
@@ -249,6 +249,7 @@ def load_lessons_once():
         token = get_access_token()
         session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
 
+
 # ------------------- Шаг 1: Выбор урока -------------------
 @app.route("/", methods=["GET", "POST"])
 def select_lesson():
@@ -259,7 +260,6 @@ def select_lesson():
         session["current_lesson_id"] = lesson_id
         return redirect(url_for("lesson_form"))
     return render_template("index.html", lessons=lessons_list, step=current_step)
-
 
 
 @app.route("/get_prompt")
@@ -280,12 +280,43 @@ def get_prompt():
     return jsonify({"prompt": ""})
 
 
+@app.route("/save_lesson_text", methods=["POST"])
+def save_lesson_text():
+    lesson_id = request.args.get("lesson_id")
+    text = request.get_data(as_text=True)  # получаем обычный текст
+
+    if not lesson_id or not text:
+        return jsonify({"success": False, "error": "Нет lesson_id или текста"}), 400
+
+    try:
+        # Папка для сохранения
+        output_dir = "output_dir"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Сохраняем текст в файл
+        file_path = os.path.join(output_dir, f"{lesson_id}_text.txt")
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(text)
+
+        # Здесь вызываем функцию обработки текста (например, генерацию квестов)
+        generate_questions(file_path)  # передаем путь к файлу с текстом
+
+        session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
+
+        return jsonify({"success": True})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
 
 # ------------------- Запуск -------------------
 if __name__ == "__main__":
     app.run(debug=True)
 
 
+def generate_questions(input_file):
+    # Пример функции обработки текста
+    print(f"Обрабатываем файл: {input_file}")
+    # Тут можно вставить вашу логику для генерации шагов/квестов
 
 
 # ==== Основной запуск ====
@@ -296,7 +327,7 @@ if __name__ == "__main__":
 
     sys.exit()
 
-    #generate_questions()
+    # generate_questions()
 
     # 2. Получение токена
     token = get_access_token()
@@ -304,15 +335,15 @@ if __name__ == "__main__":
     ####################
     course_id = 252535  # <-- сюда вставь id курса
 
-    #unit_ids = get_units_from_course(token, course_id)
-   # print("Units:", unit_ids)
+    # unit_ids = get_units_from_course(token, course_id)
+    # print("Units:", unit_ids)
 
     data = get_units_and_lessons(token, course_id)
     for item in data:
         print(f"Unit {item['unit_id']} → Lesson {item['lesson_id']} | {item['lesson_title']}")
     ###################
 
-
+    generate_questions()
 
     files_sorted = sorted(os.listdir(output_dir), key=lambda x: int(re.search(r'(\d+)', x).group(1)))
 
@@ -321,7 +352,7 @@ if __name__ == "__main__":
         try:
             if file.endswith(".json"):
                 pass
-                #load_steps_from_json(LESSON_ID, key, os.path.join(output_dir, file), token)
+                load_steps_from_json(LESSON_ID, key, os.path.join(output_dir, file), token)
         except Exception as e:
             pass
         # load_steps_from_json(LESSON_ID, 11, os.path.join(output_dir, "questions_split/1000.json"), token)
