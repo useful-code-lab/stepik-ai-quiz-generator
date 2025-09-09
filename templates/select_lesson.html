@@ -1,0 +1,35 @@
+<h1>Шаг {{ step }}: Выберите урок для редактирования</h1>
+
+<form method="post" id="lessonForm">
+    <label for="lessonSelect">Выберите урок:</label>
+    <select name="lesson_id" id="lessonSelect">
+        <option value="">-- выберите урок --</option>
+        {% for l in lessons %}
+        <option value="{{ l.lesson_id }}" data-prompt="Создай 10 заданий для урока '{{ l.lesson_title }}'">{{ l.lesson_title }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <div id="promptContainer" style="border:1px solid #ccc; padding:10px; margin-top:10px; display:none;">
+        <strong>Промпт для генерации квестов:</strong>
+        <p id="promptText"></p>
+    </div>
+    <button type="submit">Редактировать</button>
+</form>
+
+<script>
+    const select = document.getElementById("lessonSelect");
+    const promptContainer = document.getElementById("promptContainer");
+    const promptText = document.getElementById("promptText");
+
+    select.addEventListener("change", function() {
+        const selectedOption = select.options[select.selectedIndex];
+        const prompt = selectedOption.getAttribute("data-prompt");
+        if(prompt) {
+            promptText.textContent = prompt;
+            promptContainer.style.display = "block";
+        } else {
+            promptText.textContent = "";
+            promptContainer.style.display = "none";
+        }
+    });
+</script>

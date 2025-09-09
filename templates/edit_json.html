@@ -1,0 +1,14 @@
+<h1>Шаг {{ step }}: Редактирование JSON для урока: {{ lesson.lesson_title }}</h1>
+
+<h2>Использованный промпт:</h2>
+<pre>{{ prompt_text }}</pre>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+    <label>JSON-контент (можно редактировать вручную):</label><br>
+    <textarea name="json_content" rows="20" cols="120">{{ json_content }}</textarea><br><br>
+    <button type="submit">Сохранить JSON</button>
+</form>

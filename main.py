@@ -3,14 +3,17 @@
 
 import json
 import re
+import sys
 from pathlib import Path
 import time
 import requests
 from typing import Dict, Any, List
 import os
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import requests
 import json
+
+COURSE_ID=252535
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
@@ -203,14 +206,17 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
 
     # 2. Обходим все секции и сразу вытягиваем уроки
     units_and_lessons = []
-    for sid in section_ids:
-        url = f"{STEPIC_HOST}/api/sections/{sid}"
+
+    for section_id in section_ids:
+        # --- получаем секцию
+        url = f"{STEPIC_HOST}/api/sections/{section_id}"
         r = requests.get(url, headers=mk_headers(token), timeout=30)
         r.raise_for_status()
         section = r.json()["sections"][0]
+        section_title = section.get("title", "")  # название модуля берём отсюда
 
         for unit_id in section.get("units", []):
-            # --- получаем unit
+            # --- получаем unit (он сам по себе не имеет title)
             url = f"{STEPIC_HOST}/api/units/{unit_id}"
             r = requests.get(url, headers=mk_headers(token), timeout=30)
             r.raise_for_status()
@@ -226,12 +232,135 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
 
             units_and_lessons.append({
                 "unit_id": unit_id,
+                "module_title": section_title,  # берём название модуля из section
                 "lesson_id": lesson_id,
                 "lesson_title": lesson.get("title", ""),
-                "lesson_description": lesson.get("description", "")
+                "lesson_description": lesson.get("description", ""),
+                "steps_count": lesson.get("steps_count", 0)
             })
 
     return units_and_lessons
+
+
+# Флаг, чтобы загрузка данных произошла только один раз
+@app.before_request
+def load_lessons_once():
+    if "lessons_list" not in session:
+        token = get_access_token()
+        session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
+
+# ------------------- Шаг 1: Выбор урока -------------------
+@app.route("/", methods=["GET", "POST"])
+def select_lesson():
+    lessons_list = session.get("lessons_list", [])
+    current_step = 1
+    if request.method == "POST":
+        lesson_id = int(request.form["lesson_id"])
+        session["current_lesson_id"] = lesson_id
+        return redirect(url_for("lesson_form"))
+    return render_template("index.html", lessons=lessons_list, step=current_step)
+
+# ------------------- Шаг 2: Заполнение модуля, аудитории и тем -------------------
+@app.route("/lesson_form", methods=["GET", "POST"])
+def lesson_form():
+    lessons_list = session.get("lessons_list", [])
+    lesson_id = session.get("current_lesson_id")
+    lesson = next(l for l in lessons_list if l["lesson_id"] == lesson_id)
+    current_step = 2
+
+    prompt_text = ""
+    generated_json = session.get("generated_json", [])
+
+    if request.method == "POST":
+        module_title = request.form["module_title"]
+        audience = request.form["audience"]
+        topic_examples = [s.strip() for s in request.form["topic_examples"].split(",")]
+
+        # Заглушка: пока JSON генерируем пустыми объектами
+        generated_json = ["{}"]*10
+
+        session["generated_json"] = generated_json
+        session["prompt_text"] = prompt_text
+        return redirect(url_for("edit_json"))
+
+    return render_template("lesson_form.html", lesson=lesson, prompt_text=prompt_text,
+                           generated_json=generated_json, step=current_step)
+
+@app.route("/get_prompt")
+def get_prompt():
+    lesson_id = request.args.get("lesson_id")
+    lessons_list = session.get("lessons_list", [])
+
+    lesson = next((l for l in lessons_list if str(l['lesson_id']) == lesson_id), None)
+    if lesson:
+        # Здесь генерируем промпт динамически
+        prompt = render_template(
+            "prompt_template.txt",
+            module_title=lesson['module_title'],
+            topic=lesson['lesson_title'],
+            topic_examples="«Для мам с детьми», «Для стартаперов», «Для новичков в фитнесе»",
+        )
+        return jsonify({"prompt": prompt})
+    return jsonify({"prompt": ""})
+
+
+# ------------------- Шаг 3: Редактирование JSON -------------------
+@app.route("/edit_json", methods=["GET", "POST"])
+def edit_json():
+    lesson_id = session.get("current_lesson_id")
+    lesson = next(l for l in session.get("lessons_list", []) if l["lesson_id"] == lesson_id)
+    prompt_text = session.get("prompt_text", "")
+    generated_json = session.get("generated_json", [])
+    current_step = 3
+
+    if request.method == "POST":
+        # Пользователь редактирует JSON
+        user_json = request.form.get("json_content", "")
+        try:
+            parsed = json.loads(user_json)
+            session["generated_json"] = parsed
+            return redirect(url_for("show_json"))
+        except:
+            error = "Некорректный JSON"
+            return render_template("edit_json.html", lesson=lesson, prompt_text=prompt_text,
+                                   json_content=user_json, error=error, step=current_step)
+
+    # Показываем поле с автогенерированным JSON (пока заглушка)
+    json_content = json.dumps(generated_json, indent=2, ensure_ascii=False)
+    return render_template("edit_json.html", lesson=lesson, prompt_text=prompt_text,
+                           json_content=json_content, step=current_step)
+
+# ------------------- Шаг 4: Просмотр JSON и загрузка в Stepik -------------------
+@app.route("/show_json")
+def show_json():
+    generated_json = session.get("generated_json", [])
+    prompt_text = session.get("prompt_text", "")
+    current_step = 4
+    return render_template("show_json.html", json_list=generated_json, prompt_text=prompt_text, step=current_step)
+
+@app.route("/upload_to_stepik")
+def upload_to_stepik():
+    lesson_id = session.get("current_lesson_id")
+    generated_json = session.get("generated_json", [])
+    token = get_access_token()
+
+    for quest_json in generated_json:
+        url = f"{STEPIC_HOST}/api/step-sources"
+        payload = {"step_source": quest_json}
+        r = requests.post(url, headers=mk_headers(token), data=json.dumps(payload))
+        r.raise_for_status()
+
+    return "<h1>Все задания успешно загружены в Stepik!</h1><a href='/'>Вернуться к списку уроков</a>"
+
+
+
+
+# ------------------- Запуск -------------------
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+
 
 # ==== Основной запуск ====
 if __name__ == "__main__":
@@ -239,7 +368,7 @@ if __name__ == "__main__":
     LESSON_ID = 1937372
     output_dir = Path("questions_split")
 
-
+    sys.exit()
 
     #generate_questions()
 
@@ -256,6 +385,8 @@ if __name__ == "__main__":
     for item in data:
         print(f"Unit {item['unit_id']} → Lesson {item['lesson_id']} | {item['lesson_title']}")
     ###################
+
+
 
     files_sorted = sorted(os.listdir(output_dir), key=lambda x: int(re.search(r'(\d+)', x).group(1)))
 

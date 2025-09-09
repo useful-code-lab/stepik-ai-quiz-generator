@@ -1,0 +1,13 @@
+<h1>Шаг {{ step }}: Просмотр JSON-заданий</h1>
+
+<h2>Использованный промпт:</h2>
+<pre>{{ prompt_text }}</pre>
+
+<h2>JSON-задания:</h2>
+<pre>
+{% for j in json_list %}
+{{ j }}
+{% endfor %}
+</pre>
+
+<a href="/upload_to_stepik">Сохранить все задания в Stepik</a>
