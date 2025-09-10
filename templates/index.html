@@ -19,9 +19,10 @@
     </div>
 
     <br>
-    <label htmlFor="jsonInput">JSON с заданиями для Stepik:</label><br>
-    <textarea id="jsonInput" name="json_input" rows="20" style="width:100%; font-family: monospace;"
-              placeholder="Вставьте сюда JSON с заданиями"></textarea>
+    <label htmlFor="lessonText">JSON с заданиями для Stepik:</label><br>
+    <textarea id="lessonText" name="json_input" rows="20" style="width:100%; font-family: monospace;"
+          placeholder="Вставьте сюда JSON с заданиями"></textarea>
+
     <br><br>
     <button type="submit" id="saveBtn">Сохранить</button>
 </form>
@@ -112,7 +113,9 @@ copyBtn.addEventListener("click", function () {
 });
 
 // Сохранение текста через AJAX
-saveBtn.addEventListener("click", function () {
+saveBtn.addEventListener("click", function (event) {
+     event.preventDefault();
+
     const lessonId = select.value;
     const textData = lessonText.value.trim();
 

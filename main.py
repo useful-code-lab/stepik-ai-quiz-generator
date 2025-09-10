@@ -144,32 +144,6 @@ def generate_questions(input_file):
     return out_dir
 
 
-def get_units_from_course(token: str, course_id: int) -> List[int]:
-    """
-    Получает список всех unit_id для заданного курса.
-    """
-    # 1. Берём сам курс
-    url = f"{STEPIC_HOST}/api/courses/{course_id}"
-    r = requests.get(url, headers=mk_headers(token), timeout=30)
-    r.raise_for_status()
-    course = r.json()["courses"][0]
-
-    section_ids = course.get("sections", [])
-    if not section_ids:
-        return []
-
-    # 2. Собираем все unit_id из каждой секции
-    units = []
-    for sid in section_ids:
-        url = f"{STEPIC_HOST}/api/sections/{sid}"
-        r = requests.get(url, headers=mk_headers(token), timeout=30)
-        r.raise_for_status()
-        section = r.json()["sections"][0]  # здесь всегда один объект
-        units.extend(section.get("units", []))
-
-    return units
-
-
 # ==== Запрос в Stepik (пример POST) ====
 def post_step_source(token: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     print("Отправляем payload:", json.dumps(payload, ensure_ascii=False, indent=2))
@@ -243,10 +217,20 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
 
     return units_and_lessons
 
+# Флаг, что сервер только что запустился
+server_started = True
 
 # Флаг, чтобы загрузка данных произошла только один раз
 @app.before_request
 def load_lessons_once():
+    global server_started
+    global token
+
+    if server_started:
+        # Удаляем данные из сессии при первом запросе после запуска
+        session.pop("lessons_list", None)
+        server_started = False  # Сбрасываем флаг, чтобы дальше не удалять
+
     if "lessons_list" not in session:
         token = get_access_token()
         session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
@@ -286,6 +270,7 @@ def get_prompt():
 def save_lesson_text():
     lesson_id = request.args.get("lesson_id")
     text = request.get_data(as_text=True)  # получаем обычный текст
+    global token
 
     if not lesson_id or not text:
         return jsonify({"success": False, "error": "Нет lesson_id или текста"}), 400
@@ -303,6 +288,17 @@ def save_lesson_text():
         # Здесь вызываем функцию обработки текста (например, генерацию квестов)
         generate_questions(file_path)  # передаем путь к файлу с текстом
 
+        output_dir = "questions_split"
+        files_sorted = sorted(os.listdir(output_dir), key=lambda x: int(re.search(r'(\d+)', x).group(1)))
+
+        # Перебираем с индексом
+        for key, file in enumerate(files_sorted, start=1):
+            try:
+                if file.endswith(".json"):
+                    pass
+                    load_steps_from_json(int(lesson_id), key, os.path.join(output_dir, file), token)
+            except Exception as e:
+                pass
         #session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
         return jsonify({"success": True})
     except Exception as e:
