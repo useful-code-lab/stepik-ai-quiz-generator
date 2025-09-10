@@ -80,11 +80,34 @@ select.addEventListener("change", function () {
 });
 
 // Копирование промпта
+// Копирование промпта
 copyBtn.addEventListener("click", function () {
     if (promptText.textContent) {
         navigator.clipboard.writeText(promptText.textContent)
-            .then(() => alert("Промпт скопирован!"))
-            .catch(err => alert("Ошибка при копировании: " + err));
+            .then(() => {
+                // Меняем вид кнопки
+                copyBtn.textContent = "✅ Скопировано!";
+                copyBtn.style.backgroundColor = "#4caf50"; // зелёный фон
+                copyBtn.style.color = "#fff";
+
+                // Через 5 секунд возвращаем обратно
+                setTimeout(() => {
+                    copyBtn.textContent = "Скопировать промпт";
+                    copyBtn.style.backgroundColor = "";
+                    copyBtn.style.color = "";
+                }, 5000);
+            })
+            .catch(err => {
+                copyBtn.textContent = "⚠ Ошибка копирования!";
+                copyBtn.style.backgroundColor = "red";
+                copyBtn.style.color = "#fff";
+
+                setTimeout(() => {
+                    copyBtn.textContent = "Скопировать промпт";
+                    copyBtn.style.backgroundColor = "";
+                    copyBtn.style.color = "";
+                }, 5000);
+            });
     }
 });
 
