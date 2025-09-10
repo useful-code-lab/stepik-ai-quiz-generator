@@ -1,3 +1,30 @@
+<h1>Шаг {{ step }}: Выберите урок для редактирования</h1>
+
+<form method="post" id="lessonForm">
+    <label htmlFor="lessonSelect">Выберите урок:</label>
+    <select name="lesson_id" id="lessonSelect">
+        <option value="">-- выберите урок --</option>
+        {% for l in lessons %}
+        <option value="{{ l.lesson_id }}">
+            {{ l.lesson_title }} — Модуль: {{ l.module_title }} — Шагов: {{ l.steps_count }}
+        </option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <div id="promptContainer" style="border:1px solid #ccc; padding:10px; margin-top:10px; display:none;">
+        <strong>Промпт для генерации квестов:</strong>
+        <pre id="promptText" style="white-space: pre-wrap;"></pre>
+        <button type="button" id="copyPromptBtn">Скопировать промпт</button>
+    </div>
+
+    <br>
+    <label htmlFor="jsonInput">JSON с заданиями для Stepik:</label><br>
+    <textarea id="jsonInput" name="json_input" rows="20" style="width:100%; font-family: monospace;"
+              placeholder="Вставьте сюда JSON с заданиями"></textarea>
+    <br><br>
+    <button type="submit" id="saveBtn">Сохранить</button>
+</form>
 <script>
 const select = document.getElementById("lessonSelect");
 const promptContainer = document.getElementById("promptContainer");

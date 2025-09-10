@@ -13,7 +13,9 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import requests
 import json
 
-COURSE_ID = 252535
+TEMPLATE = "prompt_template_lesson.txt"
+
+COURSE_ID = 252805
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
@@ -271,7 +273,7 @@ def get_prompt():
     if lesson:
         # Здесь генерируем промпт динамически
         prompt = render_template(
-            "prompt_template.txt",
+            TEMPLATE,
             module_title=lesson['module_title'],
             topic=lesson['lesson_title'],
             topic_examples="«Для мам с детьми», «Для стартаперов», «Для новичков в фитнесе»",
@@ -301,8 +303,7 @@ def save_lesson_text():
         # Здесь вызываем функцию обработки текста (например, генерацию квестов)
         generate_questions(file_path)  # передаем путь к файлу с текстом
 
-        session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
-
+        #session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
         return jsonify({"success": True})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
