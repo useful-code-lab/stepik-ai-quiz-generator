@@ -13,9 +13,9 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import requests
 import json
 
-TEMPLATE = "prompt_template_lesson.txt"
+TEMPLATE = "prompt_template.txt"
 
-COURSE_ID = 252805
+COURSE_ID = 253003
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
