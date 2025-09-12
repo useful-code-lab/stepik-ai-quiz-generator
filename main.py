@@ -15,7 +15,7 @@ import json
 
 TEMPLATE = "prompt_template.txt"
 
-COURSE_ID = 253003
+COURSE_ID = 253043
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
@@ -108,6 +108,19 @@ def extract_json_objects(text: str):
     return objects
 
 
+
+
+def merge_json_blocks(input_text: str) -> str:
+    """
+    Объединяет строки JSON, каждая из которых начинается с {"block":{,
+    в одну строку, добавляя перенос строки между объектами.
+    """
+    lines = input_text.strip().split("\n")
+    blocks = [line.strip() for line in lines if line.strip().startswith('{"block":{')]
+    return "\n".join(blocks)
+
+
+
 def generate_questions(input_file):
     # Папка, где находятся файлы
     folder = "questions_split"
@@ -131,6 +144,7 @@ def generate_questions(input_file):
         content = f.read()
 
     # Извлекаем JSON объекты
+    #content = merge_json_blocks(content)
     objs = extract_json_objects(content)
     print(f"Найдено {len(objs)} JSON-блоков")
 
