@@ -15,7 +15,7 @@ import json
 
 TEMPLATE = "prompt_template.txt"
 
-COURSE_ID = 253043
+COURSE_ID = 253181
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
@@ -120,6 +120,26 @@ def merge_json_blocks(input_text: str) -> str:
     return "\n".join(blocks)
 
 
+import re
+
+
+def flatten_json_blocks(text: str) -> str:
+    """
+    Находит все JSON-объекты, начинающиеся с {"block" и заканчивающиеся на Z"},
+    убирает все переносы строк и пробелы внутри них,
+    и возвращает строку, где каждый JSON в отдельной строке.
+    """
+    # ищем все куски, которые начинаются с {"block и заканчиваются } (последняя скобка перед кавычкой Z может быть без пробелов)
+    blocks = re.findall(r'(\{"block".*?\}Z"\})', text, flags=re.DOTALL)
+
+    # собираем каждый в одну строку, убираем переносы и лишние пробелы
+    flattened = []
+    for b in blocks:
+        one_line = re.sub(r'\s+', ' ', b).strip()
+        flattened.append(one_line)
+
+    return "\n".join(flattened)
+
 
 def generate_questions(input_file):
     # Папка, где находятся файлы
@@ -144,7 +164,7 @@ def generate_questions(input_file):
         content = f.read()
 
     # Извлекаем JSON объекты
-    #content = merge_json_blocks(content)
+    #content = flatten_json_blocks(content)
     objs = extract_json_objects(content)
     print(f"Найдено {len(objs)} JSON-блоков")
 
