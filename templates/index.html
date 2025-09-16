@@ -10,13 +10,15 @@
         </option>
         {% endfor %}
     </select>
+    <button type="button" id="nextLessonBtn">➡ Вперед</button>
     <br><br>
 
-    <div id="promptContainer" style="border:1px solid #ccc; padding:10px; margin-top:10px; display:none;">
-        <strong>Промпт для генерации квестов:</strong>
-        <pre id="promptText" style="white-space: pre-wrap;"></pre>
-        <button type="button" id="copyPromptBtn">Скопировать промпт</button>
-    </div>
+<div id="promptContainer" style="border:1px solid #ccc; padding:10px; margin-top:10px; display:none;">
+    <button type="button" id="copyPromptBtn">Скопировать промпт</button>
+    <strong>Промпт для генерации квестов:</strong>
+    <pre id="promptText" style="white-space: pre-wrap; max-height: 10em; overflow-y: auto;"></pre>
+</div>
+
 
     <br>
     <label htmlFor="lessonText">JSON с заданиями для Stepik:</label><br>
@@ -26,8 +28,10 @@
     <br><br>
     <button type="submit" id="saveBtn">Сохранить</button>
 </form>
+
 <script>
 const select = document.getElementById("lessonSelect");
+const nextBtn = document.getElementById("nextLessonBtn");
 const promptContainer = document.getElementById("promptContainer");
 const promptText = document.getElementById("promptText");
 const copyBtn = document.getElementById("copyPromptBtn");
@@ -36,11 +40,10 @@ const lessonText = document.getElementById("lessonText");
 
 // Функция для обновления списка уроков
 function reloadLessonList() {
-    fetch('/get_lessons')  // эндпоинт, который возвращает актуальный список уроков
+    fetch('/get_lessons')
         .then(resp => resp.json())
         .then(data => {
             if (data.lessons) {
-                // Очищаем старые options
                 select.innerHTML = '<option value="">-- выберите урок --</option>';
                 data.lessons.forEach(l => {
                     const opt = document.createElement('option');
@@ -81,17 +84,13 @@ select.addEventListener("change", function () {
 });
 
 // Копирование промпта
-// Копирование промпта
 copyBtn.addEventListener("click", function () {
     if (promptText.textContent) {
         navigator.clipboard.writeText(promptText.textContent)
             .then(() => {
-                // Меняем вид кнопки
                 copyBtn.textContent = "✅ Скопировано!";
-                copyBtn.style.backgroundColor = "#4caf50"; // зелёный фон
+                copyBtn.style.backgroundColor = "#4caf50";
                 copyBtn.style.color = "#fff";
-
-                // Через 5 секунд возвращаем обратно
                 setTimeout(() => {
                     copyBtn.textContent = "Скопировать промпт";
                     copyBtn.style.backgroundColor = "";
@@ -102,7 +101,6 @@ copyBtn.addEventListener("click", function () {
                 copyBtn.textContent = "⚠ Ошибка копирования!";
                 copyBtn.style.backgroundColor = "red";
                 copyBtn.style.color = "#fff";
-
                 setTimeout(() => {
                     copyBtn.textContent = "Скопировать промпт";
                     copyBtn.style.backgroundColor = "";
@@ -112,22 +110,27 @@ copyBtn.addEventListener("click", function () {
     }
 });
 
+// Переход к следующему уроку
+nextBtn.addEventListener("click", function () {
+    const options = Array.from(select.options).filter(o => o.value);
+    const currentIndex = options.findIndex(o => o.value === select.value);
+    if (currentIndex < options.length - 1) {
+        select.value = options[currentIndex + 1].value;
+        select.dispatchEvent(new Event("change"));
+    }
+});
+
 // Сохранение текста через AJAX
 saveBtn.addEventListener("click", function (event) {
     event.preventDefault();
-
     const lessonId = select.value;
     const textData = lessonText.value.trim();
-
     if (!lessonId || !textData) {
         alert("Выберите урок и вставьте текст!");
         return;
     }
-
-    // Блокируем кнопку на время отправки
     saveBtn.disabled = true;
     saveBtn.textContent = "Сохраняем...";
-
     fetch(`/save_lesson_text?lesson_id=${lessonId}`, {
         method: "POST",
         body: textData
@@ -136,8 +139,8 @@ saveBtn.addEventListener("click", function (event) {
     .then(data => {
         if (data.success) {
             alert("Текст успешно сохранен и шаги загружены!");
-            lessonText.value = ""; // очищаем поле после успешной отправки
-            reloadLessonList();  // обновляем список уроков
+            lessonText.value = "";
+            reloadLessonList();
         } else {
             alert("Ошибка: " + (data.error || "Неизвестная ошибка"));
         }
@@ -148,5 +151,4 @@ saveBtn.addEventListener("click", function (event) {
         saveBtn.textContent = "Сохранить";
     });
 });
-
 </script>
