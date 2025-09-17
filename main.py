@@ -25,6 +25,7 @@ total_text = ""
 
 app = Flask(__name__)
 app.secret_key = "super-secret-key"
+current_steps = 0
 
 
 # ==== OAuth ====
@@ -58,6 +59,23 @@ def post_step_source(token: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     return r.json()
 
 
+def get_steps(token: str, lesson_id: int) -> list:
+    url = f"{STEPIC_HOST}/api/steps?lesson={lesson_id}"
+    r = requests.get(url, headers=mk_headers(token), timeout=60)
+    r.raise_for_status()
+    data = r.json()
+    return data.get("steps", [])  # список шагов
+
+
+
+import re
+
+def replace_mission_number(json_str: str, new_number: int) -> str:
+    pattern = r'(<h3>Миссия )\d+(</h3>)'
+    replaced = re.sub(pattern, lambda m: f"{m.group(1)}{new_number}{m.group(2)}", json_str)
+    return replaced
+
+
 # ==== Загрузка шагов из JSON ====
 def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -> None:
     with open(path, "r", encoding="utf-8") as f:
@@ -65,11 +83,18 @@ def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -
 
     block = cfg["block"]
 
+    global current_steps
+
     payload = {"step-source": {
         "lesson": lesson_id,
-        "block": block
+        "block": block,
+        "max_score": 5,
+        "position": current_steps + 1
     }
     }
+
+    payload["step-source"]["block"]["text"] = replace_mission_number(payload["step-source"]["block"]["text"], current_steps)
+
     global total_text
     if position > 10:
         payload["step-source"]["block"]["text"] = total_text
@@ -77,9 +102,8 @@ def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -
     resp = post_step_source(token, payload)
     new_id = resp.get("step-sources", [{}])[0].get("id")
 
-    'text'
     total_text = total_text + resp.get("step-sources", [{}])[0].get("block").get("text")
-
+    current_steps = current_steps + 1
     print(f"✓ [{path}] Создан шаг {position + 1}, id={new_id}")
 
 
@@ -106,8 +130,6 @@ def extract_json_objects(text: str):
         except json.JSONDecodeError:
             i = j + 1
     return objects
-
-
 
 
 def merge_json_blocks(input_text: str) -> str:
@@ -140,8 +162,10 @@ def flatten_json_blocks(text: str) -> str:
 
     return "\n".join(flattened)
 
+
 import json
 import re
+
 
 def extract_json_lines(text: str):
     """
@@ -192,7 +216,7 @@ def generate_questions(input_file):
         content = f.read()
 
     # Извлекаем JSON объекты
-    #content = flatten_json_blocks(content)
+    # content = flatten_json_blocks(content)
     objs = extract_json_lines(content)
     print(f"Найдено {len(objs)} JSON-блоков")
 
@@ -274,13 +298,15 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
                 "lesson_id": lesson_id,
                 "lesson_title": lesson.get("title", ""),
                 "lesson_description": lesson.get("description", ""),
-                "steps_count": lesson.get("steps_count", 0)
+                "steps_count": lesson.get("steps_count", 0),
             })
 
     return units_and_lessons
 
+
 # Флаг, что сервер только что запустился
 server_started = True
+
 
 # Флаг, чтобы загрузка данных произошла только один раз
 @app.before_request
@@ -333,7 +359,8 @@ def save_lesson_text():
     lesson_id = request.args.get("lesson_id")
     text = request.get_data(as_text=True)  # получаем обычный текст
     global token
-
+    global current_steps
+    current_steps = len(get_steps(token, int(lesson_id)))
     if not lesson_id or not text:
         return jsonify({"success": False, "error": "Нет lesson_id или текста"}), 400
 
@@ -361,7 +388,7 @@ def save_lesson_text():
                     load_steps_from_json(int(lesson_id), key, os.path.join(output_dir, file), token)
             except Exception as e:
                 pass
-        #session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
+        # session["lessons_list"] = get_units_and_lessons(token, COURSE_ID)
         return jsonify({"success": True})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
