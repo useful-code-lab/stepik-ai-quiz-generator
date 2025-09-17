@@ -13,9 +13,9 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import requests
 import json
 
-TEMPLATE = "prompt_template_text13.txt"
+TEMPLATE = "prompt_template.txt"
 
-COURSE_ID = 253525
+COURSE_ID = 253631
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
@@ -130,7 +130,7 @@ def flatten_json_blocks(text: str) -> str:
     и возвращает строку, где каждый JSON в отдельной строке.
     """
     # ищем все куски, которые начинаются с {"block и заканчиваются } (последняя скобка перед кавычкой Z может быть без пробелов)
-    blocks = re.findall(r'\{"block".*?\}\}', text, flags=re.DOTALL)
+    blocks = re.findall(r'(\{"block".*?\}Z"\})', text, flags=re.DOTALL)
 
     # собираем каждый в одну строку, убираем переносы и лишние пробелы
     flattened = []
@@ -140,34 +140,34 @@ def flatten_json_blocks(text: str) -> str:
 
     return "\n".join(flattened)
 
+import json
+import re
 
-def extract_blocks(text):
-    # Начало блока
-    start = '{"block'
-    # Конец блока
-    end = 'Z"}'
+def extract_json_lines(text: str):
+    """
+    Парсит текст, где каждая строка — отдельный JSON-объект.
+    Возвращает список словарей Python.
+    """
+    lines = text.splitlines()
+    result = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+            result.append(obj)
+        except json.JSONDecodeError as e:
+            print(f"Ошибка парсинга: {e}")
+            # иногда экранирование ломает, можно убрать обратные слэши
+            try:
+                obj = json.loads(line.replace(r'\:', ':').replace(r'\_', '_').replace(r'\[', '[').replace(r'\]', ']'))
+                result.append(obj)
+            except json.JSONDecodeError as e2:
+                print(f"Второй попытка не удалась: {e2}")
+                print(f"Проблемный кусок: {line[:100]}...")
+    return result
 
-    blocks = []
-    start_index = 0  # Начнем с начала текста
-
-    while True:
-        # Ищем начало следующего блока
-        start_index = text.find(start, start_index)
-        if start_index == -1:
-            break  # Если нет следующего блока, выходим
-
-        # Ищем конец блока
-        end_index = text.find(end, start_index)
-        if end_index == -1:
-            break  # Если нет конца блока, выходим
-
-        # Извлекаем блок и добавляем в список
-        blocks.append(text[start_index:end_index + len(end)])
-
-        # Сдвигаем start_index для поиска следующего блока
-        start_index = end_index + len(end)
-
-    return blocks
 
 def generate_questions(input_file):
     # Папка, где находятся файлы
@@ -192,8 +192,8 @@ def generate_questions(input_file):
         content = f.read()
 
     # Извлекаем JSON объекты
-    content = extract_blocks(content)
-    objs = extract_json_objects(content)
+    #content = flatten_json_blocks(content)
+    objs = extract_json_lines(content)
     print(f"Найдено {len(objs)} JSON-блоков")
 
     # Сохраняем каждый блок отдельно
