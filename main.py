@@ -96,7 +96,7 @@ def load_steps_from_json(lesson_id: int, position: int, path: str, token: str) -
     payload["step-source"]["block"]["text"] = replace_mission_number(payload["step-source"]["block"]["text"], current_steps)
 
     global total_text
-    if position > 10:
+    if position > 999:
         payload["step-source"]["block"]["text"] = total_text
 
     resp = post_step_source(token, payload)
