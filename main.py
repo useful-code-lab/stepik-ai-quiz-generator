@@ -91,18 +91,30 @@ async def post_step_source(session_http: aiohttp.ClientSession, token: str, payl
 def replace_mission_number(text: str, new_number: int) -> str:
     return re.sub(r'(<h3>Миссия )\d+(</h3>)', lambda m: f"{m.group(1)}{new_number}{m.group(2)}", text)
 
-def extract_json_lines(text: str) -> List[Dict[str, Any]]:
+def extract_json_lines(text: str):
+    """
+    Парсит текст, где каждая строка — отдельный JSON-объект.
+    Возвращает список словарей Python.
+    """
     lines = text.splitlines()
-    objs = []
+    result = []
     for line in lines:
         line = line.strip()
         if not line:
             continue
         try:
-            objs.append(json.loads(line))
-        except json.JSONDecodeError:
-            continue
-    return objs
+            obj = json.loads(line)
+            result.append(obj)
+        except json.JSONDecodeError as e:
+            print(f"Ошибка парсинга: {e}")
+            # иногда экранирование ломает, можно убрать обратные слэши
+            try:
+                obj = json.loads(line.replace(r'\:', ':').replace(r'\_', '_').replace(r'\[', '[').replace(r'\]', ']'))
+                result.append(obj)
+            except json.JSONDecodeError as e2:
+                print(f"Второй попытка не удалась: {e2}")
+                print(f"Проблемный кусок: {line[:100]}...")
+    return result
 
 def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path]:
     with open(input_file, "r", encoding="utf-8") as f:
@@ -160,14 +172,21 @@ def save_lesson_text():
     if not lesson_id or not text:
         return jsonify({"success": False, "error": "Нет lesson_id или текста"}), 400
 
+    output_dir = "output_dir"
+
+    # Сохраняем текст в файл
+    file_path = os.path.join(output_dir, f"{lesson_id}_text.txt")
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(text)
+
     output_dir = Path("questions_split")
-    saved_files = generate_questions_from_file(text, output_dir)
+    saved_files = generate_questions_from_file(file_path, output_dir)
 
     async def post_all_steps():
         async with aiohttp.ClientSession() as session_http:
             for idx, file_path in enumerate(saved_files, start=1):
                 with open(file_path, "r", encoding="utf-8") as f:
-                    payload = {"step-source": {"lesson": int(lesson_id), "block": json.load(f), "max_score": 5, "position": idx}}
+                    payload = {"step-source": {"lesson": int(lesson_id), "block": json.load(f)["block"], "max_score": 5, "position": idx}}
                     payload["step-source"]["block"]["text"] = replace_mission_number(payload["step-source"]["block"]["text"], idx)
                     await post_step_source(session_http, token, payload)
 
