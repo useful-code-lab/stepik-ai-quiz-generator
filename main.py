@@ -82,7 +82,11 @@ async def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, An
         return units_and_lessons
 
 
-async def post_step_source(session_http: aiohttp.ClientSession, token: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+import json
+import aiohttp
+from typing import Dict, Any
+
+async def post_step_source(session_http: aiohttp.ClientSession, token: str, payload: Dict[str, Any], file_name: str) -> Dict[str, Any] | None:
     headers = mk_headers(token)
     url = f"{STEPIC_HOST}/api/step-sources"
 
@@ -92,22 +96,36 @@ async def post_step_source(session_http: aiohttp.ClientSession, token: str, payl
                 # Повтор через 1.5 секунды
                 await asyncio.sleep(1.5)
                 async with session_http.post(url, headers=headers, json=payload) as r2:
+                    text = await r2.text()
                     if r2.status != 200:
-                        text = await r2.text()
-                        print(f"Ошибка при повторной попытке загрузки шага: {r2.status}, ответ: {text}")
-                        r2.raise_for_status()
+                        print("\n" + "-"*60)
+                        print(f"[WARNING] Ошибка при повторной попытке загрузки файла: {file_name}")
+                        print(f"Статус: {r2.status}, ответ: {text}")
+                        print("-"*60 + "\n")
+                        return None
                     return await r2.json()
-            if r.status != 200:
-                text = await r.text()
-                print(f"Ошибка при загрузке шага: {r.status}, ответ: {text}")
-                r.raise_for_status()
+
+            text = await r.text()
+            if r.status != 201:
+                print("\n" + "-"*60)
+                print(f"[WARNING] Ошибка при загрузке файла: {file_name}")
+                print(f"Статус: {r.status}, ответ: {text}")
+                print(json.dumps(payload, ensure_ascii=False, indent=2))
+                print("-"*60 + "\n")
+                return None
+
             return await r.json()
+
     except aiohttp.ClientResponseError as e:
-        print(f"ClientResponseError: {e.status}, сообщение: {e.message}")
-        raise
+        print("\n" + "-"*60)
+        print(f"[WARNING] ClientResponseError для файла {file_name}: {e.status}, сообщение: {e.message}")
+        print("-"*60 + "\n")
+        return None
     except Exception as e:
-        print(f"Неожиданная ошибка при загрузке шага: {e}")
-        raise
+        print("\n" + "-"*60)
+        print(f"[WARNING] Неожиданная ошибка при загрузке файла {file_name}: {e}")
+        print("-"*60 + "\n")
+        return None
 
 
 
@@ -184,9 +202,7 @@ def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path
     return saved_files
 
 
-# ==== Загрузка кэша при первом запросе ====
-@app.before_request
-def load_cache_once():
+def load_cache():
     global CACHE_LOADED, ACCESS_TOKEN, LESSONS_CACHE
     if not CACHE_LOADED:
         print("Загрузка токена и уроков...")
@@ -194,6 +210,11 @@ def load_cache_once():
         LESSONS_CACHE = asyncio.run(get_units_and_lessons(ACCESS_TOKEN, COURSE_ID))
         CACHE_LOADED = True
         print(f"Кэш уроков загружен: {len(LESSONS_CACHE)} уроков")
+
+# Используем before_request, но с проверкой
+@app.before_request
+def ensure_cache_loaded():
+    load_cache()
 
 
 # ==== Flask routes ====
@@ -298,6 +319,13 @@ def fill_template(block_data):
     # Дополнительно
     template["has_review"] = block_data.get("has_review", template.get("has_review", False))
 
+    if block_type == "sorting":
+        options_list = block_data["source"].get("options", [])
+        for i, opt in enumerate(options_list):
+            if isinstance(opt, str):
+                options_list[i] = {"text": opt}  # преобразуем только строки
+        template["block"]["source"]["options"] = options_list
+
     return template
 
 
@@ -322,8 +350,10 @@ def save_lesson_text():
     async def post_all_steps(saved_files, lesson_id, token):
         async with aiohttp.ClientSession() as session_http:
             for idx, file_path in enumerate(saved_files, start=1):
-                with open(file_path, "r", encoding="utf-8") as f:
-                    step_json = json.load(f)
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        step_json = json.load(f)
+
                     block_data = step_json.get("block", {})
                     full_payload = fill_template(block_data)
 
@@ -332,20 +362,23 @@ def save_lesson_text():
                     block_text = full_payload["block"].get("text", "").strip()
 
                     if not block_text:
-                        print(f"Пропущен шаг {idx}: отсутствует текст для блока '{block_type}'")
+                        print(f"[WARNING] Пропущен шаг {idx}: отсутствует текст для блока '{block_type}'")
                         continue  # пропускаем
 
                     if block_type in ("choice", "sorting"):
                         options = full_payload["block"]["source"].get("options", [])
                         if not options or not isinstance(options, list):
-                            print(f"Пропущен шаг {idx}: отсутствуют опции для блока '{block_type}'")
+                            print(f"[WARNING] Пропущен шаг {idx}: отсутствуют опции для блока '{block_type}'")
                             continue  # пропускаем
 
                     if block_type == "matching":
                         pairs = full_payload["block"]["source"].get("pairs", [])
                         if not pairs or not isinstance(pairs, list):
-                            print(f"Пропущен шаг {idx}: отсутствуют пары для блока 'matching'")
+                            print(f"[WARNING] Пропущен шаг {idx}: отсутствуют пары для блока 'matching'")
                             continue  # пропускаем
+
+                    if idx > 19:
+                        continue  # лимит на 20 шагов
 
                     # Заменяем номер миссии в тексте, если нужно
                     full_payload["block"]["text"] = replace_mission_number(full_payload["block"]["text"], idx)
@@ -359,7 +392,12 @@ def save_lesson_text():
                         }
                     }
 
-                    await post_step_source(session_http, token, payload)
+                    await post_step_source(session_http, token, payload, file_path)
+
+                except Exception as e:
+                    # Логируем ошибку и продолжаем цикл
+                    print(f"[ERROR] Ошибка при обработке файла '{file_path}' (шаг {idx}): {e}")
+                    continue
 
     asyncio.run(post_all_steps(saved_files, lesson_id, token))
 
