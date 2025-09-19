@@ -15,8 +15,8 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 TEMPLATE = "prompt_template_typescript.txt"
 COURSE_ID = 253972
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
-CLIENT_SECRET = "mqjpR0NjckDjVG6cGxCILh18nkDHJb7D2WLWlTpqYKVoWfCDKZF53MhvlHk7YbgUi1U8L96bEPhMRepW6IiSyvs98qtn7aU7J1DW9LD9jZF0g1HZVI3rHcrphLN8Kkik"
+CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
+CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
 
 app = Flask(__name__)
 app.secret_key = "super-secret-key"
@@ -91,13 +91,39 @@ async def post_step_source(session_http: aiohttp.ClientSession, token: str, payl
 def replace_mission_number(text: str, new_number: int) -> str:
     return re.sub(r'(<h3>Миссия )\d+(</h3>)', lambda m: f"{m.group(1)}{new_number}{m.group(2)}", text)
 
-def extract_json_lines(text: str):
+
+
+import json
+
+import json
+import re
+
+def extract_json_blocks(text: str):
     """
-    Парсит текст, где каждая строка — отдельный JSON-объект.
-    Возвращает список словарей Python.
+    Из текста извлекает все блоки {"block": ...} и парсит их как JSON-массив.
+    Если не удаётся, пробует построчно.
     """
-    lines = text.splitlines()
+    text = text.strip()
+    if not text:
+        return []
+
     result = []
+
+    # 1. Попытка найти все блоки {"block": ...} с помощью регулярки
+    # Берем '{' + любые символы + '"block"' + любые символы + '}' с жадным захватом до закрывающей скобки
+    pattern = r'(\{"block":.*?Z"\})'
+    matches = re.findall(pattern, text, flags=re.DOTALL)
+
+    if matches:
+        # Собираем все найденные блоки в массив JSON
+        json_array_str = '[' + ','.join(matches) + ']'
+        try:
+            return json.loads(json_array_str)
+        except json.JSONDecodeError as e:
+            print(f"Ошибка при парсинге массива блоков: {e}")
+
+    # 2. Если не получилось — fallback на построчный разбор (твоя старая логика)
+    lines = text.splitlines()
     for line in lines:
         line = line.strip()
         if not line:
@@ -106,20 +132,24 @@ def extract_json_lines(text: str):
             obj = json.loads(line)
             result.append(obj)
         except json.JSONDecodeError as e:
-            print(f"Ошибка парсинга: {e}")
-            # иногда экранирование ломает, можно убрать обратные слэши
+            # попытка с заменой экранирования
             try:
-                obj = json.loads(line.replace(r'\:', ':').replace(r'\_', '_').replace(r'\[', '[').replace(r'\]', ']'))
+                clean_line = (line
+                              .replace(r'\:', ':')
+                              .replace(r'\_', '_')
+                              .replace(r'\[', '[')
+                              .replace(r'\]', ']')
+                              .replace(r'\"', '"'))
+                obj = json.loads(clean_line)
                 result.append(obj)
-            except json.JSONDecodeError as e2:
-                print(f"Второй попытка не удалась: {e2}")
-                print(f"Проблемный кусок: {line[:100]}...")
+            except json.JSONDecodeError:
+                continue
     return result
 
 def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path]:
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
-    objs = extract_json_lines(content)
+    objs = extract_json_blocks(content)
     output_dir.mkdir(exist_ok=True)
     saved_files = []
     for idx, obj in enumerate(objs, start=1):
@@ -164,6 +194,87 @@ def get_prompt():
         return jsonify({"prompt": prompt})
     return jsonify({"prompt": ""})
 
+
+# Полные шаблоны блоков для Stepik (без пустых id и time)
+BLOCK_TEMPLATES = {
+    "choice": {
+        "block": {
+            "name": "choice",
+            "text": "",
+            "video": None,
+            "options": {"is_multiple_choice": False},
+            "is_deprecated": False,
+            "source": {
+                "is_multiple_choice": False,
+                "is_always_correct": False,
+                "sample_size": 4,
+                "preserve_order": False,
+                "is_html_enabled": True,
+                "is_options_feedback": False,
+                "options": []
+            }
+        },
+        "has_review": False,
+    },
+    "sorting": {
+        "block": {
+            "name": "sorting",
+            "text": "",
+            "video": None,
+            "options": {},
+            "is_deprecated": False,
+            "source": {"is_html_enabled": True, "options": []}
+        },
+        "has_review": False,
+    },
+    "matching": {
+        "block": {
+            "name": "matching",
+            "text": "",
+            "video": None,
+            "options": {},
+            "is_deprecated": False,
+            "source": {"preserve_firsts_order": True, "is_html_enabled": True, "pairs": []}
+        },
+        "has_review": False,
+    }
+}
+
+def fill_template(block_data):
+    """
+    Заполняем шаблон блоком, заменяя текст, options/pairs и position,
+    сохраняя остальные данные из шаблона, и подставляя данные из block_data, если они есть.
+    """
+    block_type = block_data["name"]
+    template = json.loads(json.dumps(BLOCK_TEMPLATES[block_type]))  # создаём глубокую копию
+
+    # Основной текст
+    template["block"]["text"] = block_data.get("text", template["block"]["text"])
+    template["block"]["video"] = block_data.get("video", template["block"]["video"])
+    template["block"]["is_deprecated"] = block_data.get("is_deprecated", template["block"]["is_deprecated"])
+    template["block"]["options"] = block_data.get("options", template["block"].get("options", {}))
+
+    # Source: обновляем только существующие поля, если они есть
+    if "source" in block_data:
+        for key, value in block_data["source"].items():
+            template["block"]["source"][key] = value
+
+    # Пары для matching
+    if "pairs" in block_data.get("source", {}):
+        template["block"]["source"]["pairs"] = block_data["source"]["pairs"]
+
+    # Опции для choice/sorting
+    if "options" in block_data.get("source", {}):
+        template["block"]["source"]["options"] = block_data["source"]["options"]
+
+    # Дополнительно
+    template["has_review"] = block_data.get("has_review", template.get("has_review", False))
+
+
+    return template
+
+
+
 @app.route("/save_lesson_text", methods=["POST"])
 def save_lesson_text():
     lesson_id = request.args.get("lesson_id")
@@ -182,15 +293,29 @@ def save_lesson_text():
     output_dir = Path("questions_split")
     saved_files = generate_questions_from_file(file_path, output_dir)
 
-    async def post_all_steps():
+    async def post_all_steps(saved_files, lesson_id, token):
         async with aiohttp.ClientSession() as session_http:
             for idx, file_path in enumerate(saved_files, start=1):
                 with open(file_path, "r", encoding="utf-8") as f:
-                    payload = {"step-source": {"lesson": int(lesson_id), "block": json.load(f)["block"], "max_score": 5, "position": idx}}
-                    payload["step-source"]["block"]["text"] = replace_mission_number(payload["step-source"]["block"]["text"], idx)
+                    step_json = json.load(f)
+                    block_data = step_json.get("block", {})
+                    full_payload = fill_template(block_data)
+
+                    # Заменяем номер миссии в тексте, если нужно
+                    full_payload["block"]["text"] = replace_mission_number(full_payload["block"]["text"], idx)
+
+                    payload = {
+                        "step-source": {
+                            "lesson": int(lesson_id),
+                            **full_payload,
+                            "max_score": 5,
+                            "position": idx
+                        }
+                    }
+
                     await post_step_source(session_http, token, payload)
 
-    asyncio.run(post_all_steps())
+    asyncio.run(post_all_steps(saved_files, lesson_id, token))
 
     return jsonify({"success": True})
 
