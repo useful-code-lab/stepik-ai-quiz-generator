@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Dict, Any, List
 
 import aiohttp
+import requests
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 # ==== Настройки ====
@@ -87,7 +88,9 @@ import json
 import aiohttp
 from typing import Dict, Any
 
-async def post_step_source(session_http: aiohttp.ClientSession, token: str, payload: Dict[str, Any], file_name: str) -> Dict[str, Any] | None:
+
+async def post_step_source(session_http: aiohttp.ClientSession, token: str, payload: Dict[str, Any], file_name: str) -> \
+        Dict[str, Any] | None:
     headers = mk_headers(token)
     url = f"{STEPIC_HOST}/api/step-sources"
 
@@ -99,35 +102,34 @@ async def post_step_source(session_http: aiohttp.ClientSession, token: str, payl
                 async with session_http.post(url, headers=headers, json=payload) as r2:
                     text = await r2.text()
                     if r2.status != 200:
-                        print("\n" + "-"*60)
+                        print("\n" + "-" * 60)
                         print(f"[WARNING] Ошибка при повторной попытке загрузки файла: {file_name}")
                         print(f"Статус: {r2.status}, ответ: {text}")
-                        print("-"*60 + "\n")
+                        print("-" * 60 + "\n")
                         return None
                     return await r2.json()
 
             text = await r.text()
             if r.status != 201:
-                print("\n" + "-"*60)
+                print("\n" + "-" * 60)
                 print(f"[WARNING] Ошибка при загрузке файла: {file_name}")
                 print(f"Статус: {r.status}, ответ: {text}")
                 print(json.dumps(payload, ensure_ascii=False, indent=2))
-                print("-"*60 + "\n")
+                print("-" * 60 + "\n")
                 return None
 
             return await r.json()
 
     except aiohttp.ClientResponseError as e:
-        print("\n" + "-"*60)
+        print("\n" + "-" * 60)
         print(f"[WARNING] ClientResponseError для файла {file_name}: {e.status}, сообщение: {e.message}")
-        print("-"*60 + "\n")
+        print("-" * 60 + "\n")
         return None
     except Exception as e:
-        print("\n" + "-"*60)
+        print("\n" + "-" * 60)
         print(f"[WARNING] Неожиданная ошибка при загрузке файла {file_name}: {e}")
-        print("-"*60 + "\n")
+        print("-" * 60 + "\n")
         return None
-
 
 
 def replace_mission_number(text: str, new_number: int) -> str:
@@ -206,6 +208,7 @@ def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path
 @app.before_request
 def load_cache_once():
     global CACHE_LOADED, ACCESS_TOKEN, LESSONS_CACHE
+    ACCESS_TOKEN = asyncio.run(get_access_token())
     if not CACHE_LOADED:
         if os.path.exists(CACHE_FILE):
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
@@ -213,12 +216,12 @@ def load_cache_once():
             CACHE_LOADED = True
             print(f"Кэш загружен из файла: {len(LESSONS_CACHE)} уроков")
         else:
-            ACCESS_TOKEN = asyncio.run(get_access_token())
             LESSONS_CACHE = asyncio.run(get_units_and_lessons(ACCESS_TOKEN, COURSE_ID))
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(LESSONS_CACHE, f, ensure_ascii=False, indent=2)
             CACHE_LOADED = True
             print(f"Кэш загружен и сохранён: {len(LESSONS_CACHE)} уроков")
+
 
 # ==== Flask routes ====
 @app.route("/", methods=["GET", "POST"])
@@ -332,11 +335,27 @@ def fill_template(block_data):
     return template
 
 
+def get_steps(token: str, lesson_id: int) -> list:
+    url = f"{STEPIC_HOST}/api/steps?lesson={lesson_id}"
+    r = requests.get(url, headers=mk_headers(token), timeout=60)
+    r.raise_for_status()
+    data = r.json()
+    return data.get("steps", [])  # список шагов
+
+
+current_steps = 0
+
+
 @app.route("/save_lesson_text", methods=["POST"])
 def save_lesson_text():
     lesson_id = request.args.get("lesson_id")
     text = request.get_data(as_text=True)
     token = ACCESS_TOKEN
+    global current_steps
+
+    steps = get_steps(token, int(lesson_id))
+    current_steps = len(steps) - 1 if steps[0]["block"]["name"] == "text" else len(steps)
+
     if not lesson_id or not text:
         return jsonify({"success": False, "error": "Нет lesson_id или текста"}), 400
 
@@ -351,6 +370,7 @@ def save_lesson_text():
     saved_files = generate_questions_from_file(file_path, output_dir)
 
     async def post_all_steps(saved_files, lesson_id, token):
+        global current_steps
         async with aiohttp.ClientSession() as session_http:
             for idx, file_path in enumerate(saved_files, start=1):
                 try:
@@ -365,35 +385,37 @@ def save_lesson_text():
                     block_text = full_payload["block"].get("text", "").strip()
 
                     if not block_text:
-                        print(f"[WARNING] Пропущен шаг {idx}: отсутствует текст для блока '{block_type}'")
+                        print(f"[WARNING] Пропущен шаг {current_steps}: отсутствует текст для блока '{block_type}'")
                         continue  # пропускаем
 
                     if block_type in ("choice", "sorting"):
                         options = full_payload["block"]["source"].get("options", [])
                         if not options or not isinstance(options, list):
-                            print(f"[WARNING] Пропущен шаг {idx}: отсутствуют опции для блока '{block_type}'")
+                            print(f"[WARNING] Пропущен шаг {current_steps}: отсутствуют опции для блока '{block_type}'")
                             continue  # пропускаем
 
                     if block_type == "matching":
                         pairs = full_payload["block"]["source"].get("pairs", [])
                         if not pairs or not isinstance(pairs, list):
-                            print(f"[WARNING] Пропущен шаг {idx}: отсутствуют пары для блока 'matching'")
+                            print(f"[WARNING] Пропущен шаг {current_steps}: отсутствуют пары для блока 'matching'")
                             continue  # пропускаем
 
-                    if idx > 19:
+                    if current_steps > 19:
                         continue  # лимит на 20 шагов
 
                     # Заменяем номер миссии в тексте, если нужно
-                    full_payload["block"]["text"] = replace_mission_number(full_payload["block"]["text"], idx)
+                    full_payload["block"]["text"] = replace_mission_number(full_payload["block"]["text"], current_steps)
 
                     payload = {
                         "step-source": {
                             "lesson": int(lesson_id),
                             **full_payload,
                             "max_score": 5,
-                            "position": idx
+                            "position": current_steps + 1
                         }
                     }
+
+                    current_steps = current_steps + 1
 
                     await post_step_source(session_http, token, payload, file_path)
 
