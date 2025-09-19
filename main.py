@@ -25,6 +25,7 @@ app.secret_key = "super-secret-key"
 LESSONS_CACHE: List[Dict[str, Any]] = []
 ACCESS_TOKEN: str = ""
 CACHE_LOADED: bool = False
+CACHE_FILE = "lessons_cache.json"
 
 
 # ==== Вспомогательные функции ====
@@ -202,20 +203,22 @@ def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path
     return saved_files
 
 
-def load_cache():
+@app.before_request
+def load_cache_once():
     global CACHE_LOADED, ACCESS_TOKEN, LESSONS_CACHE
     if not CACHE_LOADED:
-        print("Загрузка токена и уроков...")
-        ACCESS_TOKEN = asyncio.run(get_access_token())
-        LESSONS_CACHE = asyncio.run(get_units_and_lessons(ACCESS_TOKEN, COURSE_ID))
-        CACHE_LOADED = True
-        print(f"Кэш уроков загружен: {len(LESSONS_CACHE)} уроков")
-
-# Используем before_request, но с проверкой
-@app.before_request
-def ensure_cache_loaded():
-    load_cache()
-
+        if os.path.exists(CACHE_FILE):
+            with open(CACHE_FILE, "r", encoding="utf-8") as f:
+                LESSONS_CACHE = json.load(f)
+            CACHE_LOADED = True
+            print(f"Кэш загружен из файла: {len(LESSONS_CACHE)} уроков")
+        else:
+            ACCESS_TOKEN = asyncio.run(get_access_token())
+            LESSONS_CACHE = asyncio.run(get_units_and_lessons(ACCESS_TOKEN, COURSE_ID))
+            with open(CACHE_FILE, "w", encoding="utf-8") as f:
+                json.dump(LESSONS_CACHE, f, ensure_ascii=False, indent=2)
+            CACHE_LOADED = True
+            print(f"Кэш загружен и сохранён: {len(LESSONS_CACHE)} уроков")
 
 # ==== Flask routes ====
 @app.route("/", methods=["GET", "POST"])
