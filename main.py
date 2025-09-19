@@ -26,25 +26,29 @@ LESSONS_CACHE: List[Dict[str, Any]] = []
 ACCESS_TOKEN: str = ""
 CACHE_LOADED: bool = False
 
+
 # ==== Вспомогательные функции ====
 async def get_access_token() -> str:
     async with aiohttp.ClientSession() as session_http:
         async with session_http.post(
-            f"{STEPIC_HOST}/oauth2/token/",
-            data={"grant_type": "client_credentials"},
-            auth=aiohttp.BasicAuth(CLIENT_ID, CLIENT_SECRET)
+                f"{STEPIC_HOST}/oauth2/token/",
+                data={"grant_type": "client_credentials"},
+                auth=aiohttp.BasicAuth(CLIENT_ID, CLIENT_SECRET)
         ) as resp:
             resp.raise_for_status()
             data = await resp.json()
             return data["access_token"]
 
+
 def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+
 
 async def fetch_json(session_http: aiohttp.ClientSession, url: str, headers: Dict[str, str]) -> Dict[str, Any]:
     async with session_http.get(url, headers=headers) as r:
         r.raise_for_status()
         return await r.json()
+
 
 async def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
     headers = mk_headers(token)
@@ -77,26 +81,45 @@ async def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, An
                 })
         return units_and_lessons
 
+
 async def post_step_source(session_http: aiohttp.ClientSession, token: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     headers = mk_headers(token)
-    async with session_http.post(f"{STEPIC_HOST}/api/step-sources", headers=headers, json=payload) as r:
-        if r.status == 429:
-            await asyncio.sleep(1.5)
-            async with session_http.post(f"{STEPIC_HOST}/api/step-sources", headers=headers, json=payload) as r2:
-                r2.raise_for_status()
-                return await r2.json()
-        r.raise_for_status()
-        return await r.json()
+    url = f"{STEPIC_HOST}/api/step-sources"
+
+    try:
+        async with session_http.post(url, headers=headers, json=payload) as r:
+            if r.status == 429:
+                # Повтор через 1.5 секунды
+                await asyncio.sleep(1.5)
+                async with session_http.post(url, headers=headers, json=payload) as r2:
+                    if r2.status != 200:
+                        text = await r2.text()
+                        print(f"Ошибка при повторной попытке загрузки шага: {r2.status}, ответ: {text}")
+                        r2.raise_for_status()
+                    return await r2.json()
+            if r.status != 200:
+                text = await r.text()
+                print(f"Ошибка при загрузке шага: {r.status}, ответ: {text}")
+                r.raise_for_status()
+            return await r.json()
+    except aiohttp.ClientResponseError as e:
+        print(f"ClientResponseError: {e.status}, сообщение: {e.message}")
+        raise
+    except Exception as e:
+        print(f"Неожиданная ошибка при загрузке шага: {e}")
+        raise
+
+
 
 def replace_mission_number(text: str, new_number: int) -> str:
     return re.sub(r'(<h3>Миссия )\d+(</h3>)', lambda m: f"{m.group(1)}{new_number}{m.group(2)}", text)
-
 
 
 import json
 
 import json
 import re
+
 
 def extract_json_blocks(text: str):
     """
@@ -146,6 +169,7 @@ def extract_json_blocks(text: str):
                 continue
     return result
 
+
 def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path]:
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
@@ -159,6 +183,7 @@ def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path
         saved_files.append(file_path)
     return saved_files
 
+
 # ==== Загрузка кэша при первом запросе ====
 @app.before_request
 def load_cache_once():
@@ -170,6 +195,7 @@ def load_cache_once():
         CACHE_LOADED = True
         print(f"Кэш уроков загружен: {len(LESSONS_CACHE)} уроков")
 
+
 # ==== Flask routes ====
 @app.route("/", methods=["GET", "POST"])
 def select_lesson():
@@ -179,6 +205,7 @@ def select_lesson():
         session["current_lesson_id"] = lesson_id
         return redirect(url_for("lesson_form"))
     return render_template("index.html", lessons=lessons_list)
+
 
 @app.route("/get_prompt")
 def get_prompt():
@@ -240,6 +267,7 @@ BLOCK_TEMPLATES = {
     }
 }
 
+
 def fill_template(block_data):
     """
     Заполняем шаблон блоком, заменяя текст, options/pairs и position,
@@ -270,9 +298,7 @@ def fill_template(block_data):
     # Дополнительно
     template["has_review"] = block_data.get("has_review", template.get("has_review", False))
 
-
     return template
-
 
 
 @app.route("/save_lesson_text", methods=["POST"])
@@ -301,6 +327,26 @@ def save_lesson_text():
                     block_data = step_json.get("block", {})
                     full_payload = fill_template(block_data)
 
+                    # Проверка обязательных данных
+                    block_type = full_payload["block"]["name"]
+                    block_text = full_payload["block"].get("text", "").strip()
+
+                    if not block_text:
+                        print(f"Пропущен шаг {idx}: отсутствует текст для блока '{block_type}'")
+                        continue  # пропускаем
+
+                    if block_type in ("choice", "sorting"):
+                        options = full_payload["block"]["source"].get("options", [])
+                        if not options or not isinstance(options, list):
+                            print(f"Пропущен шаг {idx}: отсутствуют опции для блока '{block_type}'")
+                            continue  # пропускаем
+
+                    if block_type == "matching":
+                        pairs = full_payload["block"]["source"].get("pairs", [])
+                        if not pairs or not isinstance(pairs, list):
+                            print(f"Пропущен шаг {idx}: отсутствуют пары для блока 'matching'")
+                            continue  # пропускаем
+
                     # Заменяем номер миссии в тексте, если нужно
                     full_payload["block"]["text"] = replace_mission_number(full_payload["block"]["text"], idx)
 
@@ -318,6 +364,7 @@ def save_lesson_text():
     asyncio.run(post_all_steps(saved_files, lesson_id, token))
 
     return jsonify({"success": True})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
