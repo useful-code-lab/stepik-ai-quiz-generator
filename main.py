@@ -93,7 +93,7 @@ async def post_step_source(session_http: aiohttp.ClientSession, token: str, payl
         Dict[str, Any] | None:
     headers = mk_headers(token)
     url = f"{STEPIC_HOST}/api/step-sources"
-
+    global current_steps
     try:
         async with session_http.post(url, headers=headers, json=payload) as r:
             if r.status == 429:
@@ -117,6 +117,8 @@ async def post_step_source(session_http: aiohttp.ClientSession, token: str, payl
                 print(json.dumps(payload, ensure_ascii=False, indent=2))
                 print("-" * 60 + "\n")
                 return None
+
+            current_steps = current_steps + 1
 
             return await r.json()
 
@@ -322,6 +324,11 @@ def fill_template(block_data):
     if "options" in block_data.get("source", {}):
         template["block"]["source"]["options"] = block_data["source"]["options"]
 
+    if block_type == "choice":
+        for opt in block_data["source"]["options"]:
+            if "feedback" not in opt:
+                opt["feedback"] = ""
+
     # Дополнительно
     template["has_review"] = block_data.get("has_review", template.get("has_review", False))
 
@@ -415,7 +422,6 @@ def save_lesson_text():
                         }
                     }
 
-                    current_steps = current_steps + 1
 
                     await post_step_source(session_http, token, payload, file_path)
 
