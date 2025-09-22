@@ -5,6 +5,7 @@ import asyncio
 import json
 import os
 import re
+import shutil
 from pathlib import Path
 from typing import Dict, Any, List
 
@@ -14,7 +15,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 
 # ==== Настройки ====
 TEMPLATE = "prompt_template_conflict.txt"
-COURSE_ID = 254078
+COURSE_ID = 254191
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
@@ -197,6 +198,7 @@ def generate_questions_from_file(input_file: str, output_dir: Path) -> List[Path
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
     objs = extract_json_blocks(content)
+    shutil.rmtree(output_dir, ignore_errors=True)
     output_dir.mkdir(exist_ok=True)
     saved_files = []
     for idx, obj in enumerate(objs, start=1):
