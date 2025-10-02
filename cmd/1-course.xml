@@ -1,0 +1,3814 @@
+<div class="item-tile-list">
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254045" aria-label="Link to the course Полный курс по Linux"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254045/cover_DTvqfRc/d72ba4faeaddcdcf289a8c49d9198b62.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254045" class="item-tile__title-link" tabindex="-1">
+                        Полный курс по Linux
+                      </a>
+
+                      <span id="ember2037" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2038" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2039" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          0
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254045/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254045" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254045/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-pinned="" data-tooltip="Открепить" type="button" data-ember-action="" data-ember-action-2040="2040">
+                          <span id="ember2041" class="svg-icon unpin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#unpin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2042" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2043" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2044" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253470" aria-label="Link to the course Разработчик gRPC-сервисов в Python и Go "></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253470/cover_k6WJQkH/9d93b3ba826c1f4c3e253a61de3f6906.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253470" class="item-tile__title-link" tabindex="-1">
+                        Разработчик gRPC-сервисов в Python и Go
+                      </a>
+
+                      <span id="ember2045" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2046" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2047" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          8
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253470/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253470" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253470/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-pinned="" data-tooltip="Открепить" type="button" data-ember-action="" data-ember-action-2048="2048">
+                          <span id="ember2049" class="svg-icon unpin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#unpin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2050" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2051" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2052" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254587" aria-label="Link to the course Курс-квест: 8 врат продвинутого PostgreSQL"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254587/cover_4ZPkgc8/bb270daefbe0b80e74aaa923b273d512.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254587" class="item-tile__title-link" tabindex="-1">
+                        Курс-квест: 8 врат продвинутого PostgreSQL
+                      </a>
+
+                      <span id="ember2053" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2054" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2055" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          0
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254587/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254587" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254587/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="1">1</span><span data-type="group" data-value="&nbsp;">&nbsp;</span><span data-type="integer" data-value="000">000</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2056="2056">
+                          <span id="ember2057" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2058" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2059" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2060" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254584" aria-label="Link to the course 🎮 Курс-квест Middle Node.js Developer+"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254584/cover_4FAsj3Z/0e27f49f067b6faea58c1f3eb918b8ef.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254584" class="item-tile__title-link" tabindex="-1">
+                        🎮 Курс-квест Middle Node.js Developer+
+                      </a>
+
+                      <span id="ember2061" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2062" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2063" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254584/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254584" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254584/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2064="2064">
+                          <span id="ember2065" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2066" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2067" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2068" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254446" aria-label="Link to the course Квест-курс: HTML Middle — Путь Архитектора"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254446/cover_FpTMgU4/e35fb5c4151a57e15cd0e4ad3541fd14.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254446" class="item-tile__title-link" tabindex="-1">
+                        Квест-курс: HTML Middle — Путь Архитектора
+                      </a>
+
+                      <span id="ember2069" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2070" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2071" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254446/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254446" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254446/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2072="2072">
+                          <span id="ember2073" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2074" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2075" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2076" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254432" aria-label="Link to the course Курс-квест: TypeScript Middle+"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253972/cover_f5AmiVa/439a502b1f08df20d5f5242b16bca77e.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254432" class="item-tile__title-link" tabindex="-1">
+                        Курс-квест: TypeScript Middle+
+                      </a>
+
+                      <span id="ember2077" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2078" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2079" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254432/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254432" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254432/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2080="2080">
+                          <span id="ember2081" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2082" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2083" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2084" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253491" aria-label="Link to the course Самостоятельный ребёнок: курс для родителей"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253158/cover_dsBNDk4/a34341edede240e96ead4794acd79a7e.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253491" class="item-tile__title-link" tabindex="-1">
+                        Самостоятельный ребёнок: курс для родителей
+                      </a>
+
+                      <span id="ember2085" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2086" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2087" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253491/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253491" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253491/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2088="2088">
+                          <span id="ember2089" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2090" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2091" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2092" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254325" aria-label="Link to the course Курс-квест по визуализации: прокачай воображение"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254134/cover_RCLjhVy/97fb230a3d06dc136356d80151f09b3e.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254325" class="item-tile__title-link" tabindex="-1">
+                        Курс-квест по визуализации: прокачай воображение
+                      </a>
+
+                      <span id="ember2093" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2094" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2095" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          0
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254325/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254325" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254325/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2096="2096">
+                          <span id="ember2097" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2098" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2099" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2100" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253487" aria-label="Link to the course Квест-курс: Успех, деньги и уют — пошаговая стратегия"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253343/cover_Dx9zf8a/f7a3989ee43311a727c04389fdb777a1.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253487" class="item-tile__title-link" tabindex="-1">
+                        Квест-курс: Успех, деньги и уют — пошаговая стратегия
+                      </a>
+
+                      <span id="ember2101" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2102" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2103" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253487/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253487" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253487/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2104="2104">
+                          <span id="ember2105" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2106" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2107" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2108" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254324" aria-label="Link to the course Ментальный Квест: искусство мирно решать конфликты"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254078/cover_jfT6GTz/2a39c13c8af936fc24fba96489783ea8.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254324" class="item-tile__title-link" tabindex="-1">
+                        Ментальный Квест: искусство мирно решать конфликты
+                      </a>
+
+                      <span id="ember2109" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2110" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2111" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254324/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254324" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254324/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2112="2112">
+                          <span id="ember2113" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2114" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2115" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2116" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253010" aria-label="Link to the course 🐍 Python Developer Quest: прокачка до Middle"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253003/cover_Ayhk2IX/317f7ad7c882f5cd21fb89f1585c5341.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253010" class="item-tile__title-link" tabindex="-1">
+                        🐍 Python Developer Quest: прокачка до Middle
+                      </a>
+
+                      <span id="ember2117" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2118" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2119" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          13
+                        </span>
+
+                          <span class="item-tile__footer-badge">
+                            <span id="ember2120" class="svg-icon star2_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#star2"></use>
+  </svg></span>
+                            5
+                          </span>
+                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253010/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253010" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253010/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2121="2121">
+                          <span id="ember2122" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2123" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2124" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2125" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254326" aria-label="Link to the course Квест-прокачка: «Уверенно пройди собес и получи оффер»"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254191/cover_e8h85CU/9318bccb6ad6e03f87e131edf5f9fbc4.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254326" class="item-tile__title-link" tabindex="-1">
+                        Квест-прокачка: «Уверенно пройди собес и получи оффер»
+                      </a>
+
+                      <span id="ember2126" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2127" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2128" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254326/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254326" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254326/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2129="2129">
+                          <span id="ember2130" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2131" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2132" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2133" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/254321" aria-label="Link to the course Дневник Эффективности: Квесты Личной Трансформации"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/254321/cover_unbmz4x/ea7605e82b1c935a31224aabb3009db7.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/254321" class="item-tile__title-link" tabindex="-1">
+                        Дневник Эффективности: Квесты Личной Трансформации
+                      </a>
+
+                      <span id="ember2134" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2135" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2136" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/254321/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/254321" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/254321/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2137="2137">
+                          <span id="ember2138" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2139" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2140" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2141" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252572" aria-label="Link to the course Игровой курс по продажам: стань мастером сделок"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252572/cover_Dh9ku5S/7fed37412ee470a2eaa10334e0c6d69b.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252572" class="item-tile__title-link" tabindex="-1">
+                        Игровой курс по продажам: стань мастером сделок
+                      </a>
+
+                      <span id="ember2142" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2143" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2144" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252572/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252572" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252572/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2145="2145">
+                          <span id="ember2146" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2147" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2148" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2149" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253880" aria-label="Link to the course Курс-квест «Grow a Garden with Python»"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253880/cover_Cc4F64g/1aaa840b5456ea23fdb4de26019e1bdb.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253880" class="item-tile__title-link" tabindex="-1">
+                        Курс-квест «Grow a Garden with Python»
+                      </a>
+
+                      <span id="ember2150" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember2151" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2152" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          16
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253880/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253880" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253880/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2153="2153">
+                          <span id="ember2154" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2155" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2156" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2157" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253935" aria-label="Link to the course Middle JavaScript Developer: Курс-квест"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253935/cover_tQtEiDo/1a4a31ded688e099791439dc0c093f17.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253935" class="item-tile__title-link" tabindex="-1">
+                        Middle JavaScript Developer: Курс-квест
+                      </a>
+
+                      <span id="ember2158" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2159" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2160" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          5
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253935/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253935" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253935/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2161="2161">
+                          <span id="ember2162" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2163" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2164" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2165" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252927" aria-label="Link to the course Разработчик Lua в игровом мире Roblox"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252927/cover_5wZv12c/8d9e27598e5921389f2725ca71e8e576.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252927" class="item-tile__title-link" tabindex="-1">
+                        Разработчик Lua в игровом мире Roblox
+                      </a>
+
+                      <span id="ember2166" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2167" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2168" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252927/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252927" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252927/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2169="2169">
+                          <span id="ember2170" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2171" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2172" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2173" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253490" aria-label="Link to the course Python Senior: архитектура и практика на квестах"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253011/cover_JTFSxLk/6871da626d1dc7863468e39744df9739.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253490" class="item-tile__title-link" tabindex="-1">
+                        Python Senior: архитектура и практика на квестах
+                      </a>
+
+                      <span id="ember2174" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2175" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2176" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          4
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253490/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253490" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253490/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2177="2177">
+                          <span id="ember2178" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2179" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2180" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2181" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253488" aria-label="Link to the course Специалист по Data Science и ML в обучающих мирах Minecraft"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253488/cover_F8YgBy5/5693f859b256da0a0bfaa60611cb00d1.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253488" class="item-tile__title-link" tabindex="-1">
+                        Специалист по Data Science и ML в обучающих мирах Minecraft
+                      </a>
+
+                      <span id="ember2182" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2183" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2184" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253488/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253488" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253488/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2185="2185">
+                          <span id="ember2186" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2187" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2188" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2189" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253631" aria-label="Link to the course Python-разработчик в обучающих мирах Minecraft"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253631/cover_CJg7lRB/4254b2e1261b65b17776128a15d5a746.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253631" class="item-tile__title-link" tabindex="-1">
+                        Python-разработчик в обучающих мирах Minecraft
+                      </a>
+
+                      <span id="ember2190" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2191" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2192" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253631/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253631" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253631/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2193="2193">
+                          <span id="ember2194" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2195" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2196" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2197" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253692" aria-label="Link to the course Junior-разработчик в обучающем мире Grow A Garden"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253692/cover_Z8mcurn/a25a8bde0324fb2e7b4ce0e0508ca1ca.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253692" class="item-tile__title-link" tabindex="-1">
+                        Junior-разработчик в обучающем мире Grow A Garden
+                      </a>
+
+                      <span id="ember2705" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember2706" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember2707" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253692/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253692" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253692/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-2708="2708">
+                          <span id="ember2709" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember2710" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember2711" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember2712" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251711" aria-label="Link to the course Kubernetes-квест: обучение в игровом школьном мире"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251711/cover_DazXvRM/a546e7dcf1933f05396d260b9d649d60.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251711" class="item-tile__title-link" tabindex="-1">
+                        Kubernetes-квест: обучение в игровом школьном мире
+                      </a>
+
+                      <span id="ember3103" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3104" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3105" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          6
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251711/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251711" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251711/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3106="3106">
+                          <span id="ember3107" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3108" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3109" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3110" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/250336" aria-label="Link to the course Уверенно разбираемся в IP-адресации и 13-й задаче ЕГЭ."></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/250336/cover_SNzSS07/04d90c1ccb7e68e50fa30b2b8d316784.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/250336" class="item-tile__title-link" tabindex="-1">
+                        Уверенно разбираемся в IP-адресации и 13-й задаче ЕГЭ.
+                      </a>
+
+                      <span id="ember3111" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3112" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3113" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/250336/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/250336" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/250336/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3114="3114">
+                          <span id="ember3115" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3116" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3117" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3118" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253262" aria-label="Link to the course Data Science и ML в квестах по мотивам Minecraft"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253262/cover_7aOG2tt/d8d8543b00a5bda61d0a086c99223060.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253262" class="item-tile__title-link" tabindex="-1">
+                        Data Science и ML в квестах по мотивам Minecraft
+                      </a>
+
+                      <span id="ember3119" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3120" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3121" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          18
+                        </span>
+
+                          <span class="item-tile__footer-badge">
+                            <span id="ember3274" class="svg-icon star2_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#star2"></use>
+  </svg></span>
+                            5
+                          </span>
+                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253262/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253262" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253262/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3122="3122">
+                          <span id="ember3123" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3124" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3125" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3126" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253614" aria-label="Link to the course Профилирование и оптимизация: Программы на Python и Go"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253614/cover_L2ewKVf/18ccf4701f7741fa5fa73729152ad306.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253614" class="item-tile__title-link" tabindex="-1">
+                        Профилирование и оптимизация: Программы на Python и Go
+                      </a>
+
+                      <span id="ember3127" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3128" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3129" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          6
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253614/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253614" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253614/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3130="3130">
+                          <span id="ember3131" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3132" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3133" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3134" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253525" aria-label="Link to the course Квесты по решениям задачи №13 ЕГЭ по теме TCP/IP"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253525/cover_pZh4qKo/796f3704d64bab2ed4d81726577178fe.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253525" class="item-tile__title-link" tabindex="-1">
+                        Квесты по решениям задачи №13 ЕГЭ по теме TCP/IP
+                      </a>
+
+                      <span id="ember3135" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3136" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3137" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          16
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253525/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253525" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253525/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3138="3138">
+                          <span id="ember3139" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3140" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3141" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3142" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253437" aria-label="Link to the course «От нехватки к радости 🏆 Квест «Мой день изобилия»"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253437/cover_45rh7TT/ef23e51d63b10c1530ff069c028ffe30.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253437" class="item-tile__title-link" tabindex="-1">
+                        «От нехватки к радости 🏆 Квест «Мой день изобилия»
+                      </a>
+
+                      <span id="ember3143" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3144" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3145" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          7
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253437/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253437" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253437/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3146="3146">
+                          <span id="ember3147" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3148" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3149" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3150" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253493" aria-label="Link to the course Мастер таблицы умножения в обучающих мирах Roblox"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253181/cover_RZCGaHD/691ab8f0732f96c06a54253da80405b9.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253493" class="item-tile__title-link" tabindex="-1">
+                        Мастер таблицы умножения в обучающих мирах Roblox
+                      </a>
+
+                      <span id="ember3151" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3152" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3153" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          1
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253493/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253493" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253493/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3154="3154">
+                          <span id="ember3155" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3156" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3157" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3158" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253182" aria-label="Link to the course Таблица умножения по мотивам Roblox: квесты для лёгкого обучения"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253182/cover_7ZW8rzh/a03816ddd275522d133b32d4e7243261.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253182" class="item-tile__title-link" tabindex="-1">
+                        Таблица умножения по мотивам Roblox: квесты для лёгкого обучения
+                      </a>
+
+                      <span id="ember3159" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3160" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3161" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          10
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253182/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253182" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253182/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3162="3162">
+                          <span id="ember3163" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3164" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3165" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3166" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253489" aria-label="Link to the course Специалист по OpenTelemetry в реальном проекте"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253043/cover_zvAiRMu/483ae96148ed073ad0ded51dc9366404.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253489" class="item-tile__title-link" tabindex="-1">
+                        Специалист по OpenTelemetry в реальном проекте
+                      </a>
+
+                      <span id="ember3167" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3168" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3169" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          3
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253489/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253489" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253489/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3170="3170">
+                          <span id="ember3171" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3172" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3173" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3174" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253100" aria-label="Link to the course OpenTelemetry: прозрачность и рост для инженеров"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253100/cover_NohirKk/383c4fcb18632139e07ff36528849cb3.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253100" class="item-tile__title-link" tabindex="-1">
+                        OpenTelemetry: прозрачность и рост для инженеров
+                      </a>
+
+                      <span id="ember3175" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3176" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3177" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          15
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253100/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253100" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253100/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3178="3178">
+                          <span id="ember3179" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3180" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3181" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3182" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253171" aria-label="Link to the course Помогаем ребёнку стать самостоятельным: первые шаги"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253171/cover_ZwDRaWT/59bf684fe55f4fdf1bdbc3043362a1ce.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253171" class="item-tile__title-link" tabindex="-1">
+                        Помогаем ребёнку стать самостоятельным: первые шаги
+                      </a>
+
+                      <span id="ember3183" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3184" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3185" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          8
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253171/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253171" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253171/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3186="3186">
+                          <span id="ember3187" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3188" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3189" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3190" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253238" aria-label="Link to the course Прокачайся с Python: квесты по архитектуре от Middle до Senior"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253238/cover_lMATTmj/2a6278ef19becfeace0bacbbae6ae082.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253238" class="item-tile__title-link" tabindex="-1">
+                        Прокачайся с Python: квесты по архитектуре от Middle до Senior
+                      </a>
+
+                      <span id="ember3191" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3192" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3193" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          26
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253238/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253238" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253238/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3194="3194">
+                          <span id="ember3195" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3196" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3197" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3198" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/253102" aria-label="Link to the course Стартуем с Lua: простой курс для новичков"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/253102/cover_Ehm8s68/db3307d4819757fa29b764e95338489f.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/253102" class="item-tile__title-link" tabindex="-1">
+                        Стартуем с Lua: простой курс для новичков
+                      </a>
+
+                      <span id="ember3199" class="ember-view course-badge course-tariff-badge" data-type="basic" data-kind="tariff" data-value="true" aria-label="Course badge: Базовый">
+  <span id="ember3200" class="svg-icon basic_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#basic"></use>
+  </svg></span>
+  Базовый
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3201" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          13
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/253102/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/253102" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/253102/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+<!---->
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3202="3202">
+                          <span id="ember3203" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3204" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3205" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3206" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252874" aria-label="Link to the course Lua-программист для разработки с Redis в реальном проекте"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252874/cover_Ym2hN7h/855a6a151c7fb993c4c97afb7c1c72ca.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252874" class="item-tile__title-link" tabindex="-1">
+                        Lua-программист для разработки с Redis в реальном проекте
+                      </a>
+
+                      <span id="ember3207" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3208" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3209" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          3
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252874/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252874" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252874/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3210="3210">
+                          <span id="ember3211" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3212" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3213" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3214" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251835" aria-label="Link to the course Эксперт по ИИ и ML в реальных проектах"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251835/cover_hqO5Xka/8e752ed3cbfd8864c549d04e494f8d50.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251835" class="item-tile__title-link" tabindex="-1">
+                        Эксперт по ИИ и ML в реальных проектах
+                      </a>
+
+                      <span id="ember3215" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3216" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3217" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          6
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251835/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251835" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251835/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3218="3218">
+                          <span id="ember3219" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3220" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3221" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3222" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251953" aria-label="Link to the course Удалённая работа: стань экспертом в командных коммуникациях"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251953/cover_W6t7BkD/c1e11de87a2cfa178596b0ef76757306.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251953" class="item-tile__title-link" tabindex="-1">
+                        Удалённая работа: стань экспертом в командных коммуникациях
+                      </a>
+
+                      <span id="ember3223" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3224" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3225" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251953/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251953" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251953/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3226="3226">
+                          <span id="ember3227" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3228" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3229" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3230" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251924" aria-label="Link to the course Разработчик высоконагруженных сервисов на Go"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251924/cover_cZhxRmF/d3bd6cb58b4305d8d8a3a00df2324220.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251924" class="item-tile__title-link" tabindex="-1">
+                        Разработчик высоконагруженных сервисов на Go
+                      </a>
+
+                      <span id="ember3231" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3232" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3233" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          7
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251924/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251924" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251924/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3234="3234">
+                          <span id="ember3235" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3236" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3237" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3238" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252037" aria-label="Link to the course Разработчик event-driven микросервисов: gRPC, Kafka, Redis"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252037/cover_5tNHBFO/3b4769a56bac20290bffe36296d125fb.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252037" class="item-tile__title-link" tabindex="-1">
+                        Разработчик event-driven микросервисов: gRPC, Kafka, Redis
+                      </a>
+
+                      <span id="ember3239" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3240" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3241" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          7
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252037/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252037" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252037/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3242="3242">
+                          <span id="ember3243" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3244" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3245" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3246" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252647" aria-label="Link to the course Эмодзи-квест: как эффективно общаться в рабочих чатах"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252363/cover_nT2BKPP/dd1a8ce7e152dd6a29aa04e72fc1222e.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252647" class="item-tile__title-link" tabindex="-1">
+                        Эмодзи-квест: как эффективно общаться в рабочих чатах
+                      </a>
+
+                      <span id="ember3247" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3248" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3249" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          3
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252647/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252647" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252647/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3250="3250">
+                          <span id="ember3251" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3252" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3253" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3254" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252646" aria-label="Link to the course Специалист Kafka с глубоким пониманием системы"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252160/cover_iVkziIw/76deb4b8d951d3513e1434cc7caf1a05.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252646" class="item-tile__title-link" tabindex="-1">
+                        Специалист Kafka с глубоким пониманием системы
+                      </a>
+
+                      <span id="ember3449" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3450" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3451" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          10
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252646/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252646" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252646/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3452="3452">
+                          <span id="ember3453" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3454" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3455" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3456" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251834" aria-label="Link to the course Эксперт AI, умеющий писать эффективные запросы"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251834/cover_jLwRrCn/c4c979cd9fd285042975a52190a5ef9f.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251834" class="item-tile__title-link" tabindex="-1">
+                        Эксперт AI, умеющий писать эффективные запросы
+                      </a>
+
+                      <span id="ember3457" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3458" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3459" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          4
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251834/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251834" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251834/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3460="3460">
+                          <span id="ember3461" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3462" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3463" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3464" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252535" aria-label="Link to the course Эксперт по созданию игр в gamedev-сфере"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252535/cover_A77894D/dd3ec19d7e121eae81907e4890f7b028.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252535" class="item-tile__title-link" tabindex="-1">
+                        Эксперт по созданию игр в gamedev-сфере
+                      </a>
+
+                      <span id="ember3465" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3466" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3467" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252535/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252535" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252535/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3468="3468">
+                          <span id="ember3469" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3470" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3471" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3472" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/252068" aria-label="Link to the course Эксперт по математике с максимальными баллами в ЕГЭ"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/252068/cover_WBPBc1L/304bb12f489036000b29b7991068911e.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/252068" class="item-tile__title-link" tabindex="-1">
+                        Эксперт по математике с максимальными баллами в ЕГЭ
+                      </a>
+
+                      <span id="ember3473" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3474" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3475" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          3
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/252068/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/252068" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/252068/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3476="3476">
+                          <span id="ember3477" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3478" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3479" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3480" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251833" aria-label="Link to the course Go-программист: разработка программ, ботов и веб-сервисов"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251833/cover_oK9OvVj/8c87585341fc1833547c9a11b1febc66.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251833" class="item-tile__title-link" tabindex="-1">
+                        Go-программист: разработка программ, ботов и веб-сервисов
+                      </a>
+
+                      <span id="ember3481" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3482" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3483" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          6
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251833/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251833" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251833/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3484="3484">
+                          <span id="ember3485" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3486" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3487" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3488" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251831" aria-label="Link to the course Эксперт по созданию чат-ассистентов AI/ML для бизнеса"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251831/cover_xWmNdpY/b30fa564340f94ddb9645e788192d2ae.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251831" class="item-tile__title-link" tabindex="-1">
+                        Эксперт по созданию чат-ассистентов AI/ML для бизнеса
+                      </a>
+
+                      <span id="ember3489" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3490" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3491" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          2
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251831/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251831" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251831/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3492="3492">
+                          <span id="ember3493" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3494" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3495" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3496" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+                  <div class="item-tile teach-course-tile">
+                    <a class="item-tile__link-wrapper" href="/course/251675" aria-label="Link to the course Специалист ElasticSearch в проектной разработке"></a>
+
+                    <figure class="item-tile__cover">
+                      <img class="item-tile__cover-img" alt="Course cover" src="https://cdn.stepik.net/media/cache/images/courses/251675/cover_UAcpaTe/80faea82aef8377f0ca480861ef5433d.png">
+
+<!---->                    </figure>
+
+                    <div class="item-tile__title item-tile__title_with_badge">
+                      <a href="/course/251675" class="item-tile__title-link" tabindex="-1">
+                        Специалист ElasticSearch в проектной разработке
+                      </a>
+
+                      <span id="ember3497" class="ember-view course-badge course-tariff-badge" data-type="basic_paid" data-kind="tariff" data-value="true" aria-label="Course badge: Платный">
+  <span id="ember3498" class="svg-icon paid_icon ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#paid"></use>
+  </svg></span>
+  Платный
+<!----></span>
+
+                    </div>
+
+
+<!---->
+
+
+                    <div class="item-tile__footer" data-hover="false">
+<!---->
+                        <span class="item-tile__footer-badge">
+                          <span id="ember3499" class="svg-icon user_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#user"></use>
+  </svg></span>
+                          5
+                        </span>
+
+<!---->                    </div>
+
+                    <div class="item-tile__footer" data-hover="true">
+<!---->
+                        <a href="/course/251675/reports" class="item-tile__footer-link" aria-disabled="false">
+                          Отчеты
+                        </a>
+
+                        <a href="/course-grade-book/251675" class="item-tile__footer-link" aria-disabled="false">
+                          Табель
+                        </a>
+
+                        <a href="/course/251675/comments" class="item-tile__footer-link">
+                          Комментарии
+                        </a>
+                    </div>
+
+                        <span class="display-price teach-course-tile__price item-tile__value">
+      <span class="sr-only display-price__sr-only-price-default">Price:</span>
+      <span class="display-price__price display-price__price_default"><span class="format-price"><span data-type="integer" data-value="100">100</span><span data-type="literal" data-value="&nbsp;">&nbsp;</span><span data-type="currency" data-value="₽">₽</span></span></span>
+
+<!---->  </span>
+
+
+                    <div class="item-tile__tools">
+                      <button class="item-tile__tool-btn item-tile__pin" data-tooltip="Закрепить" type="button" data-ember-action="" data-ember-action-3500="3500">
+                          <span id="ember3501" class="svg-icon pin_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#pin"></use>
+  </svg></span>
+                      </button>
+
+                      <div id="ember3502" class="drop-down drop-down-menu ember-view item-tile__menu">
+                        <div aria-expanded="false" aria-haspopup="true" id="ember3503" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view">
+                          <button class="item-tile__tool-btn" type="button">
+                            <span id="ember3504" class="svg-icon menu-more_icon svg-icon_inline ember-view"><svg xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="/static/frontend-build/icons.svg?1758726412#menu-more"></use>
+  </svg></span>
+                          </button>
+
+</div>
+
+                        <!---->
+
+
+<!----></div>
+                    </div>
+                  </div>
+          </div>
