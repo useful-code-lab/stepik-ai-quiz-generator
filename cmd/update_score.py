@@ -3,18 +3,20 @@
 
 import asyncio
 import aiohttp
+import requests
 import json
+import time
 from typing import Dict, Any, List
 
 COURSE_IDS = [
-255401, 255403, 255404, 255405,
+    255401, 255403, 255404, 255405,
     255406, 255408, 255409, 255410, 255411, 255412, 255587, 255614
 ]
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
-MAX_CONCURRENT_REQUESTS = 3  # ограничение одновременных запросов
+MAX_CONCURRENT_REQUESTS = 10  # ограничение одновременных запросов
 FAILED_STEPS_FILE = "failed_steps.json"
 
 
@@ -116,39 +118,42 @@ async def update_step_source(session: aiohttp.ClientSession, step_id: int, token
                     failed_steps.append(step_id)
 
 
-# ==== Получение уроков и шагов курса ====
-async def get_units_and_steps(session: aiohttp.ClientSession, token: str, course_id: int) -> List[int]:
+# ==== Синхронное получение уроков и шагов ====
+def get_units_and_steps(token: str, course_id: int) -> List[int]:
     headers = mk_headers(token)
     step_ids = []
+
     try:
-        async with session.get(f"{STEPIC_HOST}/api/courses/{course_id}", headers=headers, timeout=120) as r:
-            r.raise_for_status()
-            course = (await r.json())["courses"][0]
+        r = requests.get(f"{STEPIC_HOST}/api/courses/{course_id}", headers=headers, timeout=60)
+        r.raise_for_status()
+        course = r.json()["courses"][0]
 
         for section_id in course.get("sections", []):
             try:
-                async with session.get(f"{STEPIC_HOST}/api/sections/{section_id}", headers=headers, timeout=120) as r:
-                    r.raise_for_status()
-                    section = (await r.json())["sections"][0]
+                r = requests.get(f"{STEPIC_HOST}/api/sections/{section_id}", headers=headers, timeout=60)
+                r.raise_for_status()
+                section = r.json()["sections"][0]
 
                 for unit_id in section.get("units", []):
                     try:
-                        async with session.get(f"{STEPIC_HOST}/api/units/{unit_id}", headers=headers, timeout=120) as r:
-                            r.raise_for_status()
-                            unit = (await r.json())["units"][0]
-                            lesson_id = unit["lesson"]
+                        r = requests.get(f"{STEPIC_HOST}/api/units/{unit_id}", headers=headers, timeout=60)
+                        r.raise_for_status()
+                        unit = r.json()["units"][0]
+                        lesson_id = unit["lesson"]
 
-                        async with session.get(f"{STEPIC_HOST}/api/lessons/{lesson_id}", headers=headers, timeout=120) as r:
-                            r.raise_for_status()
-                            lesson = (await r.json())["lessons"][0]
+                        r = requests.get(f"{STEPIC_HOST}/api/lessons/{lesson_id}", headers=headers, timeout=60)
+                        r.raise_for_status()
+                        lesson = r.json()["lessons"][0]
 
                         step_ids.extend(lesson.get("steps", []))
 
                     except Exception as e:
-                        print(f"Ошибка unit_id={unit_id}, lesson_id={lesson_id}: {e}")
+                        print(f"Ошибка unit_id={unit_id}, lesson_id={locals().get('lesson_id')}: {e}")
+                        time.sleep(5)
                         continue
             except Exception as e:
                 print(f"Ошибка section_id={section_id}: {e}")
+                time.sleep(5)
                 continue
 
     except Exception as e:
@@ -159,7 +164,7 @@ async def get_units_and_steps(session: aiohttp.ClientSession, token: str, course
 
 # ==== Основной запуск ====
 async def process_course(session: aiohttp.ClientSession, token: str, course_id: int, semaphore: asyncio.Semaphore, failed_steps: List[int]):
-    step_ids = await get_units_and_steps(session, token, course_id)
+    step_ids = get_units_and_steps(token, course_id)  # теперь синхронно
     tasks = [update_step_source(session, step_id, token, semaphore, failed_steps) for step_id in step_ids]
     await asyncio.gather(*tasks)
 
@@ -173,7 +178,6 @@ async def main():
         tasks = [process_course(session, token, course_id, semaphore, failed_steps) for course_id in COURSE_IDS]
         await asyncio.gather(*tasks)
 
-    # Сохраняем неудачные шаги в файл для повторного запуска
     if failed_steps:
         with open(FAILED_STEPS_FILE, "w", encoding="utf-8") as f:
             json.dump(failed_steps, f, ensure_ascii=False, indent=2)
