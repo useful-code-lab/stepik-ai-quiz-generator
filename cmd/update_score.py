@@ -30,32 +30,6 @@ def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
 
-# ==== Обновление баллов шага ====
-def patch_step_source(token: str, step_source_id: int, weight: int = 10):
-    payload = {
-        "step-sources": [
-            {
-                "id": step_source_id,
-                "weight": weight
-            }
-        ]
-    }
-
-    url = f"{STEPIC_HOST}/api/step-sources"
-    response = requests.post(
-        url,
-        headers=mk_headers(token),
-        data=json.dumps(payload),
-        timeout=30
-    )
-
-    if response.status_code == 200:
-        print(f"✅ Шаг-источник {step_source_id}: баллы обновлены на {weight}")
-        return response.json()
-    else:
-        print(f"❌ Ошибка {response.status_code}: {response.text}")
-        return None
-
 
 def options_to_html(options):
     """
@@ -172,41 +146,68 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
 
     units_and_lessons = []
 
+    # Начальный lesson_id, с которого начинать
+    start_lesson_id = 0
+
     for section_id in section_ids:
-        url = f"{STEPIC_HOST}/api/sections/{section_id}"
-        r = requests.get(url, headers=mk_headers(token), timeout=120)
-        r.raise_for_status()
-        section = r.json()["sections"][0]
-        section_title = section.get("title", "")
-
-        for unit_id in section.get("units", []):
-            url = f"{STEPIC_HOST}/api/units/{unit_id}"
+        try:
+            url = f"{STEPIC_HOST}/api/sections/{section_id}"
             r = requests.get(url, headers=mk_headers(token), timeout=120)
             r.raise_for_status()
-            unit = r.json()["units"][0]
+            section = r.json()["sections"][0]
 
-            lesson_id = unit["lesson"]
+            for unit_id in section.get("units", []):
+                lesson_id = None
+                for attempt in range(3):  # три попытки
+                    try:
+                        url = f"{STEPIC_HOST}/api/units/{unit_id}"
+                        r = requests.get(url, headers=mk_headers(token), timeout=120)
+                        r.raise_for_status()
+                        unit = r.json()["units"][0]
 
-            url = f"{STEPIC_HOST}/api/lessons/{lesson_id}"
-            r = requests.get(url, headers=mk_headers(token), timeout=120)
-            r.raise_for_status()
-            lesson = r.json()["lessons"][0]
+                        lesson_id = unit["lesson"]
 
-            step_ids = lesson["steps"]
+                        # Пропускаем, если lesson_id меньше start_lesson_id
+                        if lesson_id < start_lesson_id:
+                            break
 
-            for step_id in step_ids:
-                if lesson_id >= 1978603:
-                    update_step_source(step_id, token, new_text="Какой ответ правильный?")
+                        url = f"{STEPIC_HOST}/api/lessons/{lesson_id}"
+                        r = requests.get(url, headers=mk_headers(token), timeout=120)
+                        r.raise_for_status()
+                        lesson = r.json()["lessons"][0]
+
+                        step_ids = lesson["steps"]
+
+                        for step_id in step_ids:
+                            update_step_source(step_id, token, new_text="Какой ответ правильный?")
+
+                        # Если всё прошло успешно, выходим из цикла попыток
+                        break
+
+                    except Exception as e:
+                        print(
+                            f"Ошибка при обработке unit_id={unit_id}, lesson_id={lesson_id}, попытка {attempt + 1}: {e}")
+                        start_lesson_id = lesson_id or start_lesson_id
+                        if attempt < 2:  # если не последняя попытка
+                            print("Ждём 1 минуту перед повторной попыткой...")
+                            time.sleep(60)
+                        else:
+                            print("Превышено количество попыток. Переходим к следующему unit.")
+                            break
+
+        except Exception as e:
+            print(f"Ошибка при обработке section_id={section_id}: {e}")
+            continue
 
     return units_and_lessons
 
 
 # ==== Основной запуск ====
 if __name__ == "__main__":
-    token = get_access_token()
-    lessons = get_units_and_lessons(token, COURSE_ID)
+    course_ids = [250336, 251675, 251711, 251831, 251833, 251834, 251835, 251924, 251953, 252037, 252068, 252535, 252572, 252646, 252647, 252874, 252927, 253010, 253100, 253102, 253171, 253182, 253238, 253262, 253437, 253470, 253487, 253488, 253489, 253490, 253491, 253493, 253525, 253614, 253631, 253692, 253880, 253935, 254045, 254321, 254324, 254325, 254326, 254432, 254446, 254584, 255077, 255396, 255397, 255398, 255399, 255400, 255401, 255403, 255404, 255405, 255406, 255408, 255409, 255410, 255411, 255412,  255587, 255614]
 
-    for lesson in lessons:
-        print(f"Обновляем урок: {lesson['lesson_title']} ({lesson['steps_count']} шагов)")
-        for step_id in lesson["step_ids"]:
-            patch_step_source(token, step_id, NEW_WEIGHT)
+    token = get_access_token()
+
+    for i in course_ids:
+        lessons = get_units_and_lessons(token, i)
+
