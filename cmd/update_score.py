@@ -6,12 +6,13 @@ import time
 import requests
 from typing import Dict, Any, List
 
-COURSE_ID = 251814
+COURSE_ID = 255627
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "JiICB7TWb4c0VkfDxf6NooJaAZ1p2wDxn7puHnPs"
-CLIENT_SECRET = "mqjpR0NjckDjVG6cGxCILh18nkDHJb7D2WLWlTpqYKVoWfCDKZF53MhvlHk7YbgUi1U8L96bEPhMRepW6IiSyvs98qtn7aU7J1DW9LD9jZF0g1HZVI3rHcrphLN8Kkik"
+CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
+CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
 
 NEW_WEIGHT = 10  # баллы для всех шагов
+
 
 # ==== OAuth ====
 def get_access_token() -> str:
@@ -24,8 +25,10 @@ def get_access_token() -> str:
     resp.raise_for_status()
     return resp.json()["access_token"]
 
+
 def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+
 
 # ==== Обновление баллов шага ====
 def patch_step_source(token: str, step_source_id: int, weight: int = 10):
@@ -52,6 +55,109 @@ def patch_step_source(token: str, step_source_id: int, weight: int = 10):
     else:
         print(f"❌ Ошибка {response.status_code}: {response.text}")
         return None
+
+
+def options_to_html(options):
+    """
+    Преобразует список вариантов (JSON) в HTML-список.
+
+    options = [
+        {"is_correct": True, "text": "Рыбное карри с рисом", "feedback": ""},
+        ...
+    ]
+
+    Возвращает строку HTML.
+    """
+    html = '<ul>\n'
+    for opt in options:
+        text = opt.get("text", "")
+        if opt.get("is_correct"):
+            html += f'  <li><b>{text}</b></li>\n'
+        else:
+            html += f'  <li>{text}</li>\n'
+    html += '</ul>'
+
+    html = f' <details><summary>Показать ответ</summary>{html}</details>'
+
+    return html
+
+
+def pairs_to_html(options):
+    """
+    Преобразует список пар (JSON) в HTML-список с раскрывающимся блоком.
+
+    options = [
+        {"first": "Арамболь", "second": "Пляж для уединения и йоги"},
+        ...
+    ]
+
+    Возвращает строку HTML для Stepik.
+    """
+    html = '<ul>\n'
+    for opt in options:
+        first = opt.get("first", "")
+        second = opt.get("second", "")
+        # Составляем строку "first — second"
+        html += f'  <li><b>{first}</b> — {second}</li>\n'
+    html += '</ul>'
+
+    # Добавляем раскрывающийся блок с ответом
+    html = f'\n\n<details><summary>Показать ответ</summary>{html}</details>'
+
+    return html
+
+
+def update_step_source(step_id, token, new_text=None):
+    # 1️⃣ Получаем текущий step-source
+    src_url = f"{STEPIC_HOST}/api/step-sources/{step_id}"
+    r = requests.get(src_url, headers=mk_headers(token), timeout=30)
+    data = r.json()["step-sources"][0]
+    block = data["block"]
+    payload = None
+
+    if '<details><summary>Показать ответ</summary>' not in block["text"]:
+        html_output = None
+
+        if block["name"] == "choice":
+            options = block["source"]["options"]
+            json_string = json.dumps(options, ensure_ascii=False, indent=2)
+            html_output = options_to_html(options)
+
+        if block["name"] == "matching":
+            pairs = block["source"]["pairs"]
+            json_string = json.dumps(pairs, ensure_ascii=False, indent=2)
+            html_output = pairs_to_html(pairs)
+
+        if block["name"] == "sorting":
+            options = block["source"]["options"]
+            json_string = json.dumps(options, ensure_ascii=False, indent=2)
+            html_output = options_to_html(options)
+
+        if html_output is None:
+            return
+
+        print(f"=== Обновляем step-source {step_id} ===")
+        block["text"] = block["text"] + html_output
+        payload = {"step-source": {"block": block}}
+
+    if payload is None:
+        return
+    else:
+        data["block"] = block
+        data["cost"] = 5
+
+    payload = {"step-source": data}
+
+    # 3️⃣ Отправляем PATCH
+    patch_url = f"{STEPIC_HOST}/api/step-sources/{step_id}"
+    resp = requests.put(patch_url, headers=mk_headers(token), data=json.dumps(payload), timeout=30)
+
+    # 4️⃣ Проверка результата
+    if resp.status_code == 200:
+        print("✅ Успешно обновлено!")
+    else:
+        print(f"❌ Ошибка {resp.status_code}: {resp.text}")
+
 
 # ==== Получение уроков и шагов курса ====
 def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
@@ -85,21 +191,14 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
             r = requests.get(url, headers=mk_headers(token), timeout=30)
             r.raise_for_status()
             lesson = r.json()["lessons"][0]
-            steps = r.json().get("steps", [])
 
-            step_ids = [step["id"] for step in steps]
+            step_ids = lesson["steps"]
 
-            units_and_lessons.append({
-                "unit_id": unit_id,
-                "module_title": section_title,
-                "lesson_id": lesson_id,
-                "lesson_title": lesson.get("title", ""),
-                "lesson_description": lesson.get("description", ""),
-                "steps_count": lesson.get("steps_count", 0),
-                "step_ids": step_ids
-            })
+            for step_id in step_ids:
+                update_step_source(step_id, token, new_text="Какой ответ правильный?")
 
     return units_and_lessons
+
 
 # ==== Основной запуск ====
 if __name__ == "__main__":
