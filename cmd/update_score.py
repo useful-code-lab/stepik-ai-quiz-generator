@@ -6,7 +6,7 @@ import time
 import requests
 from typing import Dict, Any, List
 
-COURSE_ID = 255627
+COURSE_ID = 255458
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
@@ -110,7 +110,7 @@ def pairs_to_html(options):
 def update_step_source(step_id, token, new_text=None):
     # 1️⃣ Получаем текущий step-source
     src_url = f"{STEPIC_HOST}/api/step-sources/{step_id}"
-    r = requests.get(src_url, headers=mk_headers(token), timeout=30)
+    r = requests.get(src_url, headers=mk_headers(token), timeout=120)
     data = r.json()["step-sources"][0]
     block = data["block"]
     payload = None
@@ -150,7 +150,7 @@ def update_step_source(step_id, token, new_text=None):
 
     # 3️⃣ Отправляем PATCH
     patch_url = f"{STEPIC_HOST}/api/step-sources/{step_id}"
-    resp = requests.put(patch_url, headers=mk_headers(token), data=json.dumps(payload), timeout=30)
+    resp = requests.put(patch_url, headers=mk_headers(token), data=json.dumps(payload), timeout=120)
 
     # 4️⃣ Проверка результата
     if resp.status_code == 200:
@@ -162,7 +162,7 @@ def update_step_source(step_id, token, new_text=None):
 # ==== Получение уроков и шагов курса ====
 def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
     url = f"{STEPIC_HOST}/api/courses/{course_id}"
-    r = requests.get(url, headers=mk_headers(token), timeout=30)
+    r = requests.get(url, headers=mk_headers(token), timeout=120)
     r.raise_for_status()
     course = r.json()["courses"][0]
 
@@ -174,28 +174,29 @@ def get_units_and_lessons(token: str, course_id: int) -> List[Dict[str, Any]]:
 
     for section_id in section_ids:
         url = f"{STEPIC_HOST}/api/sections/{section_id}"
-        r = requests.get(url, headers=mk_headers(token), timeout=30)
+        r = requests.get(url, headers=mk_headers(token), timeout=120)
         r.raise_for_status()
         section = r.json()["sections"][0]
         section_title = section.get("title", "")
 
         for unit_id in section.get("units", []):
             url = f"{STEPIC_HOST}/api/units/{unit_id}"
-            r = requests.get(url, headers=mk_headers(token), timeout=30)
+            r = requests.get(url, headers=mk_headers(token), timeout=120)
             r.raise_for_status()
             unit = r.json()["units"][0]
 
             lesson_id = unit["lesson"]
 
             url = f"{STEPIC_HOST}/api/lessons/{lesson_id}"
-            r = requests.get(url, headers=mk_headers(token), timeout=30)
+            r = requests.get(url, headers=mk_headers(token), timeout=120)
             r.raise_for_status()
             lesson = r.json()["lessons"][0]
 
             step_ids = lesson["steps"]
 
             for step_id in step_ids:
-                update_step_source(step_id, token, new_text="Какой ответ правильный?")
+                if lesson_id >= 1978603:
+                    update_step_source(step_id, token, new_text="Какой ответ правильный?")
 
     return units_and_lessons
 
