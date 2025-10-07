@@ -1,0 +1,105 @@
+import json
+import requests
+import sys
+import time
+
+# === НАСТРОЙКИ ===
+STEPIC_CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
+STEPIC_CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
+COURSE_ID = 256069  # <-- ID существующего курса на Stepik
+JSON_FILE = "course.json"
+API_BASE = "https://stepik.org/api"
+
+
+# === АВТОРИЗАЦИЯ ===
+def get_token(client_id, client_secret):
+    resp = requests.post(
+        "https://stepik.org/oauth2/token/",
+        data={
+            "grant_type": "client_credentials",
+            "client_id": client_id,
+            "client_secret": client_secret
+        }
+    )
+    resp.raise_for_status()
+    return resp.json()["access_token"]
+
+
+# === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+def stepik_post(endpoint, data, token, retries=3):
+    headers = {"Authorization": f"Bearer {token}"}
+    for attempt in range(retries):
+        resp = requests.post(f"{API_BASE}/{endpoint}", json=data, headers=headers)
+        if resp.ok:
+            return resp.json()
+        else:
+            print(f"⚠️ Ошибка при POST {endpoint}: {resp.status_code} {resp.text}")
+            time.sleep(3)
+    resp.raise_for_status()
+
+
+# === СОЗДАНИЕ МОДУЛЯ ===
+def create_module(course_id, module_data, token):
+    payload = {
+        "section": {
+            "course": course_id,
+            "title": module_data["title"],
+            "description": module_data.get("description", ""),
+            "position": 1  # требуется Stepik API
+        }
+    }
+    resp = stepik_post("sections", payload, token)
+    return resp["sections"][0]["id"]
+
+
+# === СОЗДАНИЕ УРОКА И ПРИВЯЗКА К МОДУЛЮ ===
+def create_lesson(section_id, lesson_title, token, position):
+    # создаем урок
+    payload = {
+        "lesson": {
+            "title": lesson_title,
+            "is_public": False
+        }
+    }
+    resp = stepik_post("lessons", payload, token)
+    lesson_id = resp["lessons"][0]["id"]
+
+    # создаем unit (привязка к секции)
+    unit_data = {
+        "unit": {
+            "section": section_id,
+            "lesson": lesson_id,
+            "position": position
+        }
+    }
+    stepik_post("units", unit_data, token)
+    return lesson_id
+
+
+# === ОСНОВНОЙ СЦЕНАРИЙ ===
+def main():
+    with open(JSON_FILE, "r", encoding="utf-8") as f:
+        modules = json.load(f)
+
+    token = get_token(STEPIC_CLIENT_ID, STEPIC_CLIENT_SECRET)
+    print("✅ Авторизация успешна!")
+
+    print(f"📘 Добавляем модули и уроки в курс ID={COURSE_ID}")
+
+    for module_index, module in enumerate(modules, start=1):
+        section_id = create_module(COURSE_ID, module, token)
+        print(f"  📂 Модуль {module_index} создан: {module['title']} (ID={section_id})")
+
+        for pos, lesson_title in enumerate(module.get("lessons", []), start=1):
+            lesson_id = create_lesson(section_id, lesson_title, token, pos)
+            print(f"     🧩 Урок {pos}: {lesson_title} (ID={lesson_id})")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 2:
+        COURSE_ID = int(sys.argv[1])
+        JSON_FILE = sys.argv[2]
+    elif len(sys.argv) > 1:
+        JSON_FILE = sys.argv[1]
+
+    main()
