@@ -15,7 +15,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 
 # ==== Настройки ====
 TEMPLATE = "prompt_template_html.txt"
-COURSE_ID = 255500
+COURSE_ID = 256069
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
@@ -363,7 +363,7 @@ def save_lesson_text():
     global current_steps
 
     steps = get_steps(token, int(lesson_id))
-    current_steps = len(steps) if steps[0]["block"]["name"] == "text" else len(steps) + 1
+    current_steps = len(steps) if len(steps) != 0 and steps[0]["block"]["name"] == "text" else len(steps) + 1
 
     if not lesson_id or not text:
         return jsonify({"success": False, "error": "Нет lesson_id или текста"}), 400
