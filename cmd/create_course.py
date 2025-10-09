@@ -6,7 +6,7 @@ import time
 # === НАСТРОЙКИ ===
 STEPIC_CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 STEPIC_CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
-COURSE_ID = 256069  # <-- ID существующего курса на Stepik
+COURSE_ID = 256313  # <-- ID курса на Stepik
 JSON_FILE = "course.json"
 API_BASE = "https://stepik.org/api"
 
@@ -25,7 +25,7 @@ def get_token(client_id, client_secret):
     return resp.json()["access_token"]
 
 
-# === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+# === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ POST ===
 def stepik_post(endpoint, data, token, retries=3):
     headers = {"Authorization": f"Bearer {token}"}
     for attempt in range(retries):
@@ -38,23 +38,23 @@ def stepik_post(endpoint, data, token, retries=3):
     resp.raise_for_status()
 
 
-# === СОЗДАНИЕ МОДУЛЯ ===
-def create_module(course_id, module_data, token):
+# === СОЗДАНИЕ МОДУЛЯ (С УЧЁТОМ ПОРЯДКА) ===
+def create_module(course_id, module_data, token, position):
     payload = {
         "section": {
             "course": course_id,
             "title": module_data["title"],
             "description": module_data.get("description", ""),
-            "position": 1  # требуется Stepik API
+            "position": position
         }
     }
     resp = stepik_post("sections", payload, token)
     return resp["sections"][0]["id"]
 
 
-# === СОЗДАНИЕ УРОКА И ПРИВЯЗКА К МОДУЛЮ ===
+# === СОЗДАНИЕ УРОКА (С УЧЁТОМ ПОРЯДКА) ===
 def create_lesson(section_id, lesson_title, token, position):
-    # создаем урок
+    # создаём урок
     payload = {
         "lesson": {
             "title": lesson_title,
@@ -64,7 +64,7 @@ def create_lesson(section_id, lesson_title, token, position):
     resp = stepik_post("lessons", payload, token)
     lesson_id = resp["lessons"][0]["id"]
 
-    # создаем unit (привязка к секции)
+    # создаём unit (привязка к секции)
     unit_data = {
         "unit": {
             "section": section_id,
@@ -87,12 +87,14 @@ def main():
     print(f"📘 Добавляем модули и уроки в курс ID={COURSE_ID}")
 
     for module_index, module in enumerate(modules, start=1):
-        section_id = create_module(COURSE_ID, module, token)
-        print(f"  📂 Модуль {module_index} создан: {module['title']} (ID={section_id})")
+        section_id = create_module(COURSE_ID, module, token, module_index)
+        print(f"📂 Модуль {module_index} создан: {module['title']} (ID={section_id})")
 
-        for pos, lesson_title in enumerate(module.get("lessons", []), start=1):
-            lesson_id = create_lesson(section_id, lesson_title, token, pos)
-            print(f"     🧩 Урок {pos}: {lesson_title} (ID={lesson_id})")
+        for lesson_index, lesson_title in enumerate(module.get("lessons", []), start=1):
+            lesson_id = create_lesson(section_id, lesson_title, token, lesson_index)
+            print(f"   🧩 Урок {lesson_index}: {lesson_title} (ID={lesson_id})")
+
+    print("✅ Все модули и уроки успешно созданы по порядку!")
 
 
 if __name__ == "__main__":

@@ -14,8 +14,8 @@ import requests
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 # ==== Настройки ====
-TEMPLATE = "prompt_template_html.txt"
-COURSE_ID = 256069
+TEMPLATE = "prompt_template_olamahtml.txt"
+COURSE_ID = 256313
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
@@ -158,12 +158,24 @@ def extract_json_blocks(text: str):
 
     # 1. Попытка найти все блоки {"block": ...} с помощью регулярки
     # Берем '{' + любые символы + '"block"' + любые символы + '}' с жадным захватом до закрывающей скобки
-    pattern = r'(\{"block":.*?Z"\})'
+    pattern = r'(\{"block":.*?\}\]\}\})'
     matches = re.findall(pattern, text, flags=re.DOTALL)
+    fixed_matches = []
 
-    if matches:
+    for m in matches:
+        # Проверяем, сколько открывающих/закрывающих фигурных скобок
+        open_braces = m.count('{')
+        close_braces = m.count('}')
+
+        # Если не хватает закрывающих скобок, добавляем их
+        if close_braces < open_braces:
+            m += '}' * (open_braces - close_braces)
+
+        fixed_matches.append(m)
+
+    if fixed_matches:
         # Собираем все найденные блоки в массив JSON
-        json_array_str = '[' + ','.join(matches) + ']'
+        json_array_str = '[' + ','.join(fixed_matches) + ']'
         try:
             return json.loads(json_array_str)
         except json.JSONDecodeError as e:
@@ -173,6 +185,14 @@ def extract_json_blocks(text: str):
     lines = text.splitlines()
     for line in lines:
         line = line.strip()
+
+        # Проверяем количество открывающих и закрывающих фигурных скобок
+        open_braces = line.count('{')
+        close_braces = line.count('}')
+
+        if close_braces < open_braces:
+            line += '}' * (open_braces - close_braces)
+
         if not line:
             continue
         try:

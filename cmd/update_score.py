@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import asyncio
+import html
+import re
+
 import aiohttp
 import requests
 import json
@@ -9,7 +12,7 @@ import time
 from typing import Dict, Any, List
 
 COURSE_IDS = [
-    255500
+    256212
 ]
 
 STEPIC_HOST = "https://stepik.org"
@@ -58,6 +61,43 @@ async def get_access_token(session: aiohttp.ClientSession) -> str:
 def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
+
+def clean_html_artifacts(text: str) -> str:
+    """
+    Очищает текст от HTML-артефактов и некорректных последовательностей Stepik.
+    Делает HTML чистым и пригодным для отображения.
+    """
+    if not text:
+        return text
+
+    # 1️⃣ Раскодировать HTML сущности (&lt;, &gt;, &amp;, и т.п.)
+    text = html.unescape(text)
+
+    # 2️⃣ Исправить странные вложенные конструкции типа </<li> или <<li>>
+    text = re.sub(r"</<", "</", text)
+    text = re.sub(r"<<", "<", text)
+    text = re.sub(r">>", ">", text)
+
+    # 3️⃣ Удалить лишние теги, оставшиеся от старого HTML
+    text = re.sub(r"<li>\s*</li>", "", text)
+    text = re.sub(r"<p>\s*</p>", "", text)
+    text = re.sub(r"<br\s*/?>\s*(<br\s*/?>\s*)+", "<br>", text)  # множественные <br>
+    text = re.sub(r"<p>\s*<p>", "<p>", text)  # двойные <p>
+    text = re.sub(r"</p>\s*</p>", "</p>", text)  # двойные </p>
+    text = re.sub(r"<li>\s*<li>", "<li>", text)  # двойные <li>
+
+    # 4️⃣ Удалить пустые <ul>, <ol>, <div>, если встречаются
+    text = re.sub(r"<(ul|ol|div)>\s*</\1>", "", text)
+
+    # 5️⃣ Удалить лишние пробелы и невидимые символы
+    text = re.sub(r"\s{2,}", " ", text)
+    text = text.strip()
+
+    # 6️⃣ Привести <br> и <hr> к XHTML-формату
+    text = re.sub(r"<br>", "<br/>", text)
+    text = re.sub(r"<hr>", "<hr/>", text)
+
+    return text
 
 async def update_step_source(session: aiohttp.ClientSession, step_id: int, token: str, semaphore: asyncio.Semaphore, failed_steps: List[int]):
     headers = mk_headers(token)
