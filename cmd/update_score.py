@@ -12,7 +12,7 @@ import time
 from typing import Dict, Any, List
 
 COURSE_IDS = [
-    256212
+    256313
 ]
 
 STEPIC_HOST = "https://stepik.org"
