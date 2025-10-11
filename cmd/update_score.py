@@ -48,10 +48,10 @@ def pairs_to_html(options):
 # ==== Асинхронные HTTP функции ====
 async def get_access_token(session: aiohttp.ClientSession) -> str:
     async with session.post(
-        f"{STEPIC_HOST}/oauth2/token/",
-        data={"grant_type": "client_credentials"},
-        auth=aiohttp.BasicAuth(CLIENT_ID, CLIENT_SECRET),
-        timeout=30
+            f"{STEPIC_HOST}/oauth2/token/",
+            data={"grant_type": "client_credentials"},
+            auth=aiohttp.BasicAuth(CLIENT_ID, CLIENT_SECRET),
+            timeout=30
     ) as resp:
         resp.raise_for_status()
         data = await resp.json()
@@ -62,7 +62,8 @@ def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
 
-async def update_step_source(session: aiohttp.ClientSession, step_id: int, token: str, semaphore: asyncio.Semaphore, failed_steps: List[int]):
+async def update_step_source(session: aiohttp.ClientSession, step_id: int, token: str, semaphore: asyncio.Semaphore,
+                             failed_steps: List[int]):
     headers = mk_headers(token)
 
     async with semaphore:
@@ -74,61 +75,58 @@ async def update_step_source(session: aiohttp.ClientSession, step_id: int, token
 
                 block = data["block"]
                 update = False
+                html_output = None
 
                 if '<details><summary>Показать ответ</summary>' not in block["text"]:
-                    html_output = None
+                    if block["name"] == "choice":
+                        options = block["source"]["options"]
+                        html_output = options_to_html(options)
 
-                    if '<details><summary>Показать ответ</summary>' not in block["text"]:
-                        if block["name"] == "choice":
-                            options = block["source"]["options"]
-                            html_output = options_to_html(options)
+                    elif block["name"] == "matching":
+                        pairs = block["source"]["pairs"]
+                        html_output = pairs_to_html(pairs)
 
-                        elif block["name"] == "matching":
-                            pairs = block["source"]["pairs"]
-                            html_output = pairs_to_html(pairs)
+                    elif block["name"] == "sorting":
+                        options = block["source"]["options"]
+                        html_output = options_to_html(options)
 
-                        elif block["name"] == "sorting":
-                            options = block["source"]["options"]
-                            html_output = options_to_html(options)
-
-                        if html_output is not None:
-                            update = True
-
-
-                    # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
-                    if '<p>&nbsp;</p>' in block["text"]:
-                        block["text"] = block["text"].replace('<p>&nbsp;</p>', '')
+                    if html_output is not None:
                         update = True
 
-                    # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
-                    if '&lt;/&lt;li&gt;' in block["text"]:
-                        block["text"] = block["text"].replace('&lt;/&lt;li&gt;', '')
-                        update = True
+                    # Удаляем экранированное <p>&nbsp;</p>
+                if '<p></p>' in block["text"]:
+                    block["text"] = block["text"].replace('<p></p>', '')
+                    update = True
 
-                    if html_output is None:
-                        html_output = ""
+                # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
+                if '&lt;/&lt;li&gt;' in block["text"]:
+                    block["text"] = block["text"].replace('&lt;/&lt;li&gt;', '')
+                    update = True
 
-                    if not update:
-                        return
+                if html_output is None:
+                    html_output = ""
 
-                    block["text"] += html_output
-                    data["block"] = block
-                    data["cost"] = 5
-                    payload = {"step-source": data}
+                if not update:
+                    return
 
-                    async with session.put(
+                block["text"] += html_output
+                data["block"] = block
+                data["cost"] = 5
+                payload = {"step-source": data}
+
+                async with session.put(
                         f"{STEPIC_HOST}/api/step-sources/{step_id}",
                         headers=headers,
                         data=json.dumps(payload),
                         timeout=120
-                    ) as r:
-                        if r.status == 200:
-                            print(f"✅ Step {step_id} обновлён")
-                            return
-                        else:
-                            print(f"❌ Step {step_id}: ошибка {r.status}, {await r.text()}")
+                ) as r:
+                    if r.status == 200:
+                        print(f"✅ Step {step_id} обновлён")
+                        return
+                    else:
+                        print(f"❌ Step {step_id}: ошибка {r.status}, {await r.text()}")
 
-                return
+                        return
 
             except Exception as e:
                 print(f"Ошибка step_id={step_id}, попытка {attempt + 1}: {e}")
@@ -184,7 +182,8 @@ def get_units_and_steps(token: str, course_id: int) -> List[int]:
 
 
 # ==== Основной запуск ====
-async def process_course(session: aiohttp.ClientSession, token: str, course_id: int, semaphore: asyncio.Semaphore, failed_steps: List[int]):
+async def process_course(session: aiohttp.ClientSession, token: str, course_id: int, semaphore: asyncio.Semaphore,
+                         failed_steps: List[int]):
     step_ids = get_units_and_steps(token, course_id)  # теперь синхронно
     tasks = [update_step_source(session, step_id, token, semaphore, failed_steps) for step_id in step_ids]
     await asyncio.gather(*tasks)
