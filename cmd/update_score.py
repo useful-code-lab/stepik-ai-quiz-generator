@@ -94,12 +94,18 @@ async def update_step_source(session: aiohttp.ClientSession, step_id: int, token
                         if html_output is not None:
                             update = True
 
-                    if '<p>&nbsp;</p>' in block["text"] or '&lt;/&lt;li&gt;' in block["text"]:
-                        block["text"] = re.sub(r'<p>&nbsp;</p>', '', block["text"])
-                        block["text"] = re.sub(r'&lt;/&lt;li&gt;', '', block["text"])
+                    # Проверяем и удаляем <p>&nbsp;</p> с любыми пробелами/переносами внутри
+                    if re.search(r'<p>\s*&nbsp;\s*</p>', block["text"]):
+                        block["text"] = re.sub(r'<p>\s*&nbsp;\s*</p>', '', block["text"])
                         update = True
-                        if html_output is None:
-                            html_output = ""
+
+                    # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
+                    if '&lt;/&lt;li&gt;' in block["text"]:
+                        block["text"] = block["text"].replace('&lt;/&lt;li&gt;', '')
+                        update = True
+
+                    if html_output is None:
+                        html_output = ""
 
                     if not update:
                         return
