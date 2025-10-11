@@ -14,8 +14,8 @@ import requests
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 # ==== Настройки ====
-TEMPLATE = "prompt_template_olamahtml.txt"
-COURSE_ID = 256518
+TEMPLATE = "prompt_template_puteshestvie.txt"
+COURSE_ID = 256638
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
