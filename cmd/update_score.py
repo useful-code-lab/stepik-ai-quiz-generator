@@ -94,9 +94,10 @@ async def update_step_source(session: aiohttp.ClientSession, step_id: int, token
                         if html_output is not None:
                             update = True
 
-                    # Проверяем и удаляем <p>&nbsp;</p> с любыми пробелами/переносами внутри
-                    if re.search(r'<p>\s*&nbsp;\s*</p>', block["text"]):
-                        block["text"] = re.sub(r'<p>\s*&nbsp;\s*</p>', '', block["text"])
+
+                    # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
+                    if '<p>&nbsp;</p>' in block["text"]:
+                        block["text"] = block["text"].replace('<p>&nbsp;</p>', '')
                         update = True
 
                     # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
