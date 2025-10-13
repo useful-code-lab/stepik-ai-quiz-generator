@@ -1,0 +1,65 @@
+{
+  "id": 1897609,
+  "steps": [
+    7866577
+  ],
+  "actions": {
+    "learn_lesson": "#",
+    "assist_lesson": "#",
+    "view_all_submissions": "#",
+    "edit_lesson": "#",
+    "view_statistics": "#",
+    "attachments": "/lesson/1897609/attachments/",
+    "clone_lesson": "/lesson/1897609/clone/",
+    "admin_lesson": "#",
+    "edit_permissions": "/lesson/1897609/permissions/",
+    "delete_lesson": "#"
+  },
+  "progress": "76-1897609",
+  "subscriptions": [
+    "31-76-1897609",
+    "30-76-1897609"
+  ],
+  "viewed_by": 2,
+  "passed_by": 2,
+  "time_to_complete": null,
+  "cover_url": null,
+  "is_comments_enabled": true,
+  "is_exam_without_progress": false,
+  "is_blank": false,
+  "is_draft": false,
+  "is_orphaned": false,
+  "courses": [
+    250336
+  ],
+  "units": [
+    1923501
+  ],
+  "owner": 1112069146,
+  "language": "ru",
+  "is_featured": false,
+  "is_public": false,
+  "canonical_url": "https://stepik.org/lesson/1897609/",
+  "title": "Почему IP-адрес не бывает больше 255",
+  "slug": "Почему-IP-адрес-не-бывает-больше-255-1897609",
+  "create_date": "2025-08-08T18:36:25Z",
+  "update_date": "2025-08-12T07:09:01Z",
+  "learners_group": 12549056,
+  "testers_group": 12549057,
+  "moderators_group": 12549058,
+  "assistants_group": 12549059,
+  "teachers_group": 12549054,
+  "admins_group": 12549055,
+  "discussions_count": 0,
+  "discussion_proxy": "76-1897609-1",
+  "discussion_threads": [
+    "76-1897609-1"
+  ],
+  "epic_count": 0,
+  "abuse_count": 0,
+  "vote_delta": 0,
+  "vote": null,
+  "lti_consumer_key": "",
+  "lti_secret_key": "",
+  "lti_private_profile": false
+}

@@ -1,0 +1,81 @@
+{
+  "id": 8148695,
+  "lesson": 1897534,
+  "position": 6,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 5</h3>\n\n<p>Ты получил IP 192.168.0.1/26. Сопоставь, что из этого относится к данной подсети.</p>\n\n<p><em>Подсказка:</em> /26 означает, что маска — 255.255.255.192, хостов — 62.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>Адрес сети</b> — 192.168.0.0</li>\n  <li><b>Broadcast-адрес</b> — 192.168.0.63</li>\n  <li><b>Минимальный IP хоста</b> — 192.168.0.1</li>\n  <li><b>Максимальный IP хоста</b> — 192.168.0.62</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "Адрес сети",
+          "second": "192.168.0.0"
+        },
+        {
+          "first": "Broadcast-адрес",
+          "second": "192.168.0.63"
+        },
+        {
+          "first": "Минимальный IP хоста",
+          "second": "192.168.0.1"
+        },
+        {
+          "first": "Максимальный IP хоста",
+          "second": "192.168.0.62"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148695",
+  "subscriptions": [
+    "31-77-8148695",
+    "30-77-8148695"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:50:20Z",
+  "update_date": "2025-10-06T08:57:32Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148695-1",
+  "discussion_threads": [
+    "77-8148695-1",
+    "77-8148695-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

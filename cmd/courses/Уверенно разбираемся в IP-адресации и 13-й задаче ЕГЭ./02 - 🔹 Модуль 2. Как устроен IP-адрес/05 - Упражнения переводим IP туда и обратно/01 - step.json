@@ -1,0 +1,57 @@
+{
+  "id": 7866387,
+  "lesson": 1897539,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 5. ✏️ Упражнения: переведи IP-адреса в двоичную систему и обратно</h2>\n\n<blockquote>\n<p>💬 <strong>«Ты уже умеешь! Осталось потренироваться — и навык станет автоматическим.»</strong></p>\n</blockquote>\n\n<h3>🎯 Задания: переведи IP туда и обратно</h3>\n\n<h4>🔹 Задание 1. Переведи IP-адрес в двоичную систему</h4>\n\n<p><strong>IP:</strong> <code>10.0.0.1</code><br>\n✏️ Напиши каждый октет в двоичной форме:</p>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Октет</th>\n\t\t\t<th>Десятичный</th>\n\t\t\t<th>Двоичный</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>10</td>\n\t\t\t<td><code>00001010</code></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>0</td>\n\t\t\t<td><code>00000000</code></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>0</td>\n\t\t\t<td><code>00000000</code></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>1</td>\n\t\t\t<td><code>00000001</code></td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<p>✅ Ответ: <code>00001010.00000000.00000000.00000001</code></p>\n\n<h4>🔹 Задание 2. Переведи из двоичной системы в IP-адрес</h4>\n\n<p><strong>Биты:</strong><br>\n<code>11000000.10101000.00000001.00000001</code><br>\n✏️ Преобразуй каждый октет:</p>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Октет</th>\n\t\t\t<th>Двоичный</th>\n\t\t\t<th>Десятичный</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>11000000</td>\n\t\t\t<td>192</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>10101000</td>\n\t\t\t<td>168</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>00000001</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>00000001</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<p>✅ Ответ: <code>192.168.1.1</code></p>\n\n<h4>🔹 Задание 3. Найди ошибку в IP-адресе</h4>\n\n<p><strong>IP:</strong> <code>192.168.256.0</code><br>\n✏️ Проверь каждый октет. Что не так?</p>\n\n<p>👉 <strong>Ошибка:</strong> третий октет — <code>256</code> — недопустим (максимум — <code>255</code>).</p>\n\n<p>✅ Верный IP может быть, например, <code>192.168.255.0</code>.</p>\n\n<h4>🔹 Задание 4. Подчеркни октет, равный 128</h4>\n\n<p><strong>IP:</strong> <code>128.10.0.1</code><br>\n✏️ Ответ: первый октет (<code>128</code>) ← <strong>он равен 2⁷</strong></p>\n\n<h4>🔹 Задание 5. Запиши IP из битов в привычной форме</h4>\n\n<p><strong>Биты:</strong><br>\n<code>10000000.00000001.00000001.00000001</code><br>\n✏️ Переведи:</p>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Октет</th>\n\t\t\t<th>Биты</th>\n\t\t\t<th>Десятичный</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>10000000</td>\n\t\t\t<td>128</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>00000001</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>00000001</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>00000001</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<p>✅ Ответ: <code>128.1.1.1</code></p>\n\n<h3>📘 Дополнительно: Таблица степеней двойки</h3>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Степень</th>\n\t\t\t<th>Значение</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>2⁷</td>\n\t\t\t<td>128</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2⁶</td>\n\t\t\t<td>64</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2⁵</td>\n\t\t\t<td>32</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2⁴</td>\n\t\t\t<td>16</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2³</td>\n\t\t\t<td>8</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2²</td>\n\t\t\t<td>4</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2¹</td>\n\t\t\t<td>2</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2⁰</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<h3>💬 Мотивация</h3>\n\n<blockquote>\n<p><strong>«Если ты справился с этими заданиями — поздравляю! Ты уже мыслишь как сетевой техник!»</strong></p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866387",
+  "subscriptions": [
+    "31-77-7866387",
+    "30-77-7866387"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 3,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:17:23Z",
+  "update_date": "2025-08-08T18:28:21Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866387-1",
+  "discussion_threads": [
+    "77-7866387-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

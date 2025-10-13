@@ -1,0 +1,57 @@
+{
+  "id": 7866385,
+  "lesson": 1897537,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 3. Что такое биты и байты?</h2>\n\n<h3>(Объяснение на примерах)</h3>\n\n<blockquote>\n<p>💬 <strong>«Если ты освоишь 8 бит — ты раскроешь код любого IP!»</strong></p>\n</blockquote>\n\n<h3>🧱 1 байт = 8 бит</h3>\n\n<p><strong>Бит</strong> — это минимальная единица информации: <strong>0 или 1</strong><br>\n<strong>Байт</strong> — это <strong>8 бит</strong>, т.е. последовательность из восьми нулей и единиц</p>\n\n<p>Пример байта:</p>\n\n<p><code>11000000 </code></p>\n\n<h3>🔍 Как из битов получить число?</h3>\n\n<p>Каждый бит — это степень двойки:</p>\n\n<p><img alt=\"\" height=\"70\" name=\"image.png\" src=\"https://ucarecdn.com/b36fe289-ed78-4d5f-9cc2-d5be40fdc8ce/\" width=\"379\"></p>\n\n<p>Суммируем только те степени, где стоят <strong>1</strong>:</p>\n\n<p><img alt=\"\" height=\"26\" name=\"image.png\" src=\"https://ucarecdn.com/a5fe673b-90d5-4cfd-9547-4284afc252e9/\" width=\"400\"></p>\n\n<p>👉 <strong>11000000</strong> = <strong>192</strong></p>\n\n<h3>📊 Таблица степеней двойки (на 1 байт)</h3>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>&nbsp; Битовая позиция&nbsp;&nbsp;</th>\n\t\t\t<th>&nbsp; Степень двойки&nbsp;&nbsp;</th>\n\t\t\t<th>&nbsp; Значение&nbsp;&nbsp;</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>7</td>\n\t\t\t<td>2⁷</td>\n\t\t\t<td>128</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>6</td>\n\t\t\t<td>2⁶</td>\n\t\t\t<td>64</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>5</td>\n\t\t\t<td>2⁵</td>\n\t\t\t<td>32</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>2⁴</td>\n\t\t\t<td>16</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>2³</td>\n\t\t\t<td>8</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>2²</td>\n\t\t\t<td>4</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>2¹</td>\n\t\t\t<td>2</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>0</td>\n\t\t\t<td>2⁰</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<h3>🧠 Почему это важно?</h3>\n\n<p>Вся <strong>IP-арифметика и задача №13</strong> основаны на двоичной системе:</p>\n\n<ul>\n\t<li>\n\t<p>IP-адрес — это <strong>4 байта</strong> (32 бита)</p>\n\t</li>\n\t<li>\n\t<p>Маска подсети — тоже 32 бита</p>\n\t</li>\n\t<li>\n\t<p>Операции AND работают <strong>побитово</strong></p>\n\t</li>\n\t<li>\n\t<p>Мы считаем <strong>количество хостов</strong>, зная, сколько нулей в маске</p>\n\t</li>\n\t<li>\n\t<p>Мы <strong>определяем принадлежность IP к сети</strong>, сравнивая биты</p>\n\t</li>\n</ul>\n\n<p>📌 Чтобы уверенно решать задачи — <strong>нужно уметь переводить между битами и числами</strong></p>\n\n<h3>🧩 Пример: угадай число по битам</h3>\n\n<p><code>Биты: 10101000 </code></p>\n\n<p><code>Степени: 128 + 32 + 8 = ? </code></p>\n\n<p>✅ Ответ: <strong>168</strong><br>\n(Такой октет часто встречается в IP-адресах: <code>192.168.x.x</code>)</p>\n\n<h3>✅ Вывод</h3>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Понятие</th>\n\t\t\t<th>Значение</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td><strong>Бит</strong></td>\n\t\t\t<td>0 или 1</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><strong>Байт</strong></td>\n\t\t\t<td>8 бит</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><strong>Октет</strong></td>\n\t\t\t<td>То же, что байт в IP</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><strong>Максимум в байте</strong></td>\n\t\t\t<td><code>11111111</code> = 255</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><strong>Минимум в байте</strong></td>\n\t\t\t<td><code>00000000</code> = 0</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<h3>💬 Запомни:</h3>\n\n<blockquote>\n<p><strong>Освоив 8 бит — ты сможешь читать любой IP-адрес,<br>\nвычислять адрес сети и решать задачу 13 как профи.</strong></p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866385",
+  "subscriptions": [
+    "31-77-7866385",
+    "30-77-7866385"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:17:20Z",
+  "update_date": "2025-08-08T18:21:31Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866385-1",
+  "discussion_threads": [
+    "77-7866385-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

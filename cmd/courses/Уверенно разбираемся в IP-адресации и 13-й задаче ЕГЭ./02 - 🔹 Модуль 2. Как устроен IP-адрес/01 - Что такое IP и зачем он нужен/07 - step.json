@@ -1,0 +1,81 @@
+{
+  "id": 8148732,
+  "lesson": 1897536,
+  "position": 7,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 7</h3>\n\n<p>Тимлид Костя учит новых джунов. Разложи IP по их назначению.</p>\n\n<p><em>Подсказка:</em> Вспомни, какие адреса нужны для самопроверки, какие — для маршрутизации, какие — для пользователей.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>127.0.0.1</b> — Локальный (Loopback)</li>\n  <li><b>0.0.0.0</b> — Универсальный (маршруты по умолчанию)</li>\n  <li><b>255.255.255.255</b> — Broadcast-адрес</li>\n  <li><b>192.0.2.1</b> — Документационный IP</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "127.0.0.1",
+          "second": "Локальный (Loopback)"
+        },
+        {
+          "first": "0.0.0.0",
+          "second": "Универсальный (маршруты по умолчанию)"
+        },
+        {
+          "first": "255.255.255.255",
+          "second": "Broadcast-адрес"
+        },
+        {
+          "first": "192.0.2.1",
+          "second": "Документационный IP"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148732",
+  "subscriptions": [
+    "31-77-8148732",
+    "30-77-8148732"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 0.5,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:55:27Z",
+  "update_date": "2025-10-06T08:57:51Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148732-1",
+  "discussion_threads": [
+    "77-8148732-1",
+    "77-8148732-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

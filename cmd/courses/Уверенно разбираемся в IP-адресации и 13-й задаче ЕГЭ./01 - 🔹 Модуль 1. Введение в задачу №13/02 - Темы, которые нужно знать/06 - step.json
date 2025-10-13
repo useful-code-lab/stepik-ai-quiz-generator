@@ -1,0 +1,81 @@
+{
+  "id": 8148682,
+  "lesson": 1897532,
+  "position": 6,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 5</h3>\n\n<p>Тимлид просит тебя помочь новичку: «Сопоставь сетевые термины с их описанием».</p>\n\n<p><em>Подсказка:</em> Вспомни, что делает каждый элемент IP-сети.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>IP-адрес</b> — Уникальный адрес устройства в сети.</li>\n  <li><b>Маска подсети</b> — Указывает, какая часть IP — это сеть.</li>\n  <li><b>Маршрутизатор</b> — Устройство, передающее пакеты между сетями.</li>\n  <li><b>DNS</b> — Служба преобразования имён в IP-адреса.</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "IP-адрес",
+          "second": "Уникальный адрес устройства в сети."
+        },
+        {
+          "first": "Маска подсети",
+          "second": "Указывает, какая часть IP — это сеть."
+        },
+        {
+          "first": "Маршрутизатор",
+          "second": "Устройство, передающее пакеты между сетями."
+        },
+        {
+          "first": "DNS",
+          "second": "Служба преобразования имён в IP-адреса."
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148682",
+  "subscriptions": [
+    "31-77-8148682",
+    "30-77-8148682"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:47:29Z",
+  "update_date": "2025-10-06T08:56:17Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148682-1",
+  "discussion_threads": [
+    "77-8148682-1",
+    "77-8148682-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

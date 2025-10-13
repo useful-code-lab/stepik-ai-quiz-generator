@@ -1,0 +1,57 @@
+{
+  "id": 7866389,
+  "lesson": 1897541,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 1. Что такое маска подсети и зачем она нужна?</h2>\n\n<blockquote>\n<p><strong>Цель:</strong><br>\nПонять, что такое маска подсети, зачем она нужна, и как она помогает определить, где сеть, а где устройство (хост).</p>\n</blockquote>\n\n<h3>📌 Простое определение</h3>\n\n<p><strong>Маска подсети</strong> — это набор битов (единиц и нулей), который <strong>отделяет часть IP-адреса, отвечающую за сеть, от части, отвечающей за конкретное устройство</strong>.</p>\n\n<p>Без маски невозможно понять:</p>\n\n<ul>\n\t<li>\n\t<p>входят ли два IP-адреса в одну и ту же сеть;</p>\n\t</li>\n\t<li>\n\t<p>где заканчивается сеть и начинаются хосты.</p>\n\t</li>\n</ul>\n\n<h3>🧠 Зачем нужна маска?</h3>\n\n<p>IP-адрес сам по себе — просто число.<br>\n<strong>Маска придаёт ему структуру.</strong></p>\n\n<p>Она определяет:</p>\n\n<ul>\n\t<li>\n\t<p>какие биты относятся к <strong>адресу сети</strong>;</p>\n\t</li>\n\t<li>\n\t<p>какие — к <strong>номеру устройства (хоста)</strong>.</p>\n\t</li>\n</ul>\n\n<h3>🔍 Пример:</h3>\n\n<p>Допустим:</p>\n\n<ul>\n\t<li>\n\t<p><strong>IP-адрес</strong>: <code>192.168.1.10</code></p>\n\t</li>\n\t<li>\n\t<p><strong>Маска подсети</strong>: <code>255.255.255.0</code></p>\n\t</li>\n</ul>\n\n<p>Теперь разделим:</p>\n\n<ul>\n\t<li>\n\t<p><strong>Сеть</strong>: <code>192.168.1.0</code></p>\n\t</li>\n\t<li>\n\t<p><strong>Хост</strong>: <code>10</code></p>\n\t</li>\n</ul>\n\n<p>Итак, IP <code>192.168.1.10</code> — это <strong>десятое устройство</strong> в сети <code>192.168.1.0</code>.</p>\n\n<h3>📐 Образное объяснение</h3>\n\n<blockquote>\n<p><strong>«Маска — как линейка или шаблон, по которому IP-адрес делится на “улицу” и “дом”.»</strong></p>\n</blockquote>\n\n<ul>\n\t<li>\n\t<p>IP-адрес — это адрес здания.</p>\n\t</li>\n\t<li>\n\t<p>Маска показывает:<br>\n\t→ где заканчивается название <strong>улицы (сети)</strong><br>\n\t→ где начинается номер <strong>дома (устройства)</strong></p>\n\t</li>\n</ul>\n\n<h3>✅ Без маски…</h3>\n\n<p>Если два IP-адреса: <code>192.168.1.10</code> и <code>192.168.1.200</code><br>\n— в одной ли они сети?</p>\n\n<p>✖️ Без маски — неясно.<br>\n✔️ С маской <code>255.255.255.0</code> — да, в одной: <code>192.168.1.0</code></p>\n\n<h3>🧩 Вывод</h3>\n\n<p>Маска — это <strong>ключ к пониманию структуры сети</strong>.</p>\n\n<p>Она позволяет:</p>\n\n<ul>\n\t<li>\n\t<p>определить, какие IP-адреса относятся к одной сети;</p>\n\t</li>\n\t<li>\n\t<p>находить адрес сети;</p>\n\t</li>\n\t<li>\n\t<p>делить IP-пространство на подсети.</p>\n\t</li>\n</ul>\n\n<h3>💬 Фраза для вдохновения:</h3>\n\n<blockquote>\n<p><strong>«Маска — это как шаблон или линейка, по которой IP делится на “улицу” и “дом”.»</strong><br>\nПоняв её, ты сможешь уверенно ориентироваться в любой сети!</p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866389",
+  "subscriptions": [
+    "31-77-7866389",
+    "30-77-7866389"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 3,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:18:37Z",
+  "update_date": "2025-08-08T18:53:38Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866389-1",
+  "discussion_threads": [
+    "77-7866389-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

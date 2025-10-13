@@ -1,0 +1,57 @@
+{
+  "id": 7866411,
+  "lesson": 1897556,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h1>✅ Урок 5. Вопросы уровня ФИПИ: «может ли IP быть в этой подсети?»</h1>\n\n<p><strong>Формат задачи:</strong><br>\nДано: адрес сети (с префиксом, например <code>192.168.10.0/27</code>) и IP-адрес.<br>\nНужно: проверить, входит ли этот IP в указанную подсеть.</p>\n\n<h2>🧭 Алгоритм (3 простых шага)</h2>\n\n<ol>\n\t<li>\n\t<p><strong>Найди адрес сети для данного IP</strong> (двумя способами — любой удобен):</p>\n\n\t<ul>\n\t\t<li>\n\t\t<p>Побитово: перевести IP и маску в биты и сделать <code>IP AND MASK</code> → получится сетевой адрес.</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>Десятичным способом: вычислить размер блока = <code>2^(32 - префикс)</code> (кол-во адресов в подсети), затем в последнем октете взять <code>floor(последний_октет / размер_блока) * размер_блока</code> и собрать адрес сети.</p>\n\t\t</li>\n\t</ul>\n\t</li>\n\t<li>\n\t<p><strong>Сравни полученный адрес сети с указанным</strong> в условии.</p>\n\n\t<ul>\n\t\t<li>\n\t\t<p>Если совпадают → IP <em>входит</em> в эту подсеть.</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>Если не совпадают → IP не в подсети.</p>\n\t\t</li>\n\t</ul>\n\t</li>\n\t<li>\n\t<p><strong>Дополнительно</strong>: если задача спрашивает <em>можно ли назначить</em> IP устройству — проверь, чтобы IP ≠ адрес сети и IP ≠ broadcast (последний адрес в подсети). Для вопросов «входит ли» обычно считаем, что и сетевой, и broadcast адрес технически принадлежат подсети, но не являются назначаемыми хостам.</p>\n\t</li>\n</ol>\n\n<h2>🧪 Пример (тот же, что в задаче ФИПИ)</h2>\n\n<p><strong>Дано:</strong><br>\n<code>Сеть: 192.168.10.0/27</code><br>\nПроверяем IP: <code>192.168.10.14</code> и <code>192.168.10.40</code></p>\n\n<h3>Шаги (десятичный метод)</h3>\n\n<ul>\n\t<li>\n\t<p>/27 → <code>32 - 27 = 5</code> → <code>2^5 = 32</code> адреса в блоке → шаг = 32 (инкремент в последнем октете).</p>\n\t</li>\n\t<li>\n\t<p>Для <code>192.168.10.14</code>: <code>floor(14 / 32) * 32 = 0</code> → сеть = <code>192.168.10.0</code> → совпадает с данным → <strong>да, в подсети</strong>.</p>\n\t</li>\n\t<li>\n\t<p>Для <code>192.168.10.40</code>: <code>floor(40 / 32) * 32 = 32</code> → сеть = <code>192.168.10.32</code> → не совпадает → <strong>нет, не в подсети</strong>.</p>\n\t</li>\n</ul>\n\n<h3>Побитово (коротко)</h3>\n\n<p><code>IP: 192.168.10.14 → bits ... </code></p>\n\n<p><code>MASK: 255.255.255.224 → /27 </code></p>\n\n<p><code>IP AND MASK → 192.168.10.0 → сравнить с заданной сетью </code></p>\n\n<h2>⚠️ Частые подводные камни (ФИПИ ловушки)</h2>\n\n<ul>\n\t<li>\n\t<p><strong>Сравнивать нужно адрес сети, а не только первые 3 октета</strong> — при масках /25.. /30 граница может быть внутри четвёртого октета.</p>\n\t</li>\n\t<li>\n\t<p><strong>Не путать «входит» и «назначаемый»</strong>. Вопросы часто формулируют по-разному. Если спрашивают «можно ли назначить IP устройству» — исключай сетевой и broadcast.</p>\n\t</li>\n\t<li>\n\t<p><strong>Всегда используйте ту же маску</strong>, которая указана в условии! Нельзя сравнивать с другой маской.</p>\n\t</li>\n</ul>\n\n<h2>🧾 Быстрая шпаргалка</h2>\n\n<ul>\n\t<li>\n\t<p>Блок size = <code>2^(32 - префикс)</code> (число адресов в подсети).</p>\n\t</li>\n\t<li>\n\t<p>Сетевой адрес (десятичный метод): <code>base = floor(last_octet / block_size) * block_size</code>.</p>\n\t</li>\n\t<li>\n\t<p>Broadcast = <code>network_address + block_size - 1</code>.</p>\n\t</li>\n\t<li>\n\t<p>Для принадлежности: <code>network_address(IP) == network_address(заданной_подсети)</code> → в подсети.</p>\n\t</li>\n</ul>\n\n<h2>✅ Краткий чек-лист для проверки (в экзамене)</h2>\n\n<ol>\n\t<li>\n\t<p>Записал префикс и вычислил <code>block_size</code>.</p>\n\t</li>\n\t<li>\n\t<p>Нашёл network address для данного IP (AND или десятичный метод).</p>\n\t</li>\n\t<li>\n\t<p>Сравнил с указанным адресом сети.</p>\n\t</li>\n\t<li>\n\t<p>Если нужно «назначить» — убеждаюсь, что это не network и не broadcast.</p>\n\t</li>\n</ol>\n\n<h2>✨ Фраза-мнемоника</h2>\n\n<p><strong>«Найди сеть у IP — сравни с заданной: совпало — значит входит; не совпало — значит нет.»</strong></p>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866411",
+  "subscriptions": [
+    "31-77-7866411",
+    "30-77-7866411"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 0,
+  "passed_by": 0,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:22:07Z",
+  "update_date": "2025-08-08T19:43:53Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866411-1",
+  "discussion_threads": [
+    "77-7866411-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

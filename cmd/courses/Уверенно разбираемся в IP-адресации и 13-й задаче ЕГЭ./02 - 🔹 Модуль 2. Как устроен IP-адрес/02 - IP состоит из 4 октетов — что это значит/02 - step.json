@@ -1,0 +1,91 @@
+{
+  "id": 8148751,
+  "lesson": 1897582,
+  "position": 2,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 1</h3>\n\n<p>Когда Настя увидела IP 192.168.1.15, она удивилась: почему в нём четыре части?</p>\n\n<p><em>Подсказка:</em> Каждая часть IP-адреса — это отдельный байт, называемый октетом.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>Потому что IP-адрес состоит из 4 октетов по 8 бит</b></li>\n  <li>Это случайное разделение для читаемости</li>\n  <li>Так проще запомнить IP</li>\n  <li>Это делается только в IPv6</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Потому что IP-адрес состоит из 4 октетов по 8 бит",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Это случайное разделение для читаемости",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Так проще запомнить IP",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Это делается только в IPv6",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148751",
+  "subscriptions": [
+    "31-77-8148751",
+    "30-77-8148751"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:56:55Z",
+  "update_date": "2025-10-06T08:57:52Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148751-1",
+  "discussion_threads": [
+    "77-8148751-1",
+    "77-8148751-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

@@ -1,0 +1,57 @@
+{
+  "id": 7866367,
+  "lesson": 1897533,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 3. Как решают задачу отличники (секреты стратегии)</h2>\n\n<blockquote>\n<p><strong>«Отличник — это не тот, кто умнее. Это тот, кто идёт по шагам и не гадает.»</strong></p>\n</blockquote>\n\n<h3>🤔 В чём секрет отличников?</h3>\n\n<p>У отличников <strong>нет магии</strong>, но есть <strong>система</strong>. Вот что они делают:</p>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Шаг</th>\n\t\t\t<th>Что делают отличники</th>\n\t\t\t<th>Почему это работает</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>1️⃣</td>\n\t\t\t<td><strong>Сразу переводят IP и маску в биты</strong></td>\n\t\t\t<td>Чтобы видеть границу между сетью и хостами</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2️⃣</td>\n\t\t\t<td><strong>Применяют побитовую операцию AND</strong></td>\n\t\t\t<td>Чтобы найти адрес сети</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3️⃣</td>\n\t\t\t<td><strong>Не путают IP-адрес и адрес сети</strong></td>\n\t\t\t<td>Это разные вещи! IP — это устройство, сеть — это группа</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4️⃣</td>\n\t\t\t<td><strong>Работают строго по шагам</strong></td>\n\t\t\t<td>Никакой интуиции. Только логика.</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<h3>🧠 «Алгоритм в 4 шага» для задачи №13</h3>\n\n<p>Это можно назвать \"Золотым алгоритмом\". Он работает <strong>во всех вариантах</strong> задачи №13 — от вычисления адреса сети до проверки, входят ли два IP в одну подсеть.</p>\n\n<h4>🟡 <strong>Шаг 1: Переведи IP и маску в биты</strong></h4>\n\n<p>Например:<br>\n<code>192.168.1.5</code> → <code>11000000.10101000.00000001.00000101</code><br>\n<code>255.255.255.0</code> → <code>11111111.11111111.11111111.00000000</code></p>\n\n<p>📌 Цель: удобно видеть, где заканчивается сеть.</p>\n\n<h4>🟡 <strong>Шаг 2: Применяй маску — операция AND</strong></h4>\n\n<p>Побитово складываем IP и маску по логике <strong>\"И\" (AND)</strong>:</p>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Бит IP</th>\n\t\t\t<th>Бит маски</th>\n\t\t\t<th>Результат (бит сети)</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>1</td>\n\t\t\t<td>1</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>0</td>\n\t\t\t<td>0</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>0</td>\n\t\t\t<td>1</td>\n\t\t\t<td>0</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>0</td>\n\t\t\t<td>0</td>\n\t\t\t<td>0</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<p>📌 В результате получается <strong>адрес сети</strong>.</p>\n\n<h4>🟡 <strong>Шаг 3: Вычисли адрес сети</strong></h4>\n\n<p>Сложили побитово → получили, например:<br>\n<code>11000000.10101000.00000001.00000000</code><br>\nЭто и есть <strong>сетевой адрес</strong>: <code>192.168.1.0</code></p>\n\n<h4>🟡 <strong>Шаг 4: Проверь условия задачи</strong></h4>\n\n<p>Теперь в зависимости от задачи:</p>\n\n<ul>\n\t<li>\n\t<p>Нужно ли <strong>определить адрес сети?</strong> — Готово!</p>\n\t</li>\n\t<li>\n\t<p>Нужно ли <strong>сравнить два IP?</strong> — Сравни их сетевые адреса.</p>\n\t</li>\n\t<li>\n\t<p>Нужно ли <strong>посчитать количество адресов?</strong> — Вычти 2 из количества хостов (broadcast и сетевой не считаются).</p>\n\t</li>\n\t<li>\n\t<p>Нужно ли <strong>определить допустимый IP?</strong> — Смотри, чтобы он не совпадал с сетевым или широковещательным.</p>\n\t</li>\n</ul>\n\n<h3>📊 Схема: Весь алгоритм на одной картинке</h3>\n\n<p>Можно оформить это как блок-схему или таблицу:</p>\n\n<p><code>[ IP и Маска ] ↓ [ Перевод в биты ] ↓ [ Побитовая операция AND ] ↓ [ Адрес сети ] ↓ [ Выполняем требуемое в задаче ] </code></p>\n\n<h3>⚠️ Почему важно не спешить?</h3>\n\n<p>Многие теряют баллы, потому что:</p>\n\n<ul>\n\t<li>\n\t<p>Начинают \"гадать\": \"Наверное, эти адреса в одной сети\"</p>\n\t</li>\n\t<li>\n\t<p>Путаются: IP, адрес сети, маска — всё сливается</p>\n\t</li>\n\t<li>\n\t<p>Работают в десятичной системе, не переводя в биты</p>\n\t</li>\n</ul>\n\n<p>✅ Отличники:</p>\n\n<ul>\n\t<li>\n\t<p><strong>Не гадают, а действуют</strong></p>\n\t</li>\n\t<li>\n\t<p><strong>Идут по шагам</strong></p>\n\t</li>\n\t<li>\n\t<p><strong>Спокойно решают, зная, что схема работает всегда</strong></p>\n\t</li>\n</ul>\n\n<h3>🧩 Пример (упрощённо)</h3>\n\n<p>Задача:<br>\nIP: <code>192.168.1.5</code>, маска: <code>255.255.255.0</code>.<br>\nВходит ли <code>192.168.1.100</code> в ту же подсеть?</p>\n\n<p>Алгоритм:</p>\n\n<ol>\n\t<li>\n\t<p>Переводим оба IP в биты</p>\n\t</li>\n\t<li>\n\t<p>Применяем маску — находим адреса сети</p>\n\t</li>\n\t<li>\n\t<p><code>192.168.1.5</code> → <code>192.168.1.0</code><br>\n\t<code>192.168.1.100</code> → <code>192.168.1.0</code></p>\n\t</li>\n\t<li>\n\t<p>✅ Да, они в одной сети</p>\n\t</li>\n</ol>\n\n<h3>✅ Вывод</h3>\n\n<p>📌 Любая задача №13 — это <strong>не угадайка</strong>, а <strong>тренируемый алгоритм</strong>.<br>\n📌 В нём всего <strong>4 понятных шага</strong> — и ни капли паники.<br>\n📌 Это тот случай, когда <strong>алгоритм сильнее \"догадок\" и \"чутья\"</strong>.</p>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866367",
+  "subscriptions": [
+    "31-77-7866367",
+    "30-77-7866367"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 3,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:16:01Z",
+  "update_date": "2025-08-08T17:40:09Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866367-1",
+  "discussion_threads": [
+    "77-7866367-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

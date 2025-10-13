@@ -1,0 +1,57 @@
+{
+  "id": 7866394,
+  "lesson": 1897546,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 6. ✏️ Упражнения на маски</h2>\n\n<blockquote>\n<p><strong>Формат:</strong> Тренировка для закрепления — можно использовать как интерактивный тест или письменное задание.</p>\n</blockquote>\n\n<h3>🧠 Задание 1: Переведи маску в биты</h3>\n\n<p><strong>Вопрос:</strong><br>\nПереведи маску <code>255.255.255.192</code> в двоичную систему.</p>\n\n<p><strong>Подсказка:</strong><br>\nКаждый октет переводится отдельно.</p>\n\n<p><strong>Ответ:</strong></p>\n\n<p><code>255 = 11111111 </code></p>\n\n<p><code>255 = 11111111 </code></p>\n\n<p><code>255 = 11111111 </code></p>\n\n<p><code>192 = 11000000 </code></p>\n\n<p><code>→ Маска: 11111111.11111111.11111111.11000000 → /26 </code></p>\n\n<h3>🧠 Задание 2: Сколько хостов в сети с маской /29?</h3>\n\n<p><strong>Формула:</strong><br>\n2^x – 2, где x — количество бит под хосты.</p>\n\n<p><strong>Решение:</strong><br>\n/29 → 32 – 29 = 3 бита под хосты<br>\n2³ – 2 = <strong>6 хостов</strong></p>\n\n<h3>🧠 Задание 3: Какую маску выбрать для 30 компьютеров?</h3>\n\n<p><strong>Решение:</strong></p>\n\n<p>Нужна сеть минимум на 30 хостов.<br>\nПроверим по формуле:</p>\n\n<ul>\n\t<li>\n\t<p>2^5 – 2 = 30 → подходит</p>\n\t</li>\n\t<li>\n\t<p>32 – 5 = 27 → маска <strong>/27</strong></p>\n\t</li>\n</ul>\n\n<p><strong>Ответ:</strong> /27</p>\n\n<h3>🧠 Задание 4: Что за маска <code>11111111.11111111.11111100.00000000</code>?</h3>\n\n<p><strong>Решение:</strong></p>\n\n<p>Посчитаем количество единиц:</p>\n\n<ul>\n\t<li>\n\t<p>В первых двух октетах — по 8 → 16</p>\n\t</li>\n\t<li>\n\t<p>Третий октет: <code>11111100</code> → ещё 6</p>\n\t</li>\n\t<li>\n\t<p>Четвёртый: <code>00000000</code> → 0</p>\n\t</li>\n</ul>\n\n<p>→ Всего: 16 + 6 = <strong>22</strong><br>\n<strong>Ответ:</strong> Маска <strong>/22</strong></p>\n\n<h3>🧠 Задание 5: Где больше устройств — в /25 или в /27?</h3>\n\n<p><strong>Решение:</strong></p>\n\n<ul>\n\t<li>\n\t<p>/25 → 32 – 25 = 7 бит → 2⁷ – 2 = 126</p>\n\t</li>\n\t<li>\n\t<p>/27 → 32 – 27 = 5 бит → 2⁵ – 2 = 30</p>\n\t</li>\n</ul>\n\n<p><strong>Ответ:</strong> В <strong>/25</strong> больше устройств</p>\n\n<h3>💡 Итог</h3>\n\n<p>Если ты справился с этими заданиями — ты уже на уровне, чтобы уверенно решать 13-ю задачу на ЕГЭ!<br>\nСледующий шаг — научиться применять маску в задачах.</p>\n\n<blockquote>\n<p><strong>Совет:</strong> запомни ключевые маски:<br>\n/30 — 2 хоста, /28 — 14, /26 — 62, /24 — 254</p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866394",
+  "subscriptions": [
+    "31-77-7866394",
+    "30-77-7866394"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:19:03Z",
+  "update_date": "2025-08-08T19:06:37Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866394-1",
+  "discussion_threads": [
+    "77-7866394-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

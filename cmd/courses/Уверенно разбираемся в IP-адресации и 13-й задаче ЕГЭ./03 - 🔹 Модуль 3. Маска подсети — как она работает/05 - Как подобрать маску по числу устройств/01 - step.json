@@ -1,0 +1,57 @@
+{
+  "id": 7866393,
+  "lesson": 1897545,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 5. Как выбрать маску по количеству устройств?</h2>\n\n<blockquote>\n<p><strong>Цель:</strong><br>\nНаучиться определять подходящую маску подсети по количеству нужных устройств (хостов).</p>\n</blockquote>\n\n<h3>📐 Формула</h3>\n\n<p>Чтобы узнать, сколько устройств можно разместить в сети с определённой маской, используют формулу:</p>\n\n<h3>  <strong>Количество хостов = 2^x – 2</strong></h3>\n\n<ul>\n\t<li>\n\t<p><code>x</code> — это <strong>количество нулей</strong> в маске (то есть битов под хосты)</p>\n\t</li>\n\t<li>\n\t<p><code>–2</code> — мы убираем <strong>адрес сети</strong> и <strong>широковещательный адрес (broadcast)</strong></p>\n\t</li>\n</ul>\n\n<h3>🤔 Пример</h3>\n\n<p><strong>Задача:</strong> нужно подключить <strong>14 компьютеров</strong>.<br>\n<strong>Решение:</strong></p>\n\n<p>Найди <code>x</code>, чтобы:</p>\n\n<p>  2^x&nbsp;–&nbsp;2&nbsp;≥&nbsp;14</p>\n\n<p>→ 2^4&nbsp;=&nbsp;16 → 16&nbsp;–&nbsp;2&nbsp;=&nbsp;<strong>14</strong></p>\n\n<p>Значит, <strong>4 бита под хосты</strong> → маска <strong>/28</strong></p>\n\n<h3>📊 Удобная таблица</h3>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Кол-во устройств</th>\n\t\t\t<th>Кол-во бит под хосты</th>\n\t\t\t<th>Маска</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>2</td>\n\t\t\t<td>/30</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>6</td>\n\t\t\t<td>3</td>\n\t\t\t<td>/29</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>14</td>\n\t\t\t<td>4</td>\n\t\t\t<td>/28</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>30</td>\n\t\t\t<td>5</td>\n\t\t\t<td>/27</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>62</td>\n\t\t\t<td>6</td>\n\t\t\t<td>/26</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>126</td>\n\t\t\t<td>7</td>\n\t\t\t<td>/25</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>254</td>\n\t\t\t<td>8</td>\n\t\t\t<td>/24</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<blockquote>\n<p>🔍 Советуем <strong>запомнить</strong> хотя бы:<br>\n<strong>/30 → 2</strong>, <strong>/28 → 14</strong>, <strong>/26 → 62</strong>, <strong>/24 → 254</strong></p>\n</blockquote>\n\n<h3>🎨 Образное объяснение</h3>\n\n<blockquote>\n<p><strong>Маска — это как сито.</strong><br>\nЧем <strong>больше дырок</strong> (нулей), тем <strong>больше устройств</strong> может «пройти» через него.</p>\n</blockquote>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>Маска</th>\n\t\t\t<th>Сколько нулей?</th>\n\t\t\t<th>Значит, сколько «дырок»</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>/30</td>\n\t\t\t<td>2</td>\n\t\t\t<td>2 хоста</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>/28</td>\n\t\t\t<td>4</td>\n\t\t\t<td>14 хостов</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>/24</td>\n\t\t\t<td>8</td>\n\t\t\t<td>254 хоста</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>&nbsp;</p>\n\n<h3>💬 Мотивационная фраза</h3>\n\n<blockquote>\n<p><strong>«В маске нет ничего загадочного. Она просто отвечает на вопрос: “Сколько устройств я могу подключить?”»</strong></p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866393",
+  "subscriptions": [
+    "31-77-7866393",
+    "30-77-7866393"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:19:01Z",
+  "update_date": "2025-08-08T19:01:59Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866393-1",
+  "discussion_threads": [
+    "77-7866393-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

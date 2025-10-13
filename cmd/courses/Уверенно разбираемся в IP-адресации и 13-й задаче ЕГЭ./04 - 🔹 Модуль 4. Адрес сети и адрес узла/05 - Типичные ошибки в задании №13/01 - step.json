@@ -1,0 +1,57 @@
+{
+  "id": 7866715,
+  "lesson": 1897656,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 6. ⚠️ Подводные камни: где чаще всего ошибаются на ЕГЭ</h2>\n\n<blockquote>\n<p><strong>Цель:</strong> узнать типичные ошибки, чтобы их избежать.</p>\n</blockquote>\n\n<h3>❌ Типичные ошибки школьников</h3>\n\n<ol>\n\t<li>\n\t<p><strong>Путают порядок битов при переводе</strong><br>\n\tНапример, 192 → пишут как <code>11000001</code> вместо <code>11000000</code>.</p>\n\t</li>\n\t<li>\n\t<p><strong>Считают, что адрес сети — это просто IP с последними нулями</strong><br>\n\tЭто верно только для маски <code>/8</code>, <code>/16</code> или <code>/24</code>.<br>\n\tПри <code>/26</code> или <code>/28</code> так не работает.</p>\n\t</li>\n\t<li>\n\t<p><strong>Путают адрес сети и первый адрес устройства</strong><br>\n\tПервый адрес устройства = адрес сети + 1.<br>\n\tОни не одинаковые.</p>\n\t</li>\n\t<li>\n\t<p><strong>Не уверены, что делать с “дробными” масками</strong><br>\n\t<code>/26</code>, <code>/30</code>, <code>/29</code> — вызывают панику, потому что граница не по октету.</p>\n\t</li>\n\t<li>\n\t<p><strong>Считают, что адрес сети — это “IP – 1”</strong><br>\n\tНа самом деле — это <strong>побитовое AND</strong> IP и маски.</p>\n\t</li>\n</ol>\n\n<h3>💡 Фраза для запоминания</h3>\n\n<blockquote>\n<p>«Не доверяй глазам — только биты говорят правду.»</p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866715",
+  "subscriptions": [
+    "31-77-7866715",
+    "30-77-7866715"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T19:31:16Z",
+  "update_date": "2025-08-08T19:32:33Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866715-1",
+  "discussion_threads": [
+    "77-7866715-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

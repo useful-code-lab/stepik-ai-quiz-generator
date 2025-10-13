@@ -1,0 +1,65 @@
+{
+  "id": 1897544,
+  "steps": [
+    7866392
+  ],
+  "actions": {
+    "learn_lesson": "#",
+    "assist_lesson": "#",
+    "view_all_submissions": "#",
+    "edit_lesson": "#",
+    "view_statistics": "#",
+    "attachments": "/lesson/1897544/attachments/",
+    "clone_lesson": "/lesson/1897544/clone/",
+    "admin_lesson": "#",
+    "edit_permissions": "/lesson/1897544/permissions/",
+    "delete_lesson": "#"
+  },
+  "progress": "76-1897544",
+  "subscriptions": [
+    "31-76-1897544",
+    "30-76-1897544"
+  ],
+  "viewed_by": 2,
+  "passed_by": 2,
+  "time_to_complete": null,
+  "cover_url": null,
+  "is_comments_enabled": true,
+  "is_exam_without_progress": false,
+  "is_blank": false,
+  "is_draft": false,
+  "is_orphaned": false,
+  "courses": [
+    250336
+  ],
+  "units": [
+    1923437
+  ],
+  "owner": 1112069146,
+  "language": "ru",
+  "is_featured": false,
+  "is_public": false,
+  "canonical_url": "https://stepik.org/lesson/1897544/",
+  "title": "Что значат /24, /26, /30",
+  "slug": "Что-значат-24-26-30-1897544",
+  "create_date": "2025-08-08T17:18:58Z",
+  "update_date": "2025-08-12T07:10:37Z",
+  "learners_group": 12548642,
+  "testers_group": 12548643,
+  "moderators_group": 12548644,
+  "assistants_group": 12548645,
+  "teachers_group": 12548640,
+  "admins_group": 12548641,
+  "discussions_count": 0,
+  "discussion_proxy": "76-1897544-1",
+  "discussion_threads": [
+    "76-1897544-1"
+  ],
+  "epic_count": 0,
+  "abuse_count": 0,
+  "vote_delta": 0,
+  "vote": null,
+  "lti_consumer_key": "",
+  "lti_secret_key": "",
+  "lti_private_profile": false
+}

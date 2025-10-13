@@ -1,0 +1,57 @@
+{
+  "id": 7866669,
+  "lesson": 1897652,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 7. 🎨 Визуальная схема: маска как шаблон-сито</h2>\n\n<blockquote>\n<p><strong>Цель:</strong> Понять, как <strong>маска подсети</strong> визуально разделяет IP-адрес на сеть и хост.<br>\n<strong>Формат:</strong> Идеально подходит для анимации или картинки.</p>\n</blockquote>\n\n<h3>🧩 Образное объяснение:</h3>\n\n<blockquote>\n<p><strong>Маска — это как сито или лупа.</strong><br>\nОна <strong>отсекает часть IP-адреса, которая отвечает за сеть</strong>, а остальное — оставляет для устройств внутри этой сети.</p>\n</blockquote>\n\n<h3>🎯 Пример наглядной схемы (словами):</h3>\n\n<p>32 кружочка (бита), где:</p>\n\n<ul>\n\t<li>\n\t<p><strong>Закрашенные кружки</strong> (или квадраты) = биты сети (единицы)</p>\n\t</li>\n\t<li>\n\t<p><strong>Пустые</strong> = биты хоста (нули)</p>\n\t</li>\n</ul>\n\n<p><img alt=\"\" height=\"174\" name=\"image.png\" src=\"https://ucarecdn.com/8cf34c51-5cf2-4f23-a312-e6da2d7556cf/\" width=\"551\"></p>\n\n<h3>📌 Что можно объяснить через визуализацию:</h3>\n\n<ul>\n\t<li>\n\t<p><strong>Чем больше закрашено</strong> — тем <strong>меньше</strong> может быть устройств в сети.</p>\n\t</li>\n\t<li>\n\t<p><strong>Чем больше пустого пространства</strong> — тем <strong>больше хостов</strong> можно подключить.</p>\n\t</li>\n\t<li>\n\t<p>При смене маски, <strong>граница сдвигается</strong> вправо (меньше устройств) или влево (больше устройств).</p>\n\t</li>\n</ul>\n\n<h3>🔍 Аналогия:</h3>\n\n<blockquote>\n<p><strong>«Маска — это как лупа, через которую мы смотрим на IP и видим, где он живёт.»</strong><br>\nИли: <strong>«Это шаблон, который выделяет “улицу” (сеть) и “дома” (устройства).»</strong></p>\n</blockquote>\n\n<p>&nbsp;</p>\n\n<h3>✏️ Дополнительно:</h3>\n\n<ul>\n\t<li>\n\t<p>Сделать <strong>интерактив сдвига</strong>: ученик двигает ползунок (24 → 25 → 26…) и меняется граница.</p>\n\t</li>\n\t<li>\n\t<p><strong>Тест</strong>: «Сколько бит под хосты в маске /27?»<br>\n\t→ Ответ: 5 бит</p>\n\t</li>\n</ul>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866669",
+  "subscriptions": [
+    "31-77-7866669",
+    "30-77-7866669"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T19:03:28Z",
+  "update_date": "2025-08-08T19:15:34Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866669-1",
+  "discussion_threads": [
+    "77-7866669-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

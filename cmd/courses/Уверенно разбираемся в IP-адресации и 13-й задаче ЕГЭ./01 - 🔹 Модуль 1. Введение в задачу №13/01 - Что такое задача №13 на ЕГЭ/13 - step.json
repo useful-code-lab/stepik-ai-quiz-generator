@@ -1,0 +1,81 @@
+{
+  "id": 8148647,
+  "lesson": 1897531,
+  "position": 13,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 12</h3>\n\n<p>Ваш коллега запутался в терминах. Помогите сопоставить их.</p>\n\n<p><em>Подсказка:</em> В задаче №13 часто спрашивают именно это.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>Хост</b> — Конкретное устройство в сети</li>\n  <li><b>Broadcast</b> — Широковещательная рассылка</li>\n  <li><b>Subnet</b> — Часть сети, выделенная маской</li>\n  <li><b>Gateway</b> — Устройство, соединяющее сети</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "Хост",
+          "second": "Конкретное устройство в сети"
+        },
+        {
+          "first": "Broadcast",
+          "second": "Широковещательная рассылка"
+        },
+        {
+          "first": "Subnet",
+          "second": "Часть сети, выделенная маской"
+        },
+        {
+          "first": "Gateway",
+          "second": "Устройство, соединяющее сети"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148647",
+  "subscriptions": [
+    "31-77-8148647",
+    "30-77-8148647"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:33:43Z",
+  "update_date": "2025-10-06T08:56:06Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148647-1",
+  "discussion_threads": [
+    "77-8148647-1",
+    "77-8148647-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

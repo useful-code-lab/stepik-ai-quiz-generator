@@ -1,0 +1,91 @@
+{
+  "id": 8148753,
+  "lesson": 1897582,
+  "position": 4,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 3</h3>\n\n<p>На утреннем стендапе дизайнер спросил: \"А почему IP — именно 32 бита?\" Что ты ему ответишь?</p>\n\n<p><em>Подсказка:</em> IPv4 — это стандарт, где каждый IP состоит из 4 октетов.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>Потому что 4 октета по 8 бит = 32 бита</b></li>\n  <li>Это чтобы помещалось в QR-код</li>\n  <li>Чтобы упростить адресацию в HTML</li>\n  <li>Это длина MAC-адреса</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Потому что 4 октета по 8 бит = 32 бита",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Это чтобы помещалось в QR-код",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Чтобы упростить адресацию в HTML",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Это длина MAC-адреса",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148753",
+  "subscriptions": [
+    "31-77-8148753",
+    "30-77-8148753"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:56:57Z",
+  "update_date": "2025-10-06T08:57:54Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148753-1",
+  "discussion_threads": [
+    "77-8148753-1",
+    "77-8148753-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

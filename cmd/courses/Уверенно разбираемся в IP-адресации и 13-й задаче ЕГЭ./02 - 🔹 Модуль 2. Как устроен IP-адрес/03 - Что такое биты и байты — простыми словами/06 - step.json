@@ -1,0 +1,81 @@
+{
+  "id": 8148775,
+  "lesson": 1897537,
+  "position": 6,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 5</h3>\n\n<p>Настя объясняет новичку разницу между битами и байтами. Помоги ей сопоставить понятия и определения.</p>\n\n<p><em>Подсказка:</em> Бит — мельчайшая единица. Байт — набор из 8 бит.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>Бит</b> — Одна двоичная цифра: 0 или 1</li>\n  <li><b>Байт</b> — 8 бит</li>\n  <li><b>Двоичное число</b> — Набор из 0 и 1</li>\n  <li><b>Октет</b> — То же, что байт (в контексте IP)</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "Бит",
+          "second": "Одна двоичная цифра: 0 или 1"
+        },
+        {
+          "first": "Байт",
+          "second": "8 бит"
+        },
+        {
+          "first": "Двоичное число",
+          "second": "Набор из 0 и 1"
+        },
+        {
+          "first": "Октет",
+          "second": "То же, что байт (в контексте IP)"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148775",
+  "subscriptions": [
+    "31-77-8148775",
+    "30-77-8148775"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 0.6666666666666666,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:58:25Z",
+  "update_date": "2025-10-06T08:58:12Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148775-1",
+  "discussion_threads": [
+    "77-8148775-1",
+    "77-8148775-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

@@ -1,0 +1,81 @@
+{
+  "id": 8148683,
+  "lesson": 1897532,
+  "position": 7,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 6</h3>\n\n<p>Вы работаете над симулятором сети. Нужно правильно сопоставить сокращения с их расшифровкой.</p>\n\n<p><em>Подсказка:</em> Аббревиатуры часто используются в документации.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>IP</b> — Internet Protocol</li>\n  <li><b>MAC</b> — Media Access Control</li>\n  <li><b>TCP</b> — Transmission Control Protocol</li>\n  <li><b>DHCP</b> — Dynamic Host Configuration Protocol</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "IP",
+          "second": "Internet Protocol"
+        },
+        {
+          "first": "MAC",
+          "second": "Media Access Control"
+        },
+        {
+          "first": "TCP",
+          "second": "Transmission Control Protocol"
+        },
+        {
+          "first": "DHCP",
+          "second": "Dynamic Host Configuration Protocol"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148683",
+  "subscriptions": [
+    "31-77-8148683",
+    "30-77-8148683"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:47:30Z",
+  "update_date": "2025-10-06T08:56:18Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148683-1",
+  "discussion_threads": [
+    "77-8148683-1",
+    "77-8148683-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

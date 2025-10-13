@@ -1,0 +1,65 @@
+{
+  "id": 1897555,
+  "steps": [
+    7866410
+  ],
+  "actions": {
+    "learn_lesson": "#",
+    "assist_lesson": "#",
+    "view_all_submissions": "#",
+    "edit_lesson": "#",
+    "view_statistics": "#",
+    "attachments": "/lesson/1897555/attachments/",
+    "clone_lesson": "/lesson/1897555/clone/",
+    "admin_lesson": "#",
+    "edit_permissions": "/lesson/1897555/permissions/",
+    "delete_lesson": "#"
+  },
+  "progress": "76-1897555",
+  "subscriptions": [
+    "31-76-1897555",
+    "30-76-1897555"
+  ],
+  "viewed_by": 1,
+  "passed_by": 1,
+  "time_to_complete": null,
+  "cover_url": null,
+  "is_comments_enabled": true,
+  "is_exam_without_progress": false,
+  "is_blank": false,
+  "is_draft": false,
+  "is_orphaned": false,
+  "courses": [
+    250336
+  ],
+  "units": [
+    1923448
+  ],
+  "owner": 1112069146,
+  "language": "ru",
+  "is_featured": false,
+  "is_public": false,
+  "canonical_url": "https://stepik.org/lesson/1897555/",
+  "title": "Практика: 7 задач с проверкой",
+  "slug": "Практика-7-задач-с-проверкой-1897555",
+  "create_date": "2025-08-08T17:22:03Z",
+  "update_date": "2025-08-12T07:12:59Z",
+  "learners_group": 12548708,
+  "testers_group": 12548709,
+  "moderators_group": 12548710,
+  "assistants_group": 12548711,
+  "teachers_group": 12548706,
+  "admins_group": 12548707,
+  "discussions_count": 0,
+  "discussion_proxy": "76-1897555-1",
+  "discussion_threads": [
+    "76-1897555-1"
+  ],
+  "epic_count": 0,
+  "abuse_count": 0,
+  "vote_delta": 0,
+  "vote": null,
+  "lti_consumer_key": "",
+  "lti_secret_key": "",
+  "lti_private_profile": false
+}

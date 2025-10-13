@@ -1,0 +1,81 @@
+{
+  "id": 8148723,
+  "lesson": 1897535,
+  "position": 8,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 7</h3>\n\n<p>Артём оформляет справочник: сколько адресов возможно при заданных масках?</p>\n\n<p><em>Подсказка:</em> Используй формулу 2^n - 2, где n — количество нулей в маске.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>255.255.255.0</b> — 254</li>\n  <li><b>255.255.255.128</b> — 126</li>\n  <li><b>255.255.255.192</b> — 62</li>\n  <li><b>255.255.255.224</b> — 30</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "255.255.255.0",
+          "second": "254"
+        },
+        {
+          "first": "255.255.255.128",
+          "second": "126"
+        },
+        {
+          "first": "255.255.255.192",
+          "second": "62"
+        },
+        {
+          "first": "255.255.255.224",
+          "second": "30"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148723",
+  "subscriptions": [
+    "31-77-8148723",
+    "30-77-8148723"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:53:48Z",
+  "update_date": "2025-10-06T08:57:40Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148723-1",
+  "discussion_threads": [
+    "77-8148723-1",
+    "77-8148723-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

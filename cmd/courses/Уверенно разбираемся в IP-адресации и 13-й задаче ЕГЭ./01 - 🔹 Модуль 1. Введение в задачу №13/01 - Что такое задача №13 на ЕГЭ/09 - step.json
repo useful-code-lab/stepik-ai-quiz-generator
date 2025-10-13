@@ -1,0 +1,91 @@
+{
+  "id": 8148642,
+  "lesson": 1897531,
+  "position": 9,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 8</h3>\n\n<p>Ваша команда настраивает локальную сеть офиса. Вы открыли задание №13 и видите IP-адрес и маску. Что первым делом нужно сделать?</p>\n\n<p><em>Подсказка:</em> Начало всегда связано с определением адреса сети.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>Вычислить сетевой адрес</b></li>\n  <li>Посчитать число хостов</li>\n  <li>Нарисовать топологию сети</li>\n  <li>Запустить ping</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Вычислить сетевой адрес",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Посчитать число хостов",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Нарисовать топологию сети",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Запустить ping",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148642",
+  "subscriptions": [
+    "31-77-8148642",
+    "30-77-8148642"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:33:40Z",
+  "update_date": "2025-10-06T08:56:04Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148642-1",
+  "discussion_threads": [
+    "77-8148642-1",
+    "77-8148642-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

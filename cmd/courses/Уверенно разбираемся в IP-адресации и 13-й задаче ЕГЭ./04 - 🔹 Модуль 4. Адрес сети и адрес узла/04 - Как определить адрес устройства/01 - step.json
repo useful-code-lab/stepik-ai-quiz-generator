@@ -1,0 +1,57 @@
+{
+  "id": 7866405,
+  "lesson": 1897550,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 4. Как найти адрес хоста?</h2>\n\n<blockquote>\n<p><strong>Цель:</strong> Научиться определять адрес хоста по IP-адресу и адресу сети.</p>\n</blockquote>\n\n<h3>🧩 Что такое адрес хоста?</h3>\n\n<p>Это <strong>индивидуальный номер</strong> устройства внутри сети.</p>\n\n<p>IP-адрес состоит из двух частей:</p>\n\n<ul>\n\t<li>\n\t<p><strong>Сеть</strong> (где устройство находится)</p>\n\t</li>\n\t<li>\n\t<p><strong>Хост</strong> (кто именно это)</p>\n\t</li>\n</ul>\n\n<h3>🔍 Как найти адрес хоста?</h3>\n\n<h4>📘 Способ 1: В десятичной форме</h4>\n\n<p><strong>Формула:</strong></p>\n\n<p><code>Адрес хоста = IP-адрес – Адрес сети </code></p>\n\n<p><strong>Пример:</strong></p>\n\n<p><code>IP: 192.168.1.10 </code></p>\n\n<p><code>Сеть: 192.168.1.0 </code></p>\n\n<p><code>Хост: 10 </code></p>\n\n<h4>💻 Способ 2: В двоичном виде</h4>\n\n<ol>\n\t<li>\n\t<p>Переведи IP и маску в <strong>бинарный вид</strong></p>\n\t</li>\n\t<li>\n\t<p>Определи, где заканчивается маска — всё, что <strong>после неё</strong>, это и есть <strong>часть хоста</strong></p>\n\t</li>\n</ol>\n\n<p><strong>Пример:</strong></p>\n\n<p><code>IP: 11000000.10101000.00000001.00001010 </code></p>\n\n<p><code>Маска: 11111111.11111111.11111111.00000000 </code></p>\n\n<p><code>Хост: ↑00001010 → 10 </code></p>\n\n<h3>💬 Подсказка:</h3>\n\n<blockquote>\n<p>«Адрес хоста — это “хвостик” IP-адреса после откусывания маской.»</p>\n</blockquote>\n\n<h3>🧠 Почему это важно?</h3>\n\n<p>📡 Если ты знаешь хост, ты можешь:</p>\n\n<ul>\n\t<li>\n\t<p>Посчитать, сколько устройств в сети</p>\n\t</li>\n\t<li>\n\t<p>Проверить, используется ли адрес</p>\n\t</li>\n\t<li>\n\t<p>Понять, какие адреса <strong>в той же подсети</strong></p>\n\t</li>\n</ul>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866405",
+  "subscriptions": [
+    "31-77-7866405",
+    "30-77-7866405"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:20:24Z",
+  "update_date": "2025-08-08T19:25:31Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866405-1",
+  "discussion_threads": [
+    "77-7866405-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

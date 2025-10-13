@@ -1,0 +1,91 @@
+{
+  "id": 8148772,
+  "lesson": 1897537,
+  "position": 3,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 2</h3>\n\n<p>Тестировщик Артём задался вопросом: сколько битов в одном байте?</p>\n\n<p><em>Подсказка:</em> Это степень двойки. Используется повсеместно в IP.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>8</b></li>\n  <li>4</li>\n  <li>16</li>\n  <li>10</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "8",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "4",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "16",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "10",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148772",
+  "subscriptions": [
+    "31-77-8148772",
+    "30-77-8148772"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:58:23Z",
+  "update_date": "2025-10-06T08:58:08Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148772-1",
+  "discussion_threads": [
+    "77-8148772-1",
+    "77-8148772-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

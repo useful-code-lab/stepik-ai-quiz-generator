@@ -1,0 +1,91 @@
+{
+  "id": 8148678,
+  "lesson": 1897532,
+  "position": 2,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 1</h3>\n\n<p>Ты только пришёл в команду, и тимлид говорит: «Если хочешь понять задачу №13 — начни с двоичной системы счисления». Почему это важно?</p>\n\n<p><em>Подсказка:</em> IP-адрес и маска работают на уровне битов.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>Потому что IP-адрес и маска анализируются побитово.</b></li>\n  <li>Потому что это нужно для работы с графикой.</li>\n  <li>Потому что только так можно понять MAC-адрес.</li>\n  <li>Потому что так проще писать программы.</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Потому что IP-адрес и маска анализируются побитово.",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Потому что это нужно для работы с графикой.",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Потому что только так можно понять MAC-адрес.",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Потому что так проще писать программы.",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148678",
+  "subscriptions": [
+    "31-77-8148678",
+    "30-77-8148678"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:47:26Z",
+  "update_date": "2025-10-06T08:56:10Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148678-1",
+  "discussion_threads": [
+    "77-8148678-1",
+    "77-8148678-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

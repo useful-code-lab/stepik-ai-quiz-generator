@@ -82,18 +82,19 @@ async def export_course(course_id: int, session, headers, sem):
             print("⚠️ У курса нет обложки")
 
         # === Модули ===
-        for section_id in course.get("sections", []):
+        for sec_idx, section_id in enumerate(course.get("sections", []), start=1):
             sec_data = await fetch_json(session, f"{STEPIC_HOST}/api/sections/{section_id}", headers, sem)
             section = sec_data["sections"][0]
             sec_title = safe_name(section["title"])
-            print(f"  📂 Модуль: {sec_title}")
+            sec_title_num = f"{sec_idx:02d} - {sec_title}"
+            print(f"  📂 Модуль: {sec_title_num}")
 
-            sec_dir = os.path.join(course_dir, sec_title)
+            sec_dir = os.path.join(course_dir, sec_title_num)
             os.makedirs(sec_dir, exist_ok=True)
             save_json_to_file(section, os.path.join(sec_dir, "module.json"))
 
             # === Уроки ===
-            for unit_id in section.get("units", []):
+            for unit_idx, unit_id in enumerate(section.get("units", []), start=1):
                 unit_data = await fetch_json(session, f"{STEPIC_HOST}/api/units/{unit_id}", headers, sem)
                 unit = unit_data["units"][0]
                 lesson_id = unit["lesson"]
@@ -101,9 +102,10 @@ async def export_course(course_id: int, session, headers, sem):
                 les_data = await fetch_json(session, f"{STEPIC_HOST}/api/lessons/{lesson_id}", headers, sem)
                 lesson = les_data["lessons"][0]
                 les_title = safe_name(lesson["title"])
-                print(f"    📘 Урок: {les_title}")
+                les_title_num = f"{unit_idx:02d} - {les_title}"
+                print(f"    📘 Урок: {les_title_num}")
 
-                les_dir = os.path.join(sec_dir, les_title)
+                les_dir = os.path.join(sec_dir, les_title_num)
                 os.makedirs(les_dir, exist_ok=True)
                 save_json_to_file(lesson, os.path.join(les_dir, "lesson.json"))
 
@@ -111,14 +113,15 @@ async def export_course(course_id: int, session, headers, sem):
                 step_ids = lesson.get("steps", [])
                 tasks = []
 
-                async def fetch_and_save_step(step_id, les_dir=les_dir):
-                    step_data = await fetch_json(session, f"{STEPIC_HOST}/api/steps/{step_id}", headers, sem)
-                    step = step_data["steps"][0]
-                    save_json_to_file(step, os.path.join(les_dir, f"step_{step_id}.json"))
-                    print(f"      ✅ Шаг {step_id} сохранён")
+                async def fetch_and_save_step(step_id, step_idx, les_dir=les_dir):
+                    step_data = await fetch_json(session, f"{STEPIC_HOST}/api/step-sources/{step_id}", headers, sem)
+                    step = step_data["step-sources"][0]
+                    step_filename = os.path.join(les_dir, f"{step_idx:02d} - step.json")
+                    save_json_to_file(step, step_filename)
+                    print(f"      ✅ Шаг {step_idx:02d} сохранён")
 
-                for sid in step_ids:
-                    tasks.append(asyncio.create_task(fetch_and_save_step(sid)))
+                for step_idx, sid in enumerate(step_ids, start=1):
+                    tasks.append(asyncio.create_task(fetch_and_save_step(sid, step_idx)))
 
                 await asyncio.gather(*tasks)
 

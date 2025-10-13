@@ -1,0 +1,91 @@
+{
+  "id": 8148680,
+  "lesson": 1897532,
+  "position": 4,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 3</h3>\n\n<p>На хакатоне тебе попался IP 10.0.0.1. Какой это класс адреса?</p>\n\n<p><em>Подсказка:</em> Класс A начинается с 0, класс B — с 10, класс C — с 110.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>Класс A</b></li>\n  <li>Класс B</li>\n  <li>Класс C</li>\n  <li>Класс D</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Класс A",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Класс B",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Класс C",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Класс D",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148680",
+  "subscriptions": [
+    "31-77-8148680",
+    "30-77-8148680"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 0.4,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:47:28Z",
+  "update_date": "2025-10-06T08:56:16Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148680-1",
+  "discussion_threads": [
+    "77-8148680-1",
+    "77-8148680-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

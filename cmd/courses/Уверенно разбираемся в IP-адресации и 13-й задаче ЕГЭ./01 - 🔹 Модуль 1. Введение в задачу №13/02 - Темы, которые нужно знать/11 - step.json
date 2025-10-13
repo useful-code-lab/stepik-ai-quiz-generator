@@ -1,0 +1,91 @@
+{
+  "id": 8148662,
+  "lesson": 1897532,
+  "position": 11,
+  "status": "ready",
+  "block": {
+    "name": "choice",
+    "text": "<h3>Миссия 3</h3>\n\n<p>Во время митинга Тимур спросил: «Что такое частные IP-адреса?» Какой ответ верный?</p>\n\n<p><em>Подсказка:</em> Эти адреса не видны в интернете и используются внутри организаций.</p> <details><summary>Показать ответ</summary><ul>\n  <li><b>Адреса, зарезервированные для локальных сетей и не маршрутизируемые в интернете</b></li>\n  <li>IP-адреса, за которые нужно платить дополнительно</li>\n  <li>Уникальные адреса, используемые в интернете</li>\n  <li>Скрытые адреса, доступные только хакерам</li>\n</ul></details>",
+    "video": null,
+    "options": {
+      "is_multiple_choice": false
+    },
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "is_multiple_choice": false,
+      "is_always_correct": false,
+      "sample_size": 4,
+      "preserve_order": false,
+      "is_html_enabled": true,
+      "is_options_feedback": false,
+      "options": [
+        {
+          "is_correct": true,
+          "text": "Адреса, зарезервированные для локальных сетей и не маршрутизируемые в интернете",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "IP-адреса, за которые нужно платить дополнительно",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Уникальные адреса, используемые в интернете",
+          "feedback": ""
+        },
+        {
+          "is_correct": false,
+          "text": "Скрытые адреса, доступные только хакерам",
+          "feedback": ""
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148662",
+  "subscriptions": [
+    "31-77-8148662",
+    "30-77-8148662"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:39:09Z",
+  "update_date": "2025-10-06T08:56:21Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148662-1",
+  "discussion_threads": [
+    "77-8148662-1",
+    "77-8148662-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

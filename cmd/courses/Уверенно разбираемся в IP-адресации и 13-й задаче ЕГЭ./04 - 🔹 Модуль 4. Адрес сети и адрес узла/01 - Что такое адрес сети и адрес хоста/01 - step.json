@@ -1,0 +1,57 @@
+{
+  "id": 7866402,
+  "lesson": 1897547,
+  "position": 1,
+  "status": "ready",
+  "block": {
+    "name": "text",
+    "text": "<h2>✅ Урок 1. Что такое адрес сети и адрес хоста?</h2>\n\n<blockquote>\n<p><strong>Цель:</strong> Понять, как IP-адрес делится на <strong>часть сети</strong> и <strong>часть устройства (хоста)</strong>.<br>\n<strong>Формат:</strong> Подходит для визуализации, анимации или простой текстово-графической схемы.</p>\n</blockquote>\n\n<h3>📘 Основная идея</h3>\n\n<p>IP-адрес — это не просто одно число. Он <strong>состоит из двух частей</strong>:</p>\n\n<ul>\n\t<li>\n\t<p><strong>Адрес сети</strong> — где находится устройство (подсеть, \"улица\")</p>\n\t</li>\n\t<li>\n\t<p><strong>Адрес хоста</strong> — само устройство в этой сети (\"номер дома\")</p>\n\t</li>\n</ul>\n\n<h3>🧠 Как понять:</h3>\n\n<p>Для разделения IP-адреса на сеть и хост используется <strong>маска подсети</strong>.</p>\n\n<h3>🧪 Пример:</h3>\n\n<p><code>IP: 192.168.1.10 </code></p>\n\n<p><code>Маска: 255.255.255.0 </code></p>\n\n<p>Маска говорит: <strong>первые 3 октета — это сеть</strong>, последний — это хост.</p>\n\n<p>➡️ <strong>Адрес сети:</strong> <code>192.168.1.0</code><br>\n➡️ <strong>Адрес хоста:</strong> <code>10</code></p>\n\n<h3>🗺️ Визуальная аналогия:</h3>\n\n<blockquote>\n<p><strong>«Сеть — это улица, хост — это номер дома.»</strong></p>\n</blockquote>\n\n<p>Например:</p>\n\n<p><code>IP-адрес: 192.168.1.10 </code></p>\n\n<p><code>Сеть (улица): 192.168.1.0 </code></p>\n\n<p><code>Хост (дом): 10 </code></p>\n\n<h3>🔍 Что важно помнить:</h3>\n\n<ul>\n\t<li>\n\t<p>Без маски невозможно понять, <strong>где заканчивается сеть</strong>, а где начинается устройство.</p>\n\t</li>\n\t<li>\n\t<p>Один и тот же IP может быть <strong>в разных сетях</strong>, если маски разные.</p>\n\t</li>\n</ul>\n\n<h3>💡 Подсказка:</h3>\n\n<blockquote>\n<p>«Хочешь найти устройство в Интернете — сначала узнай, в какой оно сети. Маска тебе в помощь.»</p>\n</blockquote>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {},
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "comment": "#"
+  },
+  "progress": "77-7866402",
+  "subscriptions": [
+    "31-77-7866402",
+    "30-77-7866402"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 3,
+  "passed_by": 3,
+  "correct_ratio": null,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-08-08T17:20:19Z",
+  "update_date": "2025-08-08T19:19:01Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-7866402-1",
+  "discussion_threads": [
+    "77-7866402-1"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 0
+}

@@ -1,0 +1,81 @@
+{
+  "id": 8148721,
+  "lesson": 1897535,
+  "position": 6,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 5</h3>\n\n<p>Сопоставь префиксы и маски, чтобы собрать мини-шпаргалку для IP-шника.</p>\n\n<p><em>Подсказка:</em> Помни: количество битов в префиксе равно количеству единиц в маске.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>/24</b> — 255.255.255.0</li>\n  <li><b>/25</b> — 255.255.255.128</li>\n  <li><b>/26</b> — 255.255.255.192</li>\n  <li><b>/27</b> — 255.255.255.224</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "/24",
+          "second": "255.255.255.0"
+        },
+        {
+          "first": "/25",
+          "second": "255.255.255.128"
+        },
+        {
+          "first": "/26",
+          "second": "255.255.255.192"
+        },
+        {
+          "first": "/27",
+          "second": "255.255.255.224"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148721",
+  "subscriptions": [
+    "31-77-8148721",
+    "30-77-8148721"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 1,
+  "passed_by": 1,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:53:46Z",
+  "update_date": "2025-10-06T08:57:39Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148721-1",
+  "discussion_threads": [
+    "77-8148721-1",
+    "77-8148721-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}

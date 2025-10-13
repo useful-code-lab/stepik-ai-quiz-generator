@@ -1,0 +1,81 @@
+{
+  "id": 8148731,
+  "lesson": 1897536,
+  "position": 6,
+  "status": "ready",
+  "block": {
+    "name": "matching",
+    "text": "<h3>Миссия 5</h3>\n\n<p>Надя готовит презентацию про IP. Помоги ей сопоставить типы IP-адресов с их описаниями.</p>\n\n<p><em>Подсказка:</em> Раздели IP по применению: внутренние, внешние, временные и постоянные.</p>\n\n<details><summary>Показать ответ</summary><ul>\n  <li><b>Приватный IP</b> — Используется внутри локальной сети, не доступен из интернета</li>\n  <li><b>Публичный IP</b> — Доступен из любой точки интернета</li>\n  <li><b>Динамический IP</b> — Выдаётся автоматически и может меняться</li>\n  <li><b>Статический IP</b> — Назначается вручную и не изменяется</li>\n</ul></details>",
+    "video": null,
+    "options": {},
+    "subtitle_files": [],
+    "is_deprecated": false,
+    "source": {
+      "preserve_firsts_order": true,
+      "is_html_enabled": true,
+      "pairs": [
+        {
+          "first": "Приватный IP",
+          "second": "Используется внутри локальной сети, не доступен из интернета"
+        },
+        {
+          "first": "Публичный IP",
+          "second": "Доступен из любой точки интернета"
+        },
+        {
+          "first": "Динамический IP",
+          "second": "Выдаётся автоматически и может меняться"
+        },
+        {
+          "first": "Статический IP",
+          "second": "Назначается вручную и не изменяется"
+        }
+      ]
+    },
+    "subtitles": {},
+    "tests_archive": null,
+    "feedback_correct": "",
+    "feedback_wrong": ""
+  },
+  "actions": {
+    "edit_instructions": "#",
+    "submit": "#",
+    "comment": "#"
+  },
+  "progress": "77-8148731",
+  "subscriptions": [
+    "31-77-8148731",
+    "30-77-8148731"
+  ],
+  "instruction": null,
+  "session": null,
+  "instruction_type": null,
+  "viewed_by": 2,
+  "passed_by": 2,
+  "correct_ratio": 1.0,
+  "worth": 0,
+  "is_solutions_unlocked": false,
+  "solutions_unlocked_attempts": 3,
+  "has_submissions_restrictions": false,
+  "max_submissions_count": 3,
+  "variation": 1,
+  "variations_count": 1,
+  "is_enabled": true,
+  "needs_plan": null,
+  "create_date": "2025-09-16T05:55:26Z",
+  "update_date": "2025-10-06T08:57:50Z",
+  "discussions_count": 0,
+  "discussion_proxy": "77-8148731-1",
+  "discussion_threads": [
+    "77-8148731-1",
+    "77-8148731-2"
+  ],
+  "reason_of_failure": "",
+  "error": {
+    "text": "",
+    "code": "",
+    "params": {}
+  },
+  "warnings": [],
+  "cost": 5
+}
