@@ -11,7 +11,7 @@ import json
 import time
 from typing import Dict, Any, List
 
-COURSE_IDS = [250336, 251675, 251711, 251831, 251833, 251834, 251835, 251924, 251953, 252037, 252068, 252535, 252572, 252646, 252647, 252874, 252927, 253010, 253470, 253487, 253488, 253489, 253490, 253491, 253493, 253614, 253631, 253692, 253935, 254045, 254321, 254324, 254325, 254326, 254432, 254446, 254584, 255077, 255396, 255397, 255398, 255399, 255400, 255401, 255403, 255404, 255405, 255406, 255408, 255409, 255410, 255411, 255412, 255458, 255500, 255587, 255614, 256212, 256313, 256362, 256519]
+COURSE_IDS = [256452]
 
 
 STEPIC_HOST = "https://stepik.org"
@@ -76,6 +76,9 @@ async def update_step_source(session: aiohttp.ClientSession, step_id: int, token
                 update = False
                 html_output = None
 
+                if block["name"] not in {"choice", "matching", "sorting"}:
+                    return
+
                 if '<details><summary>Показать ответ</summary>' not in block["text"]:
                     if block["name"] == "choice":
                         options = block["source"]["options"]
@@ -95,6 +98,12 @@ async def update_step_source(session: aiohttp.ClientSession, step_id: int, token
                     # Удаляем экранированное <p>&nbsp;</p>
                 if '<p></p>' in block["text"]:
                     block["text"] = block["text"].replace('<p></p>', '')
+                    update = True
+
+
+                # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)
+                if '&lt;/&lt;p&gt;' in block["text"]:
+                    block["text"] = block["text"].replace('&lt;/&lt;p&gt;', '')
                     update = True
 
                 # Проверяем и удаляем неправильную строку &lt;/&lt;li&gt; (экранированную)

@@ -2,15 +2,14 @@ import aiohttp
 import asyncio
 import json
 import re
+import os
 from typing import Dict
-from motor.motor_asyncio import AsyncIOMotorClient
 
 STEPIC_HOST = "https://stepik.org"
 CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
 
-MONGO_URL = "mongodb://localhost:27017"
-DB_NAME = "stepik_courses"
+SAVE_DIR = "courses"   # куда сохраняем всё
 
 
 # === Авторизация ===
@@ -29,19 +28,9 @@ def mk_headers(token: str) -> Dict[str, str]:
     return {"Authorization": f"Bearer {token}"}
 
 
-# === Mongo ===
-async def get_db():
-    client = AsyncIOMotorClient(MONGO_URL)
-    db = client[DB_NAME]
-    await db.courses.create_index("id", unique=True)
-    await db.modules.create_index("id", unique=True)
-    await db.lessons.create_index("id", unique=True)
-    await db.steps.create_index("id", unique=True)
-    return db
-
-
 # === Утилиты ===
 def safe_name(name: str) -> str:
+    """убираем лишние символы для имени файла/папки"""
     return re.sub(r'[\\/*?:"<>|]', "", name).strip().replace("\n", " ")[:100]
 
 
@@ -53,35 +42,55 @@ async def fetch_json(session, url, headers, sem):
             return await resp.json()
 
 
-# === Основная функция ===
-async def export_course(course_id: int):
-    token = await get_access_token()
-    headers = mk_headers(token)
-    db = await get_db()
-    sem = asyncio.Semaphore(10)  # максимум 10 одновременных запросов
+def save_json_to_file(data: dict, path: str):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
-    # Очистим старые данные
-    print(f"\n🧹 Удаляем старые данные для курса {course_id}...")
-    await db.courses.delete_one({"id": course_id})
-    await db.modules.delete_many({"course_id": course_id})
-    await db.lessons.delete_many({"course_id": course_id})
-    await db.steps.delete_many({"course_id": course_id})
-    print("♻️ Старые данные удалены.\n")
 
-    async with aiohttp.ClientSession() as session:
+async def download_file(session, url, path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    async with session.get(url) as resp:
+        resp.raise_for_status()
+        with open(path, "wb") as f:
+            f.write(await resp.read())
+    print(f"💾 Скачан файл: {path}")
+
+
+# === Основная функция для курса ===
+async def export_course(course_id: int, session, headers, sem):
+    try:
         # === Курс ===
         course_data = await fetch_json(session, f"{STEPIC_HOST}/api/courses/{course_id}", headers, sem)
         course = course_data["courses"][0]
-        await db.courses.insert_one(course)
-        print(f"📘 Курс: {course['title']}")
+        course_title = safe_name(course["title"])
+        print(f"\n📘 Курс: {course_title} (id={course_id})")
+
+        course_dir = os.path.join(SAVE_DIR, course_title)
+        os.makedirs(course_dir, exist_ok=True)
+
+        # сохраняем метаданные курса
+        save_json_to_file(course, os.path.join(course_dir, "course.json"))
+
+        # сохраняем обложку
+        cover_url = course.get("cover")
+        if cover_url:
+            ext = os.path.splitext(cover_url)[1] or ".jpg"
+            cover_path = os.path.join(course_dir, f"cover{ext}")
+            await download_file(session, cover_url, cover_path)
+        else:
+            print("⚠️ У курса нет обложки")
 
         # === Модули ===
         for section_id in course.get("sections", []):
             sec_data = await fetch_json(session, f"{STEPIC_HOST}/api/sections/{section_id}", headers, sem)
             section = sec_data["sections"][0]
-            section["course_id"] = course_id
-            await db.modules.insert_one(section)
-            print(f"  📂 Модуль: {section['title']}")
+            sec_title = safe_name(section["title"])
+            print(f"  📂 Модуль: {sec_title}")
+
+            sec_dir = os.path.join(course_dir, sec_title)
+            os.makedirs(sec_dir, exist_ok=True)
+            save_json_to_file(section, os.path.join(sec_dir, "module.json"))
 
             # === Уроки ===
             for unit_id in section.get("units", []):
@@ -91,32 +100,54 @@ async def export_course(course_id: int):
 
                 les_data = await fetch_json(session, f"{STEPIC_HOST}/api/lessons/{lesson_id}", headers, sem)
                 lesson = les_data["lessons"][0]
-                lesson["course_id"] = course_id
-                lesson["section_id"] = section_id
-                await db.lessons.insert_one(lesson)
-                print(f"    📘 Урок: {lesson['title']}")
+                les_title = safe_name(lesson["title"])
+                print(f"    📘 Урок: {les_title}")
 
-                # === Асинхронная загрузка шагов ===
+                les_dir = os.path.join(sec_dir, les_title)
+                os.makedirs(les_dir, exist_ok=True)
+                save_json_to_file(lesson, os.path.join(les_dir, "lesson.json"))
+
+                # === Шаги ===
                 step_ids = lesson.get("steps", [])
                 tasks = []
 
-                async def fetch_and_store_step(step_id):
+                async def fetch_and_save_step(step_id, les_dir=les_dir):
                     step_data = await fetch_json(session, f"{STEPIC_HOST}/api/steps/{step_id}", headers, sem)
                     step = step_data["steps"][0]
-                    step["lesson_id"] = lesson_id
-                    step["course_id"] = course_id
-                    await db.steps.insert_one(step)
-                    print(f"      ✅ Шаг {step_id}")
+                    save_json_to_file(step, os.path.join(les_dir, f"step_{step_id}.json"))
+                    print(f"      ✅ Шаг {step_id} сохранён")
 
                 for sid in step_ids:
-                    tasks.append(asyncio.create_task(fetch_and_store_step(sid)))
+                    tasks.append(asyncio.create_task(fetch_and_save_step(sid)))
 
                 await asyncio.gather(*tasks)
 
-    print(f"\n🎯 Курс {course_id} успешно обновлён в MongoDB.")
+        print(f"🎯 Курс {course_title} сохранён.")
+    except Exception as e:
+        print(f"❌ Ошибка при обработке курса {course_id}: {e}")
 
 
 # === Точка входа ===
+async def main():
+    COURSE_IDS = [
+        250336, 251675, 251711, 251831, 251833, 251834, 251835, 251924,
+        251953, 252037, 252068, 252535, 252572, 252646, 252647, 252874,
+        252927, 253010, 253470, 253487, 253488, 253489, 253490, 253491,
+        253493, 253614, 253631, 253692, 253935, 254045, 254321, 254324,
+        254325, 254326, 254432, 254446, 254584, 255077, 255396, 255397,
+        255398, 255399, 255400, 255401, 255403, 255404, 255405, 255406,
+        255408, 255409, 255410, 255411, 255412, 255458, 255500, 255587,
+        255614, 255790, 256212, 256313, 256362, 256452, 256519, 256741, 256742
+    ]
+
+    token = await get_access_token()
+    headers = mk_headers(token)
+    sem = asyncio.Semaphore(10)
+
+    async with aiohttp.ClientSession() as session:
+        for cid in COURSE_IDS:
+            await export_course(cid, session, headers, sem)
+
+
 if __name__ == "__main__":
-    COURSE_IDS = [256069]
-    asyncio.run(export_course(COURSE_IDS[0]))
+    asyncio.run(main())
