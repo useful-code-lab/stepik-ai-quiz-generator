@@ -133,7 +133,7 @@ async def export_course(course_id: int, session, headers, sem):
 # === Точка входа ===
 async def main():
     COURSE_IDS = [
-        252454, 256069
+        257381
     ]
 
     token = await get_access_token()

@@ -6,7 +6,7 @@ import time
 # === НАСТРОЙКИ ===
 STEPIC_CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
 STEPIC_CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
-COURSE_ID = 25645222  # <-- ID курса на Stepik
+COURSE_ID = 252538  # <-- ID курса на Stepik
 JSON_FILE = "course.json"
 API_BASE = "https://stepik.org/api"
 
