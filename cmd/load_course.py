@@ -6,8 +6,8 @@ import os
 from typing import Dict
 
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "hXxRvtSiQQS55BXZBAXkx0D5UZZHu1mcn0s3cbNn"
-CLIENT_SECRET = "waJh174Kr7rx4GlmYC4u8hCpkpoAE3Fh729mfjTygOkCMMY2eQDLBG8r0vwSsKcnUWOOJIzoXo3wlWIYZXFfXvOsucdQSKJubE8WuTNsv66YCUnKYY6VUXMzuh4xgtEd"
+CLIENT_ID = "rEQVrrQXjA0kUmV0OuisJeg2yYZFi90aqgWXIKAp"
+CLIENT_SECRET = "I10ib8UG84JkbcTCB8yuX6lv1oWYNbBCu6jWgVHw4tpKP59ObwKJD8wU2ldGWYLdRGscZpZfcQ5KhvhXqtSYqVLJedDZUnLMghYOwxKVPmVu6demCfdlgjPkxYM0Qc0T"
 
 SAVE_DIR = "courses"   # куда сохраняем всё
 
@@ -132,9 +132,8 @@ async def export_course(course_id: int, session, headers, sem):
 
 # === Точка входа ===
 async def main():
-    COURSE_IDS = [
-        257381
-    ]
+    COURSE_IDS = [250336, 251758, 252538, 252927, 253470, 253614, 254045, 254321, 255077, 255399, 255400, 255401, 255403, 255404, 255405, 255406, 255408, 255409, 255410, 255411, 255412, 255458, 255500, 255587, 255614, 255790, 256069, 256212, 256313, 256362, 256452, 256519, 256741, 256742, 256976, 257098, 257288, 257381, 257445, 257586]
+
 
     token = await get_access_token()
     headers = mk_headers(token)
