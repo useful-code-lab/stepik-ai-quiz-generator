@@ -1,0 +1,688 @@
+{
+  "id": 257520,
+  "title": "Copy of Параллельный Python",
+  "slug": "Copy-of-Параллельный-Python-257520",
+  "summary": "",
+  "sections": [
+    {
+      "section_id": 601616,
+      "section_title": "📘 Введение: Python против времени",
+      "lessons": [
+        {
+          "lesson_id": 2004662,
+          "lesson_title": "❓ Что такое параллелизм и зачем он нужен",
+          "unit_id": 2032837
+        },
+        {
+          "lesson_id": 2004663,
+          "lesson_title": "📘 CPU-bound и I/O-bound задачи",
+          "unit_id": 2032838
+        },
+        {
+          "lesson_id": 2004664,
+          "lesson_title": "🛡️ Почему Python «медленный» и при чём здесь GIL",
+          "unit_id": 2032839
+        },
+        {
+          "lesson_id": 2004665,
+          "lesson_title": "🧪 Практика: измеряем время выполнения",
+          "unit_id": 2032840
+        },
+        {
+          "lesson_id": 2004666,
+          "lesson_title": "🎯 Квест: найди узкое место в коде",
+          "unit_id": 2032841
+        }
+      ]
+    },
+    {
+      "section_id": 601617,
+      "section_title": "🧩 Потоки: одна память — много рук",
+      "lessons": [
+        {
+          "lesson_id": 2004667,
+          "lesson_title": "📚 Основы модуля threading",
+          "unit_id": 2032842
+        },
+        {
+          "lesson_id": 2004668,
+          "lesson_title": "🛠️ Создание потоков вручную",
+          "unit_id": 2032843
+        },
+        {
+          "lesson_id": 2004669,
+          "lesson_title": "👻 Демон-потоки и завершение программы",
+          "unit_id": 2032844
+        },
+        {
+          "lesson_id": 2004670,
+          "lesson_title": "📥 Очереди queue.Queue",
+          "unit_id": 2032845
+        },
+        {
+          "lesson_id": 2004671,
+          "lesson_title": "⚠️ Race condition и блокировки (Lock, RLock)",
+          "unit_id": 2032846
+        },
+        {
+          "lesson_id": 2004672,
+          "lesson_title": "🧪 Практика: многопоточная загрузка файлов",
+          "unit_id": 2032847
+        },
+        {
+          "lesson_id": 2004673,
+          "lesson_title": "🎯 Квест: оптимизируй потоковый код",
+          "unit_id": 2032848
+        }
+      ]
+    },
+    {
+      "section_id": 601618,
+      "section_title": "🧠 Многопроцессность: сила нескольких ядер",
+      "lessons": [
+        {
+          "lesson_id": 2004674,
+          "lesson_title": "📘 Модуль multiprocessing",
+          "unit_id": 2032849
+        },
+        {
+          "lesson_id": 2004675,
+          "lesson_title": "📘 Процессы и межпроцессное взаимодействие",
+          "unit_id": 2032850
+        },
+        {
+          "lesson_id": 2004676,
+          "lesson_title": "📥 Очереди, каналы и Manager",
+          "unit_id": 2032851
+        },
+        {
+          "lesson_id": 2004677,
+          "lesson_title": "📘 Пул процессов (Pool)",
+          "unit_id": 2032852
+        },
+        {
+          "lesson_id": 2004678,
+          "lesson_title": "🧪 Практика: параллельные вычисления",
+          "unit_id": 2032853
+        },
+        {
+          "lesson_id": 2004679,
+          "lesson_title": "🎯 Квест: создаём ускоренный обработчик изображений",
+          "unit_id": 2032854
+        }
+      ]
+    },
+    {
+      "section_id": 601619,
+      "section_title": "⚡ Асинхронность: время не ждёт",
+      "lessons": [
+        {
+          "lesson_id": 2004680,
+          "lesson_title": "❓ Что такое event loop",
+          "unit_id": 2032855
+        },
+        {
+          "lesson_id": 2004681,
+          "lesson_title": "⚡ async/await и корутины",
+          "unit_id": 2032856
+        },
+        {
+          "lesson_id": 2004682,
+          "lesson_title": "📘 Функции gather и as_completed",
+          "unit_id": 2032857
+        },
+        {
+          "lesson_id": 2004683,
+          "lesson_title": "⚡ Практика: асинхронный парсер сайтов",
+          "unit_id": 2032858
+        },
+        {
+          "lesson_id": 2004684,
+          "lesson_title": "🎯 Квест: напиши код, который не «ждёт»",
+          "unit_id": 2032859
+        }
+      ]
+    },
+    {
+      "section_id": 601620,
+      "section_title": "🔧 concurrent.futures: Python-способ параллелить",
+      "lessons": [
+        {
+          "lesson_id": 2004685,
+          "lesson_title": "📘 ThreadPoolExecutor и ProcessPoolExecutor",
+          "unit_id": 2032860
+        },
+        {
+          "lesson_id": 2004686,
+          "lesson_title": "📘 Future и метод result()",
+          "unit_id": 2032861
+        },
+        {
+          "lesson_id": 2004687,
+          "lesson_title": "🧪 Практика: ускоряем API-запросы",
+          "unit_id": 2032862
+        },
+        {
+          "lesson_id": 2004688,
+          "lesson_title": "🎯 Квест: подбери лучший пул для задачи",
+          "unit_id": 2032863
+        }
+      ]
+    },
+    {
+      "section_id": 601621,
+      "section_title": "📊 Война подходов: Thread vs Process vs Async",
+      "lessons": [
+        {
+          "lesson_id": 2004689,
+          "lesson_title": "📊 Сравнение по скорости и памяти",
+          "unit_id": 2032864
+        },
+        {
+          "lesson_id": 2004690,
+          "lesson_title": "💼 Кейс: веб-запросы и CPU-вычисления",
+          "unit_id": 2032865
+        },
+        {
+          "lesson_id": 2004691,
+          "lesson_title": "🧪 Практика: профилирование разных стратегий",
+          "unit_id": 2032866
+        },
+        {
+          "lesson_id": 2004692,
+          "lesson_title": "🎯 Квест: выбери оптимальную стратегию для стартапа",
+          "unit_id": 2032867
+        }
+      ]
+    },
+    {
+      "section_id": 601622,
+      "section_title": "🛡️ GIL — страж Python",
+      "lessons": [
+        {
+          "lesson_id": 2004693,
+          "lesson_title": "📘 Что делает Global Interpreter Lock",
+          "unit_id": 2032868
+        },
+        {
+          "lesson_id": 2004694,
+          "lesson_title": "📘 Почему потоки не ускоряют вычисления",
+          "unit_id": 2032869
+        },
+        {
+          "lesson_id": 2004695,
+          "lesson_title": "🛡️ Как обойти GIL",
+          "unit_id": 2032870
+        },
+        {
+          "lesson_id": 2004696,
+          "lesson_title": "🧪 Практика: симуляция GIL",
+          "unit_id": 2032871
+        },
+        {
+          "lesson_id": 2004697,
+          "lesson_title": "🎯 Квест: обмани интерпретатор",
+          "unit_id": 2032872
+        }
+      ]
+    },
+    {
+      "section_id": 601623,
+      "section_title": "🔄 Синхронизация: порядок из хаоса",
+      "lessons": [
+        {
+          "lesson_id": 2004698,
+          "lesson_title": "📘 Lock, RLock, Semaphore, Event, Condition",
+          "unit_id": 2032873
+        },
+        {
+          "lesson_id": 2004699,
+          "lesson_title": "📥 Очереди для потоков и процессов",
+          "unit_id": 2032874
+        },
+        {
+          "lesson_id": 2004700,
+          "lesson_title": "🧪 Практика: синхронизируем счётчик",
+          "unit_id": 2032875
+        },
+        {
+          "lesson_id": 2004701,
+          "lesson_title": "🎯 Квест: поймай баг гонки",
+          "unit_id": 2032876
+        }
+      ]
+    },
+    {
+      "section_id": 601624,
+      "section_title": "🗃️ Асинхронные структуры данных",
+      "lessons": [
+        {
+          "lesson_id": 2004702,
+          "lesson_title": "⚡ Async Queue, Semaphore, Event",
+          "unit_id": 2032877
+        },
+        {
+          "lesson_id": 2004703,
+          "lesson_title": "⚡ Практика: асинхронная очередь задач",
+          "unit_id": 2032878
+        },
+        {
+          "lesson_id": 2004704,
+          "lesson_title": "⚡ Квест: создай асинхронный конвейер",
+          "unit_id": 2032879
+        }
+      ]
+    },
+    {
+      "section_id": 601625,
+      "section_title": "🌐 Асинхронные веб-запросы",
+      "lessons": [
+        {
+          "lesson_id": 2004705,
+          "lesson_title": "📘 aiohttp: клиент и сервер",
+          "unit_id": 2032880
+        },
+        {
+          "lesson_id": 2004706,
+          "lesson_title": "⚡ Асинхронный API",
+          "unit_id": 2032881
+        },
+        {
+          "lesson_id": 2004707,
+          "lesson_title": "🧪 Практика: собираем данные с 100 сайтов",
+          "unit_id": 2032882
+        },
+        {
+          "lesson_id": 2004708,
+          "lesson_title": "🎯 Квест: сделай быстрее, чем конкурент",
+          "unit_id": 2032883
+        }
+      ]
+    },
+    {
+      "section_id": 601626,
+      "section_title": "🔁 Реактивные потоки",
+      "lessons": [
+        {
+          "lesson_id": 2004709,
+          "lesson_title": "📘 Потоки событий (RxPy)",
+          "unit_id": 2032884
+        },
+        {
+          "lesson_id": 2004710,
+          "lesson_title": "🔁 Реактивное программирование",
+          "unit_id": 2032885
+        },
+        {
+          "lesson_id": 2004711,
+          "lesson_title": "🧪 Практика: обработка потоков данных",
+          "unit_id": 2032886
+        },
+        {
+          "lesson_id": 2004712,
+          "lesson_title": "🎯 Квест: автоматический мониторинг событий",
+          "unit_id": 2032887
+        }
+      ]
+    },
+    {
+      "section_id": 601627,
+      "section_title": "⏲️ Планировщики и таймеры",
+      "lessons": [
+        {
+          "lesson_id": 2004713,
+          "lesson_title": "⚡ Таймеры в threading и asyncio",
+          "unit_id": 2032888
+        },
+        {
+          "lesson_id": 2004714,
+          "lesson_title": "📘 События по расписанию",
+          "unit_id": 2032889
+        },
+        {
+          "lesson_id": 2004715,
+          "lesson_title": "🧪 Практика: фоновый планировщик",
+          "unit_id": 2032890
+        },
+        {
+          "lesson_id": 2004716,
+          "lesson_title": "🎯 Квест: построй свой мини-cron",
+          "unit_id": 2032891
+        }
+      ]
+    },
+    {
+      "section_id": 601628,
+      "section_title": "📈 Профилирование и измерение производительности",
+      "lessons": [
+        {
+          "lesson_id": 2004717,
+          "lesson_title": "📘 Модуль timeit и cProfile",
+          "unit_id": 2032892
+        },
+        {
+          "lesson_id": 2004718,
+          "lesson_title": "📘 Метрики потоков и процессов",
+          "unit_id": 2032893
+        },
+        {
+          "lesson_id": 2004719,
+          "lesson_title": "🧪 Практика: измеряем ускорение",
+          "unit_id": 2032894
+        },
+        {
+          "lesson_id": 2004720,
+          "lesson_title": "⚡ Квест: докажи, что async быстрее",
+          "unit_id": 2032895
+        }
+      ]
+    },
+    {
+      "section_id": 601629,
+      "section_title": "⚙️ Оптимизация и кэширование",
+      "lessons": [
+        {
+          "lesson_id": 2004721,
+          "lesson_title": "📘 functools.lru_cache",
+          "unit_id": 2032896
+        },
+        {
+          "lesson_id": 2004722,
+          "lesson_title": "🗂️ Кэширование результатов задач",
+          "unit_id": 2032897
+        },
+        {
+          "lesson_id": 2004723,
+          "lesson_title": "🧪 Практика: ускоряем API",
+          "unit_id": 2032898
+        },
+        {
+          "lesson_id": 2004724,
+          "lesson_title": "🎯 Квест: минимизируй время выполнения",
+          "unit_id": 2032899
+        }
+      ]
+    },
+    {
+      "section_id": 601630,
+      "section_title": "📋 Очереди задач (Task Queue)",
+      "lessons": [
+        {
+          "lesson_id": 2004725,
+          "lesson_title": "📘 Celery и Redis",
+          "unit_id": 2032900
+        },
+        {
+          "lesson_id": 2004726,
+          "lesson_title": "📘 Отложенные задачи и retry",
+          "unit_id": 2032901
+        },
+        {
+          "lesson_id": 2004727,
+          "lesson_title": "🧪 Практика: создаём очередь задач",
+          "unit_id": 2032902
+        },
+        {
+          "lesson_id": 2004728,
+          "lesson_title": "⚡ Квест: асинхронная рассылка писем",
+          "unit_id": 2032903
+        }
+      ]
+    },
+    {
+      "section_id": 601631,
+      "section_title": "🌍 Распределённые вычисления",
+      "lessons": [
+        {
+          "lesson_id": 2004729,
+          "lesson_title": "📚 Основы Dask и Ray",
+          "unit_id": 2032904
+        },
+        {
+          "lesson_id": 2004730,
+          "lesson_title": "🌍 Распределённые пулы",
+          "unit_id": 2032905
+        },
+        {
+          "lesson_id": 2004731,
+          "lesson_title": "🧪 Практика: обработка большого массива",
+          "unit_id": 2032906
+        },
+        {
+          "lesson_id": 2004732,
+          "lesson_title": "🎯 Квест: симуляция кластера",
+          "unit_id": 2032907
+        }
+      ]
+    },
+    {
+      "section_id": 601632,
+      "section_title": "☁️ Параллелизм в облаке",
+      "lessons": [
+        {
+          "lesson_id": 2004733,
+          "lesson_title": "📘 AWS Lambda и Python",
+          "unit_id": 2032908
+        },
+        {
+          "lesson_id": 2004734,
+          "lesson_title": "🌍 Docker и распределённые процессы",
+          "unit_id": 2032909
+        },
+        {
+          "lesson_id": 2004735,
+          "lesson_title": "🧪 Практика: параллельный запуск контейнеров",
+          "unit_id": 2032910
+        },
+        {
+          "lesson_id": 2004736,
+          "lesson_title": "🎯 Квест: оптимизация пайплайна",
+          "unit_id": 2032911
+        }
+      ]
+    },
+    {
+      "section_id": 601633,
+      "section_title": "🧪 Тестирование параллельного кода",
+      "lessons": [
+        {
+          "lesson_id": 2004738,
+          "lesson_title": "⚡ pytest и asyncio",
+          "unit_id": 2032913
+        },
+        {
+          "lesson_id": 2004739,
+          "lesson_title": "📘 Проверка многопоточности",
+          "unit_id": 2032914
+        },
+        {
+          "lesson_id": 2004740,
+          "lesson_title": "⚠️ Практика: тестируем race condition",
+          "unit_id": 2032915
+        },
+        {
+          "lesson_id": 2004741,
+          "lesson_title": "🎯 Квест: найди непойманный поток",
+          "unit_id": 2032916
+        }
+      ]
+    },
+    {
+      "section_id": 601634,
+      "section_title": "🚨 Безопасность и ошибки",
+      "lessons": [
+        {
+          "lesson_id": 2004742,
+          "lesson_title": "⚡ Исключения в потоках и async",
+          "unit_id": 2032917
+        },
+        {
+          "lesson_id": 2004743,
+          "lesson_title": "📘 Обработка отмены задач",
+          "unit_id": 2032918
+        },
+        {
+          "lesson_id": 2004744,
+          "lesson_title": "🧪 Практика: устойчивый код",
+          "unit_id": 2032919
+        },
+        {
+          "lesson_id": 2004745,
+          "lesson_title": "🎯 Квест: поймай падение в проде",
+          "unit_id": 2032920
+        }
+      ]
+    },
+    {
+      "section_id": 601635,
+      "section_title": "🏗️ Архитектуры параллельных систем",
+      "lessons": [
+        {
+          "lesson_id": 2004746,
+          "lesson_title": "🏗️ Pipeline, MapReduce, Pub/Sub",
+          "unit_id": 2032921
+        },
+        {
+          "lesson_id": 2004747,
+          "lesson_title": "📘 Архитектура задач с брокером",
+          "unit_id": 2032922
+        },
+        {
+          "lesson_id": 2004748,
+          "lesson_title": "🧪 Практика: проектирование пайплайна",
+          "unit_id": 2032923
+        },
+        {
+          "lesson_id": 2004749,
+          "lesson_title": "🎯 Квест: собери архитектуру мечты",
+          "unit_id": 2032924
+        }
+      ]
+    },
+    {
+      "section_id": 601636,
+      "section_title": "🎮 Python и GPU",
+      "lessons": [
+        {
+          "lesson_id": 2004750,
+          "lesson_title": "📘 NumPy, Numba, CuPy",
+          "unit_id": 2032925
+        },
+        {
+          "lesson_id": 2004751,
+          "lesson_title": "🧪 Практика: ускорение вычислений на GPU",
+          "unit_id": 2032926
+        },
+        {
+          "lesson_id": 2004752,
+          "lesson_title": "🎯 Квест: перепиши CPU-код под GPU",
+          "unit_id": 2032927
+        }
+      ]
+    },
+    {
+      "section_id": 601637,
+      "section_title": "🖴 Параллельный ввод-вывод",
+      "lessons": [
+        {
+          "lesson_id": 2004753,
+          "lesson_title": "⚡ Асинхронные файлы",
+          "unit_id": 2032929
+        },
+        {
+          "lesson_id": 2004754,
+          "lesson_title": "📘 Параллельная запись логов",
+          "unit_id": 2032930
+        },
+        {
+          "lesson_id": 2004756,
+          "lesson_title": "🧪 Практика: логирование в несколько потоков",
+          "unit_id": 2032931
+        },
+        {
+          "lesson_id": 2004757,
+          "lesson_title": "🎯 Квест: лог без потерь",
+          "unit_id": 2032932
+        }
+      ]
+    },
+    {
+      "section_id": 601639,
+      "section_title": "🕵️ Отладка и визуализация потоков",
+      "lessons": [
+        {
+          "lesson_id": 2004758,
+          "lesson_title": "📘 Thread Inspector и визуальные трекеры",
+          "unit_id": 2032933
+        },
+        {
+          "lesson_id": 2004759,
+          "lesson_title": "⚡ Мониторинг asyncio loop",
+          "unit_id": 2032934
+        },
+        {
+          "lesson_id": 2004760,
+          "lesson_title": "🧪 Практика: визуализатор потоков",
+          "unit_id": 2032935
+        },
+        {
+          "lesson_id": 2004761,
+          "lesson_title": "🎯 Квест: найди медленную задачу",
+          "unit_id": 2032936
+        }
+      ]
+    },
+    {
+      "section_id": 601640,
+      "section_title": "🏁 Финальный проект — Битва за скорость",
+      "lessons": [
+        {
+          "lesson_id": 2004762,
+          "lesson_title": "📘 Постановка задачи: API + вычисления",
+          "unit_id": 2032937
+        },
+        {
+          "lesson_id": 2004763,
+          "lesson_title": "📘 Планирование параллельной архитектуры",
+          "unit_id": 2032938
+        },
+        {
+          "lesson_id": 2004764,
+          "lesson_title": "📈 Реализация и профилирование",
+          "unit_id": 2032939
+        },
+        {
+          "lesson_id": 2004765,
+          "lesson_title": "📘 Итоги: кто быстрее?",
+          "unit_id": 2032940
+        }
+      ]
+    },
+    {
+      "section_id": 601641,
+      "section_title": "🧠 Финальный экзамен: Герой Python",
+      "lessons": [
+        {
+          "lesson_id": 2004766,
+          "lesson_title": "⚡ Тестовый квест: потоки, async, процессы",
+          "unit_id": 2032941
+        },
+        {
+          "lesson_id": 2004767,
+          "lesson_title": "📘 Практическое задание: оптимизируй код",
+          "unit_id": 2032942
+        },
+        {
+          "lesson_id": 2004768,
+          "lesson_title": "🔍 Рефлексия и анализ",
+          "unit_id": 2032943
+        },
+        {
+          "lesson_id": 2004769,
+          "lesson_title": "📜 Сертификат и бонусы",
+          "unit_id": 2032944
+        }
+      ]
+    }
+  ]
+}
