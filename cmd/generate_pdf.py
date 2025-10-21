@@ -170,6 +170,12 @@ def generate_course_html(course_dir, preview=False):
     course_name = os.path.basename(course_dir)
     html_parts = []
 
+    # Если это preview, добавляем заголовок с предупреждением
+    if preview:
+        html_parts.append("<h2 style='color:red; text-align:center;'>Preview (демонстрационный вариант)</h2>")
+
+    html_parts.append("<h3 style='text-align:center; font-style:italic;'>Автор: Алексей Курс</h3>")
+
     # Обложка
     cover_path = os.path.join(course_dir, "cover.png")
     if os.path.exists(cover_path):
@@ -236,7 +242,6 @@ def generate_course_html(course_dir, preview=False):
                 html_parts.pop()  # Убираем заголовок урока, если шагов с нужным типом не было
 
     return "\n".join(html_parts)
-
 
 # ===================== СОЗДАНИЕ PDF =====================
 def create_pdf_from_html(course_dir, pdf_dir, preview=False):
