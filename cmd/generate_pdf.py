@@ -11,8 +11,13 @@ STOP_AFTER_FIRST_COURSE = False
 
 # ===================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ =====================
 def load_json(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    """Загружаем JSON файл с обработкой ошибок."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        print(f"Ошибка при загрузке JSON файла: {path}. Ошибка: {e}")
+        return {}
 
 
 def simplify_name(name: str) -> str:
@@ -68,7 +73,6 @@ def parse_step_text(html_text: str, block_source=None) -> str:
         h3['class'] = ['mission-title']
 
     # Обработка изображений: уменьшаем ширину до 100px и размещаем на новой строке слева
-    # Обработка изображений: уменьшаем ширину до 100px, размещаем по левому краю и с отступом сверху и снизу
     for img in soup.find_all("img"):
         img[
             'style'] = "max-width: 100px; height: auto; display: block; margin-left: 0; margin-right: auto; margin-bottom: 10px; clear: both;"
@@ -98,7 +102,7 @@ def parse_step_text(html_text: str, block_source=None) -> str:
             options = source.get("options", [])
 
             # 1) В текст задания — все варианты
-            all_options_html = "<p class='answer-title'>Опции:</p><ul>\n"
+            all_options_html = "<p class='answer-title'>Опции</p><ul>\n"
             for opt in options:
                 all_options_html += f"  <li>{opt.get('text','')}</li>\n"
             all_options_html += "</ul>"
@@ -106,35 +110,63 @@ def parse_step_text(html_text: str, block_source=None) -> str:
 
             # 2) В ответе — только правильный вариант
             correct_answers = [opt['text'] for opt in options if opt.get("is_correct")]
-            answer_html = "<p class='answer-title'>Ответ:</p><ul>\n"
+            answer_html = "<p class='answer-title'>Ответ</p><ul>\n"
             for correct_answer in correct_answers:
-                answer_html += f"  <li><b>{correct_answer}</b></li>\n"  # Жирный только в ответах
+                answer_html += f"  <li>{correct_answer}</li>\n"  # Жирный только в ответах
             answer_html += "</ul>"
             soup.append(BeautifulSoup(answer_html, "html.parser"))
 
         elif block_source["name"] == "matching":
             pairs = source.get("pairs", [])
-            answer_html = "<p class='answer-title'>Ответ:</p><ul>\n"
+            answer_html = "<p class='answer-title'>Ответ</p><ul>\n"
             for pair in pairs:
                 first = pair.get("first", "")
                 second = pair.get("second", "")
-                answer_html += f"  <li><b>{first}</b> — {second}</li>\n"  # Жирный только в ответах
+                answer_html += f"  <li>{first} => {second}</li>\n"  # Жирный только в ответах
             answer_html += "</ul>"
             soup.append(BeautifulSoup(answer_html, "html.parser"))
 
         elif block_source["name"] == "sorting":
             options = source.get("options", [])
-            answer_html = "<p class='answer-title'>Ответ:</p><ul>\n"
+            answer_html = "<p class='answer-title'>Ответ</p><ul>\n"
             for opt in options:
-                answer_html += f"  <li><b>{opt['text']}</b></li>\n"  # Жирный только в ответах
+                answer_html += f"  <li>{opt['text']}</li>\n"  # Жирный только в ответах
             answer_html += "</ul>"
             soup.append(BeautifulSoup(answer_html, "html.parser"))
 
     return str(soup)
 
 
+# ===================== ГЕНЕРАЦИЯ ОГЛАВЛЕНИЯ =====================
+def generate_toc(course_dir):
+    toc_html = "<h2>📜 Оглавление</h2><ul>"
+    modules = sorted(
+        [m for m in os.listdir(course_dir) if os.path.isdir(os.path.join(course_dir, m))],
+        key=lambda x: int(x.split('-')[0].lstrip('0'))
+    )
+
+    for module_name in modules:
+        module_path = os.path.join(course_dir, module_name)
+        simple_module_name = simplify_name(module_name)
+        toc_html += f"<li><a href='#{simple_module_name}'>{simple_module_name}</a><ul>"
+
+        lessons = sorted(
+            [l for l in os.listdir(module_path) if os.path.isdir(os.path.join(module_path, l))],
+            key=lambda x: int(x.split('-')[0].lstrip('0'))
+        )
+
+        for lesson_name in lessons:
+            simple_lesson_name = simplify_name(lesson_name)
+            toc_html += f"<li><a href='#{simple_module_name}-{simple_lesson_name}'>{simple_lesson_name}</a></li>"
+
+        toc_html += "</ul></li>"
+
+    toc_html += "</ul>"
+    return toc_html
+
+
 # ===================== ГЕНЕРАЦИЯ HTML КУРСА =====================
-def generate_course_html(course_dir):
+def generate_course_html(course_dir, preview=False):
     course_name = os.path.basename(course_dir)
     html_parts = []
 
@@ -152,16 +184,24 @@ def generate_course_html(course_dir):
 
     html_parts.append(f"<h1>📘 {course_name}</h1>")
 
+    # Оглавление
+    toc_html = generate_toc(course_dir)
+    html_parts.append(toc_html)
+
     # Модули
     modules = sorted(
         [m for m in os.listdir(course_dir) if os.path.isdir(os.path.join(course_dir, m))],
         key=lambda x: int(x.split('-')[0].lstrip('0'))
     )
 
+    # Если preview включено, выводим только первый модуль
+    if preview:
+        modules = modules[:1]  # Берем только первый модуль
+
     for module_name in modules:
         module_path = os.path.join(course_dir, module_name)
         simple_module_name = simplify_name(module_name)
-        html_parts.append(f"<h1 class=\"unit\">📂 Модуль {simple_module_name}</h1>")
+        html_parts.append(f"<h1 class=\"unit\" id=\"{simple_module_name}\">📂 Модуль {simple_module_name}</h1>")
 
         lessons = sorted(
             [l for l in os.listdir(module_path) if os.path.isdir(os.path.join(module_path, l))],
@@ -171,8 +211,7 @@ def generate_course_html(course_dir):
         for lesson_name in lessons:
             lesson_path = os.path.join(module_path, lesson_name)
             simple_lesson_name = simplify_name(lesson_name)
-            # Теперь выводим только название урока без автоматического номера
-            html_parts.append(f"<h2>📘 Урок {simple_lesson_name}</h2>")
+            html_parts.append(f"<h2 id=\"{simple_module_name}-{simple_lesson_name}\">📘 Урок {simple_lesson_name}</h2>")
 
             step_files = sorted(
                 [s for s in os.listdir(lesson_path) if s.endswith(".json")]
@@ -190,7 +229,7 @@ def generate_course_html(course_dir):
                         continue
 
                     formatted_text = parse_step_text(text, block_source=block)
-                    html_parts.append(f"<h2>💡 Миссия {step_idx}:</h2>{formatted_text}")
+                    html_parts.append(f"<h2>💡 Миссия {step_idx}</h2>{formatted_text}")
 
             # Пропускаем урок, если в нем нет шагов с разрешенными типами
             if not lesson_has_valid_steps:
@@ -200,12 +239,15 @@ def generate_course_html(course_dir):
 
 
 # ===================== СОЗДАНИЕ PDF =====================
-def create_pdf_from_html(course_dir, pdf_dir):
+def create_pdf_from_html(course_dir, pdf_dir, preview=False):
     if not os.path.exists(pdf_dir):
         os.makedirs(pdf_dir)
 
-    html_content = generate_course_html(course_dir)
-    pdf_path = os.path.join(pdf_dir, f"{os.path.basename(course_dir)}.pdf")
+    html_content = generate_course_html(course_dir, preview)
+    if preview:
+        pdf_path = os.path.join(pdf_dir, f"{os.path.basename(course_dir)}_preview.pdf")
+    else:
+        pdf_path = os.path.join(pdf_dir, f"{os.path.basename(course_dir)}.pdf")
 
     css = CSS(string="""
         @page { size: A4; margin: 25mm 20mm 25mm 20mm; }
@@ -239,11 +281,11 @@ if __name__ == "__main__":
 
     courses = sorted([
         c for c in os.listdir(BASE_DIR)
-        if os.path.isdir(os.path.join(BASE_DIR, c))  and TARGET_SUBSTRING in c
+        if os.path.isdir(os.path.join(BASE_DIR, c))
     ])
 
     for i, course_name in enumerate(courses):
-        create_pdf_from_html(os.path.join(BASE_DIR, course_name), PDF_DIR)
+        create_pdf_from_html(os.path.join(BASE_DIR, course_name), PDF_DIR, preview=True)
         if STOP_AFTER_FIRST_COURSE:
             print("⚠️ Остановлено после генерации первого курса")
             break
