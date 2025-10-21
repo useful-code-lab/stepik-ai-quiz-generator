@@ -92,7 +92,7 @@ def parse_step_text(html_text: str, block_source=None) -> str:
             options = source.get("options", [])
 
             # 1) В текст задания — все варианты
-            all_options_html = "<p class='answer-title'>Варианты:</p><ul>\n"
+            all_options_html = "<p class='answer-title'>Опции:</p><ul>\n"
             for opt in options:
                 all_options_html += f"  <li>{opt.get('text','')}</li>\n"
             all_options_html += "</ul>"
@@ -165,24 +165,30 @@ def generate_course_html(course_dir):
         for lesson_name in lessons:
             lesson_path = os.path.join(module_path, lesson_name)
             simple_lesson_name = simplify_name(lesson_name)
+            # Теперь выводим только название урока без автоматического номера
             html_parts.append(f"<h2>📘 Урок {simple_lesson_name}</h2>")
 
             step_files = sorted(
                 [s for s in os.listdir(lesson_path) if s.endswith(".json")]
             )
 
+            lesson_has_valid_steps = False  # Проверка на наличие шагов с разрешенными типами
             for step_idx, step_file in enumerate(step_files, start=1):
                 step_data = load_json(os.path.join(lesson_path, step_file))
                 block = step_data.get("block", {})
                 step_type = block.get("name")
-                if step_type not in ALLOWED_TYPES:
-                    continue
-                text = block.get("text", "")
-                if not text:
-                    continue
+                if step_type in ALLOWED_TYPES:
+                    lesson_has_valid_steps = True
+                    text = block.get("text", "")
+                    if not text:
+                        continue
 
-                formatted_text = parse_step_text(text, block_source=block)
-                html_parts.append(f"<h2>💡 Миссия {step_idx:02d}:</h2>{formatted_text}")
+                    formatted_text = parse_step_text(text, block_source=block)
+                    html_parts.append(f"<h2>💡 Миссия {step_idx:02d}:</h2>{formatted_text}")
+
+            # Пропускаем урок, если в нем нет шагов с разрешенными типами
+            if not lesson_has_valid_steps:
+                html_parts.pop()  # Убираем заголовок урока, если шагов с нужным типом не было
 
     return "\n".join(html_parts)
 
@@ -223,11 +229,11 @@ if __name__ == "__main__":
     if not os.path.exists(PDF_DIR):
         os.makedirs(PDF_DIR)
 
-    TARGET_SUBSTRING = "Продвинутое искусство составления резюме"
+    TARGET_SUBSTRING = "Специалист ElasticSearch в проектной разработке"
 
     courses = sorted([
         c for c in os.listdir(BASE_DIR)
-        if os.path.isdir(os.path.join(BASE_DIR, c)) and TARGET_SUBSTRING in c
+        if os.path.isdir(os.path.join(BASE_DIR, c)) # and TARGET_SUBSTRING in c
     ])
 
     for i, course_name in enumerate(courses):
