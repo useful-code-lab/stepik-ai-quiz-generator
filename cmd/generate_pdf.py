@@ -67,6 +67,12 @@ def parse_step_text(html_text: str, block_source=None) -> str:
         h3.name = "p"
         h3['class'] = ['mission-title']
 
+    # Обработка изображений: уменьшаем ширину до 100px и размещаем на новой строке слева
+    # Обработка изображений: уменьшаем ширину до 100px, размещаем по левому краю и с отступом сверху и снизу
+    for img in soup.find_all("img"):
+        img[
+            'style'] = "max-width: 100px; height: auto; display: block; margin-left: 0; margin-right: auto; margin-bottom: 10px; clear: both;"
+
     # Подсказки <em>
     for em in soup.find_all("em"):
         text = em.get_text(" ", strip=True)
@@ -184,7 +190,7 @@ def generate_course_html(course_dir):
                         continue
 
                     formatted_text = parse_step_text(text, block_source=block)
-                    html_parts.append(f"<h2>💡 Миссия {step_idx:02d}:</h2>{formatted_text}")
+                    html_parts.append(f"<h2>💡 Миссия {step_idx}:</h2>{formatted_text}")
 
             # Пропускаем урок, если в нем нет шагов с разрешенными типами
             if not lesson_has_valid_steps:
@@ -229,11 +235,11 @@ if __name__ == "__main__":
     if not os.path.exists(PDF_DIR):
         os.makedirs(PDF_DIR)
 
-    TARGET_SUBSTRING = "Специалист ElasticSearch в проектной разработке"
+    TARGET_SUBSTRING = "Lua-программист для разработки с Redis в реальном проекте"
 
     courses = sorted([
         c for c in os.listdir(BASE_DIR)
-        if os.path.isdir(os.path.join(BASE_DIR, c)) # and TARGET_SUBSTRING in c
+        if os.path.isdir(os.path.join(BASE_DIR, c))  and TARGET_SUBSTRING in c
     ])
 
     for i, course_name in enumerate(courses):
