@@ -13,6 +13,7 @@ def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 def simplify_name(name: str) -> str:
     """Удаляем ведущий 0 из названия модуля/урока"""
     import re
@@ -21,28 +22,32 @@ def simplify_name(name: str) -> str:
         return f"{int(match.group(1))}{match.group(2)}".strip()
     return name
 
-# ==== Генерация HTML для ответов (все видимо) ====
+
 def options_to_html(options):
-    html = '<ul>\n'
+    html = "<ul>\n"
     for opt in options:
         text = opt.get("text", "")
-        if opt.get("is_correct"):
-            html += f'  <li><b>{text}</b></li>\n'
-        else:
-            html += f'  <li>{text}</li>\n'
-    html += '</ul>'
-    return f'<p class="answer-title">Ответ:</p>{html}'
+        html += f"  <li>{text}</li>\n"
+    html += "</ul>"
+    return html
+
 
 def pairs_to_html(pairs):
-    html = '<ul>\n'
+    html = "<ul>\n"
     for pair in pairs:
         first = pair.get("first", "")
         second = pair.get("second", "")
-        html += f'  <li><b>{first}</b> — {second}</li>\n'
-    html += '</ul>'
-    return f'<p class="answer-title">Ответ:</p>{html}'
+        html += f"  <li>{first} — {second}</li>\n"
+    html += "</ul>"
+    return html
 
+
+# ===================== ОБРАБОТКА ТЕКСТОВ ШАГОВ =====================
 def parse_step_text(html_text: str, block_source=None) -> str:
+    # 💥 Удаляем всё после "Показать ответ" во всех типах
+    if "Показать ответ" in html_text:
+        html_text = html_text.split("Показать ответ", 1)[0]
+
     soup = BeautifulSoup(html_text, "html.parser")
 
     # Заголовки миссий
@@ -68,57 +73,74 @@ def parse_step_text(html_text: str, block_source=None) -> str:
                 parent_p.insert_before(block)
                 parent_p.decompose()
 
-    # Варианты и ответ
+    # ======================
+    # Обработка типов блоков
+    # ======================
     if block_source:
         source = block_source.get("source", {})
-        if block_source["name"] == "choice":
+        block_name = block_source.get("name")
+        answer_html = ""
+
+        # ---------- CHOICE ----------
+        if block_name == "choice":
             options = source.get("options", [])
+            all_options_html = options_to_html(options)
+            all_soup = BeautifulSoup(all_options_html, "html.parser")
 
-            # 1) В текст задания — все варианты
-            all_options_html = "<ul>\n"
-            for opt in options:
-                all_options_html += f"  <li>{opt.get('text','')}</li>\n"
-            all_options_html += "</ul>"
-            soup.append(BeautifulSoup(all_options_html, "html.parser"))
+            # Несколько правильных ответов
+            correct_answers = [opt['text'] for opt in options if opt.get("is_correct")]
+            if correct_answers:
+                answer_html = "<p class='answer-title'>Ответ:</p><ul>\n"
+                for ans in correct_answers:
+                    answer_html += f"  <li>{ans}</li>\n"
+                answer_html += "</ul>"
 
-            # 2) В ответе — только правильный вариант
-            answer_html = "<ul>\n"
-            for opt in options:
-                if opt.get("is_correct"):
-                    answer_html += f"  <li><b>{opt['text']}</b></li>\n"
-            answer_html += "</ul>"
-            answer_html = f'<p class="answer-title">Ответ:</p>{answer_html}'
-
-            answer_soup = BeautifulSoup(answer_html, "html.parser")
-            # вставляем после подсказки, если есть, иначе в конец
-            hints = soup.find_all("blockquote", class_="hint")
-            if hints:
-                hints[-1].insert_after(answer_soup)
-            else:
-                soup.append(answer_soup)
-
-        elif block_source["name"] == "matching":
+        # ---------- MATCHING ----------
+        elif block_name == "matching":
             pairs = source.get("pairs", [])
-            answer_html = pairs_to_html(pairs)
-            soup.append(BeautifulSoup(answer_html, "html.parser"))
+            if pairs:
+                answer_html = "<p class='answer-title'>Ответ:</p>" + pairs_to_html(pairs)
 
-        elif block_source["name"] == "sorting":
+        # ---------- SORTING ----------
+        elif block_name == "sorting":
             options = source.get("options", [])
-            answer_html = options_to_html(options)
-            soup.append(BeautifulSoup(answer_html, "html.parser"))
+            if options:
+                correct_order = [opt.get("text", "") for opt in options]
+                answer_html = "<p class='answer-title'>Ответ:</p><ul>\n"
+                for text in correct_order:
+                    answer_html += f"  <li>{text}</li>\n"
+                answer_html += "</ul>"
 
-    # <li> — жирная часть до тире
-    for li in soup.find_all("li"):
-        text = li.get_text(" ", strip=True)
-        if "—" in text:
-            bold, normal = text.split("—", 1)
-            li.clear()
-            b_tag = soup.new_tag("b")
-            b_tag.string = bold.strip()
-            li.append(b_tag)
-            li.append(f" — {normal.strip()}")
+        # Вставляем варианты и ответ
+        hints = soup.find_all("blockquote", class_="hint")
+        if hints:
+            if block_name == "choice":
+                hints[-1].insert_after(BeautifulSoup(answer_html, "html.parser"))
+                hints[-1].insert_after(all_soup)
+            else:
+                hints[-1].insert_after(BeautifulSoup(answer_html, "html.parser"))
         else:
-            li.string = text
+            if block_name == "choice":
+                soup.append(all_soup)
+            if answer_html:
+                soup.append(BeautifulSoup(answer_html, "html.parser"))
+
+    # Приведение <li> к читаемому виду
+    if block_source and block_source.get("name") == "matching":
+        for li in soup.find_all("li"):
+            text = li.get_text(" ", strip=True)
+            if "—" in text:
+                bold, normal = text.split("—", 1)
+                li.clear()
+                b_tag = soup.new_tag("b")
+                b_tag.string = bold.strip()
+                li.append(b_tag)
+                li.append(f" — {normal.strip()}")
+            else:
+                li.string = text
+    else:
+        for li in soup.find_all("li"):
+            li.string = li.get_text(" ", strip=True)
 
     return str(soup)
 
@@ -143,23 +165,30 @@ def generate_course_html(course_dir):
     html_parts.append(f"<h1>📘 {course_name}</h1>")
 
     # Модули
-    modules = sorted([m for m in os.listdir(course_dir)
-                      if os.path.isdir(os.path.join(course_dir, m))],
-                     key=lambda x: int(x.split('-')[0].lstrip('0')))
+    modules = sorted(
+        [m for m in os.listdir(course_dir) if os.path.isdir(os.path.join(course_dir, m))],
+        key=lambda x: int(x.split('-')[0].lstrip('0'))
+    )
+
     for module_name in modules:
         module_path = os.path.join(course_dir, module_name)
         simple_module_name = simplify_name(module_name)
         html_parts.append(f"<h2>📂 Модуль {simple_module_name}</h2>")
 
-        lessons = sorted([l for l in os.listdir(module_path)
-                          if os.path.isdir(os.path.join(module_path, l))],
-                         key=lambda x: int(x.split('-')[0].lstrip('0')))
+        lessons = sorted(
+            [l for l in os.listdir(module_path) if os.path.isdir(os.path.join(module_path, l))],
+            key=lambda x: int(x.split('-')[0].lstrip('0'))
+        )
+
         for lesson_name in lessons:
             lesson_path = os.path.join(module_path, lesson_name)
             simple_lesson_name = simplify_name(lesson_name)
             html_parts.append(f"<h3>📘 Урок {simple_lesson_name}</h3>")
 
-            step_files = sorted([s for s in os.listdir(lesson_path) if s.endswith(".json")])
+            step_files = sorted(
+                [s for s in os.listdir(lesson_path) if s.endswith(".json")]
+            )
+
             for step_idx, step_file in enumerate(step_files, start=1):
                 step_data = load_json(os.path.join(lesson_path, step_file))
                 block = step_data.get("block", {})
@@ -169,10 +198,12 @@ def generate_course_html(course_dir):
                 text = block.get("text", "")
                 if not text:
                     continue
+
                 formatted_text = parse_step_text(text, block_source=block)
-                html_parts.append(f"<h4>💡 Шаг {step_idx:02d}:</h4>{formatted_text}")
+                html_parts.append(f"<h4>💡 Миссия {step_idx:02d}:</h4>{formatted_text}")
 
     return "\n".join(html_parts)
+
 
 # ===================== СОЗДАНИЕ PDF =====================
 def create_pdf_from_html(course_dir, pdf_dir):
@@ -202,6 +233,7 @@ def create_pdf_from_html(course_dir, pdf_dir):
 
     HTML(string=html_content).write_pdf(pdf_path, stylesheets=[css])
     print(f"✅ PDF создан: {pdf_path}")
+
 
 # ===================== ОСНОВНОЙ БЛОК =====================
 if __name__ == "__main__":
