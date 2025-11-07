@@ -20,3 +20,5 @@ unique_course_ids = sorted(set(course_ids))
 
 # Вывод в формате массива Python
 print(unique_course_ids)
+
+print(len(unique_course_ids))

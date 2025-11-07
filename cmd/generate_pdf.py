@@ -7,12 +7,12 @@ import pikepdf
 
 # ============== Настройки ==============
 BASE_DIR = "courses"
-PDF_DIR = "pdfs"
+PDF_DIR = "pdfs_preview"
 ALLOWED_TYPES = {"choice", "matching", "sorting"}
 STOP_AFTER_FIRST_COURSE = False
 
 # Поставьте пароль или None, если не хотите применять защиту
-PASSWORD = "your_secure_password"  # например: "sTr0ngP@ssw0rd"
+PASSWORD = "демо"  # например: "sTr0ngP@ssw0rd"
 # =======================================
 
 
@@ -173,7 +173,7 @@ def generate_course_html(course_dir, preview=False):
     if preview:
         html_parts.append("<h2 style='color:red; text-align:center;'>Preview (демонстрационный вариант)</h2>")
 
-    html_parts.append("<h3 style='text-align:center; font-style:italic;'>Автор: Алексей Курс</h3>")
+    html_parts.append("<h3 style='text-align:center; font-style:italic;'>Автор: Алексей Павлов</h3>")
 
     cover_path = os.path.join(course_dir, "cover.png")
     if os.path.exists(cover_path):

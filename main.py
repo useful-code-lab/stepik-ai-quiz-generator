@@ -15,10 +15,10 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 
 # ==== Настройки ====
 TEMPLATE = "prompt_template_triz.txt"
-COURSE_ID = 252537
+COURSE_ID = 259702
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "rEQVrrQXjA0kUmV0OuisJeg2yYZFi90aqgWXIKAp"
-CLIENT_SECRET = "I10ib8UG84JkbcTCB8yuX6lv1oWYNbBCu6jWgVHw4tpKP59ObwKJD8wU2ldGWYLdRGscZpZfcQ5KhvhXqtSYqVLJedDZUnLMghYOwxKVPmVu6demCfdlgjPkxYM0Qc0T"
+CLIENT_ID = "5koCEimNkAf8LLLqpCtDmZkvOW07nWcUsgKa4hbD"
+CLIENT_SECRET = "GfAs2VrZozoV7UZGa1r6Zr08lcWNYKrhiJOhiRA0adAsyktEd0JvgtQj65FguVSEVzmobyLf7YHwx1A7rRHxLwXP9icprIAxKz2MB4SjYNtlbWJYhigjJxQnWpG4AGom"
 
 app = Flask(__name__)
 app.secret_key = "super-secret-key"
