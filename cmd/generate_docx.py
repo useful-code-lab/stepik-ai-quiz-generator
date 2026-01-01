@@ -73,7 +73,8 @@ def add_answer_title(doc):
 
 
 def add_bullet_with_bold_left(doc, text):
-    p = doc.add_paragraph(style="List Bullet")
+    # Убираем стиль "List Bullet"
+    p = doc.add_paragraph()
 
     if "—" in text:
         left, right = text.split("—", 1)
@@ -82,6 +83,7 @@ def add_bullet_with_bold_left(doc, text):
         p.add_run(" — " + right.strip())
     else:
         p.add_run(text)
+
 
 
 # ================= HTML → DOCX =================
@@ -127,6 +129,7 @@ def create_docx(course_dir, is_preview=False):
     if os.path.exists(cover):
         doc.add_picture(cover, width=Inches(5))
 
+    doc.add_page_break()
     doc.add_page_break()
 
     # --- КОНТЕНТ ---
@@ -187,4 +190,4 @@ if __name__ == "__main__":
     for c in os.listdir(BASE_DIR):
         p = os.path.join(BASE_DIR, c)
         if os.path.isdir(p):
-            create_docx(p, is_preview=True)
+            create_docx(p, is_preview=False)
