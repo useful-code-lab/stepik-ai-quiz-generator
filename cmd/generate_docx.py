@@ -27,27 +27,6 @@ def simplify_name(name):
     return f"{int(m.group(1))}{m.group(2)}".strip() if m else name
 
 
-# ================= TOC =================
-def add_table_of_contents(doc):
-    p = doc.add_paragraph()
-    r = p.add_run()
-
-    fld = OxmlElement("w:fldChar")
-    fld.set(qn("w:fldCharType"), "begin")
-
-    instr = OxmlElement("w:instrText")
-    instr.text = 'TOC \\o "1-3" \\h \\z \\u'
-
-    fld_end = OxmlElement("w:fldChar")
-    fld_end.set(qn("w:fldCharType"), "end")
-
-    r._r.append(fld)
-    r._r.append(instr)
-    r._r.append(fld_end)
-
-    doc.add_page_break()
-
-
 # ================= STYLES =================
 def setup_styles(doc):
     doc.styles["Title"].font.size = Pt(28)
@@ -123,6 +102,33 @@ def render_html(doc, html):
                 add_bullet_with_bold_left(doc, li.get_text(strip=True))
 
 
+# ================= TOC =================
+def add_table_of_contents(doc):
+    """
+    Кликабельное оглавление в конце
+    """
+    doc.add_page_break()
+
+
+    p = doc.add_paragraph()
+    r = p.add_run()
+
+    fld_begin = OxmlElement("w:fldChar")
+    fld_begin.set(qn("w:fldCharType"), "begin")
+
+    instr = OxmlElement("w:instrText")
+    instr.text = 'TOC \\o "1-3" \\h \\z \\u'
+
+    fld_end = OxmlElement("w:fldChar")
+    fld_end.set(qn("w:fldCharType"), "end")
+
+    r._r.append(fld_begin)
+    r._r.append(instr)
+    r._r.append(fld_end)
+
+    doc.add_page_break()
+
+
 # ================= MAIN =================
 def create_docx(course_dir):
     if not os.path.exists(DOCX_DIR):
@@ -132,7 +138,7 @@ def create_docx(course_dir):
     doc = Document()
     setup_styles(doc)
 
-    # title
+    # --- ТИТУЛЬНАЯ СТРАНИЦА ---
     doc.add_heading(course, 0)
     doc.add_paragraph("Автор: Алексей Павлов").italic = True
 
@@ -140,8 +146,9 @@ def create_docx(course_dir):
     if os.path.exists(cover):
         doc.add_picture(cover, width=Inches(5))
 
-    add_table_of_contents(doc)
+    doc.add_page_break()
 
+    # --- КОНТЕНТ ---
     modules = sorted(os.listdir(course_dir))
     for module in modules:
         mp = os.path.join(course_dir, module)
@@ -185,6 +192,9 @@ def create_docx(course_dir):
                 elif block["name"] == "sorting":
                     for o in source.get("options", []):
                         add_bullet_with_bold_left(doc, o["text"])
+
+    # --- ОГЛАВЛЕНИЕ В КОНЦЕ ---
+    add_table_of_contents(doc)
 
     out = os.path.join(DOCX_DIR, f"{course}.docx")
     doc.save(out)
