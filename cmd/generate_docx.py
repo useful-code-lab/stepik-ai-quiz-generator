@@ -7,7 +7,6 @@ from docx.shared import Pt, Inches, RGBColor
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
-
 BASE_DIR = "courses"
 DOCX_DIR = "docx_preview"
 ALLOWED_TYPES = {"choice", "matching", "sorting"}
@@ -102,44 +101,26 @@ def render_html(doc, html):
                 add_bullet_with_bold_left(doc, li.get_text(strip=True))
 
 
-# ================= TOC =================
-def add_table_of_contents(doc):
-    """
-    Кликабельное оглавление в конце
-    """
-    doc.add_page_break()
-
-
-    p = doc.add_paragraph()
-    r = p.add_run()
-
-    fld_begin = OxmlElement("w:fldChar")
-    fld_begin.set(qn("w:fldCharType"), "begin")
-
-    instr = OxmlElement("w:instrText")
-    instr.text = 'TOC \\o "1-3" \\h \\z \\u'
-
-    fld_end = OxmlElement("w:fldChar")
-    fld_end.set(qn("w:fldCharType"), "end")
-
-    r._r.append(fld_begin)
-    r._r.append(instr)
-    r._r.append(fld_end)
-
-    doc.add_page_break()
-
-
 # ================= MAIN =================
-def create_docx(course_dir):
+def create_docx(course_dir, is_preview=False):
+    """
+    is_preview=True -> добавляется только первый модуль
+    """
     if not os.path.exists(DOCX_DIR):
         os.makedirs(DOCX_DIR)
 
     course = os.path.basename(course_dir)
+    filename = f"{course}.docx"
+    title_name = course  # для титульной страницы
+    if is_preview:
+        filename = f"{course} [Preview].docx"
+        title_name = f"{course} (Демонстрационный вариант)"  # показываем рядом с названием
+
     doc = Document()
     setup_styles(doc)
 
     # --- ТИТУЛЬНАЯ СТРАНИЦА ---
-    doc.add_heading(course, 0)
+    doc.add_heading(title_name, 0)
     doc.add_paragraph("Автор: Алексей Павлов").italic = True
 
     cover = os.path.join(course_dir, "cover.png")
@@ -150,6 +131,9 @@ def create_docx(course_dir):
 
     # --- КОНТЕНТ ---
     modules = sorted(os.listdir(course_dir))
+    if is_preview:
+        modules = modules[:1]  # только первый модуль
+
     for module in modules:
         mp = os.path.join(course_dir, module)
         if not os.path.isdir(mp):
@@ -193,10 +177,7 @@ def create_docx(course_dir):
                     for o in source.get("options", []):
                         add_bullet_with_bold_left(doc, o["text"])
 
-    # --- ОГЛАВЛЕНИЕ В КОНЦЕ ---
-    add_table_of_contents(doc)
-
-    out = os.path.join(DOCX_DIR, f"{course}.docx")
+    out = os.path.join(DOCX_DIR, filename)
     doc.save(out)
     print(f"✅ DOCX создан: {out}")
 
@@ -206,4 +187,4 @@ if __name__ == "__main__":
     for c in os.listdir(BASE_DIR):
         p = os.path.join(BASE_DIR, c)
         if os.path.isdir(p):
-            create_docx(p)
+            create_docx(p, is_preview=True)
