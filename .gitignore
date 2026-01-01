@@ -1,3 +1,7 @@
 /questions_split
 /output_dir
 lessons_cache.json
+cmd/docx_preview
+cmd/docx_files
+cmd/courses
+cmd/fb2s
