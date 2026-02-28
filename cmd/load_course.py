@@ -6,8 +6,8 @@ import os
 from typing import Dict
 
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "5koCEimNkAf8LLLqpCtDmZkvOW07nWcUsgKa4hbD"
-CLIENT_SECRET = "GfAs2VrZozoV7UZGa1r6Zr08lcWNYKrhiJOhiRA0adAsyktEd0JvgtQj65FguVSEVzmobyLf7YHwx1A7rRHxLwXP9icprIAxKz2MB4SjYNtlbWJYhigjJxQnWpG4AGom"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 
 SAVE_DIR = "courses"   # куда сохраняем всё
 

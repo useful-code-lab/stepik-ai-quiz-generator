@@ -17,8 +17,8 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 TEMPLATE = "prompt_template_triz.txt"
 COURSE_ID = 263363
 STEPIC_HOST = "https://stepik.org"
-CLIENT_ID = "rEQVrrQXjA0kUmV0OuisJeg2yYZFi90aqgWXIKAp"
-CLIENT_SECRET = "I10ib8UG84JkbcTCB8yuX6lv1oWYNbBCu6jWgVHw4tpKP59ObwKJD8wU2ldGWYLdRGscZpZfcQ5KhvhXqtSYqVLJedDZUnLMghYOwxKVPmVu6demCfdlgjPkxYM0Qc0T"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 
 app = Flask(__name__)
 app.secret_key = "super-secret-key"
